@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.logoIcon {
+  color: #0be881;
+  margin-right: 8px;
+}
+
+.logoText {
+  font-family: 'Montserrat';
+  font-weight: 300;
+}

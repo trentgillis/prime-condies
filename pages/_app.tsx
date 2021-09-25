@@ -18,7 +18,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <Navbar />
-        <Container>
+        <Container maxWidth="xl">
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
