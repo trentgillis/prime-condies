@@ -1,14 +1,14 @@
 import '@/styles/globals.css';
-
 import type { AppProps } from 'next/app';
-import { FC } from 'react';
+
 import Head from 'next/head';
 import { Container, ThemeProvider } from '@mui/material';
 
 import theme from '@/styles/theme';
 import { Navbar } from '@/components';
+import { Box } from '@mui/system';
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -19,7 +19,9 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       <ThemeProvider theme={theme}>
         <Navbar />
         <Container maxWidth="xl">
-          <Component {...pageProps} />
+          <Box sx={{ marginTop: '2rem' }}>
+            <Component {...pageProps} />
+          </Box>
         </Container>
       </ThemeProvider>
     </>

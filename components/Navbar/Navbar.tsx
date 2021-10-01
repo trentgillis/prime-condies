@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { AppBar, Container, Toolbar } from '@mui/material';
 
 import { Logo } from '@/components';

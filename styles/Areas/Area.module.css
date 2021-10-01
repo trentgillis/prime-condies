@@ -1,0 +1,9 @@
+.areaHeaderText {
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .areaHeaderText {
+    text-align: center;
+  }
+}
