@@ -13,6 +13,7 @@ module.exports = {
     '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/components': '<rootDir>/components/index.ts',
+    '^@/styles/(.*)$': '<rootDir>/styles/$1',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
