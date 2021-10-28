@@ -3,8 +3,8 @@ import type { IconProps } from '@/lib/ui/types/WeatherIconTypes';
 const PartlyCloudyIcon = ({ size, color, strokeWidth }: IconProps) => {
   return (
     <svg
-      width="100px"
-      height="100px"
+      width={size}
+      height={size}
       viewBox="0 0 100 100"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
