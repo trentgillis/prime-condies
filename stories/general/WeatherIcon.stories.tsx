@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { WeatherIcon } from '@/components';
 
 export default {
-  title: 'General/WeatherIcon',
+  title: 'Common/WeatherIcon',
   component: WeatherIcon,
 } as ComponentMeta<typeof WeatherIcon>;
 

@@ -11,12 +11,9 @@ import SnowIcon from './Icons/SnowIcon';
 import SunnyIcon from './Icons/SunnyIcon';
 import ThunderstormIcon from './Icons/ThunderstormIcon';
 
-export type WeatherIconProps = {
+interface WeatherIconProps extends IconProps {
   iconName: string;
-  size: number;
-  color?: string;
-  strokeWidth?: number;
-};
+}
 
 const WeatherIcon = ({ iconName, size, color = theme.palette.primary.main, strokeWidth = 3 }: WeatherIconProps) => {
   const iconProps: IconProps = {
@@ -35,11 +32,7 @@ const WeatherIcon = ({ iconName, size, color = theme.palette.primary.main, strok
     thunderstorm: <ThunderstormIcon {...iconProps} />,
   };
 
-  const renderIcon = (): JSX.Element => {
-    return weatherIcons[iconName];
-  };
-
-  return renderIcon() || <Typography>ICON NOT FOUND</Typography>;
+  return weatherIcons[iconName] || <Typography>ICON NOT FOUND</Typography>;
 };
 
 export default WeatherIcon;
