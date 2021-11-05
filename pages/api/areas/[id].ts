@@ -1,12 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type AreaResponse from '@/lib/api/types/AreaResponse';
 
 import nc from 'next-connect';
 
-import middleware from '@/lib/api/middleware';
+import type AreaResponse from '@/lib/api/types/AreaResponse';
 import AreaModel, { AreaDocument } from '@/lib/api/models/AreaSchema';
 import { InternalServerError, ResponseError, MethodNotAllowedError, NotFoundError } from '@/lib/api/utils/errors';
+import middleware from '@/lib/api/middleware';
+import { getOneCallForecast } from '@/lib/api/utils/openWeatherMap/oneCall';
 
 const handler = nc();
 
@@ -15,10 +16,13 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse<AreaResponse | Resp
   // id represents the URL identifier given in the request, i.e. boulder-canyon in /api/areas/boulder-canyon
   const { id } = req.query;
 
-  AreaModel.findOne({ areaId: id }, (error: any, area: AreaDocument) => {
-    // TODO: Build correct JSON response before sending it out
-    // This seems useless right now but will be useful once interfacing with the OpenWeatherMap API
-    const areaRes: AreaResponse = area;
+  AreaModel.findOne({ areaId: id }, async (error: any, area: AreaDocument) => {
+    // Fetch weather data from OpenWeatherMap one call API
+    const [areaLon, areaLat] = area.location.coordinates;
+    const { current, hourly, daily } = await getOneCallForecast(areaLat, areaLon);
+
+    // Build area response object
+    let areaRes: AreaResponse = { ...area.toObject(), current, hourly, daily };
 
     try {
       if (error) throw InternalServerError;
