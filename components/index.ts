@@ -1,5 +1,5 @@
-export { default as AreaHeader } from '@/components/AreaHeader/AreaHeader';
-export { default as Logo } from '@/components/Logo/Logo';
-export { default as Navbar } from '@/components/Navbar/Navbar';
-export { default as InfoIcon } from '@/components/InfoIcon/InfoIcon';
-export { default as WeatherIcon } from '@/components/WeatherIcon/WeatherIcon';
+export { default as AreaHeader } from '@/components/area/AreaHeader';
+export { default as Logo } from '@/components/layout/Logo';
+export { default as Navbar } from '@/components/layout/Navbar';
+export { default as InfoIcon } from '@/components/general/InfoIcon';
+export { default as WeatherIcon } from '@/components/general/WeatherIcon';
