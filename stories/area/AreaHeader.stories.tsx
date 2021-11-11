@@ -9,8 +9,8 @@ export default {
 
 const Template: ComponentStory<typeof AreaHeader> = (args) => <AreaHeader {...args} />;
 
-export const Header = Template.bind({});
-Header.args = {
+export const main = Template.bind({});
+main.args = {
   areaName: 'Boulder Canyon',
   areaLocation: 'Colorado',
   areaCountry: 'US',

@@ -9,8 +9,8 @@ export default {
 
 const Template: ComponentStory<typeof WeatherIcon> = (args) => <WeatherIcon {...args} />;
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const main = Template.bind({});
+main.args = {
   iconName: 'partlyCloudy',
   size: 100,
 };
