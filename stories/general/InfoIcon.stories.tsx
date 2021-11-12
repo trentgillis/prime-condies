@@ -9,8 +9,8 @@ export default {
 
 const Template: ComponentStory<typeof InfoIcon> = (args) => <InfoIcon {...args} />;
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const main = Template.bind({});
+main.args = {
   iconName: 'humidity',
   size: 100,
 };
