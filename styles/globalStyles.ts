@@ -5,6 +5,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   * {
+    // TODO: Update to correct fonts
     font-family: 'Montserrat', 'Roboto', sans-serif;
     margin: 0;
   }
