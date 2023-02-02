@@ -1,13 +1,9 @@
-import styled from 'styled-components';
-
-const Wrapper = styled.main`
-  border: 1px solid black;
-`;
+import styles from '@/styles/pages/Home.module.scss';
 
 export default function Home() {
   return (
-    <Wrapper>
+    <main className={styles.layout}>
       <h1>Prime Condies</h1>
-    </Wrapper>
+    </main>
   );
 }

@@ -1,12 +1,15 @@
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-import GlobalStyles from '@/styles/globalStyles';
+import '@/styles/global.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <GlobalStyles />
-      <Component {...pageProps} />;
+      <Head>
+        <title>PrimeCondies</title>
+      </Head>
+      <Component {...pageProps} />
     </>
   );
 }
