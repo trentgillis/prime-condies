@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.main`
-  background-color: pink;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  * {
+    grid-column: 2;
+  }
+
+  @media only screen and (min-width: 788px) {
+    grid-template-columns: 1fr 768px 1fr;
+  }
 `;
 
 export default function Home() {
