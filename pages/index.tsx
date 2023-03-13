@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.main`
+  grid-area: main;
   display: grid;
   grid-template-columns: 1fr;
-
-  * {
-    grid-column: 2;
-  }
+  padding: 16px;
 
   @media only screen and (min-width: 788px) {
     grid-template-columns: 1fr 768px 1fr;
+    padding: 0px;
+
+    * {
+      grid-column: 2;
+    }
   }
 `;
 
