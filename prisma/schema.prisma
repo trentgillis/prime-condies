@@ -7,19 +7,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type PrimeCondiesLocation {
+type AreaLocation {
   coordinates Float[]
   type        String
 }
 
-model prime_condies {
-  id       String               @id @default(auto()) @map("_id") @db.ObjectId
-  v        Int                  @map("__v")
+model Area {
+  id       String       @id @default(auto()) @map("_id") @db.ObjectId
+  v        Int          @map("__v")
   areaId   String
   country  String
-  location PrimeCondiesLocation
+  location AreaLocation
   name     String
   place    String
-
-  @@map("prime-condies")
 }
