@@ -12,7 +12,7 @@ type AreaLocation {
   type        String
 }
 
-model Area {
+model area {
   id       String       @id @default(auto()) @map("_id") @db.ObjectId
   v        Int          @map("__v")
   areaId   String
