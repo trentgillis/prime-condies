@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma';
 import styled from 'styled-components';
 
 const Wrapper = styled.main`
@@ -16,10 +17,17 @@ const Wrapper = styled.main`
   }
 `;
 
-export default function Home() {
+export default function Home({ data }: any) {
+  console.log(data);
+
   return (
     <Wrapper>
       <h1>Prime Condies</h1>
     </Wrapper>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await prisma.area.findMany();
+  return { props: { data } };
 }
