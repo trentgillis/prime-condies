@@ -29,8 +29,5 @@ export default function Home({ data }: any) {
 
 export async function getServerSideProps() {
   const data = await prisma.area.findMany();
-
-  console.log(data);
-
   return { props: { data } };
 }
