@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type PrimeCondiesLocation {
+  coordinates Float[]
+  type        String
+}
+
+model prime_condies {
+  id       String               @id @default(auto()) @map("_id") @db.ObjectId
+  v        Int                  @map("__v")
+  areaId   String
+  country  String
+  location PrimeCondiesLocation
+  name     String
+  place    String
+
+  @@map("prime-condies")
+}
