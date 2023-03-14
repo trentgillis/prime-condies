@@ -1,22 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const HeaderWrapper = styled.main`
+import { Logo } from '@/components';
+
+const Wrapper = styled.nav`
   height: 130px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-`;
-const LogoWrapper = styled.main`
-  display: flex;
-  height: 36px;
-  width: 152px;
-  align-items: left;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 33.3333%;
-  flex-basis: 200px;
-  display: flex;
 `;
 
 const SearchWrapper = styled.main`
@@ -33,13 +23,11 @@ const SearchWrapper = styled.main`
 
 export function Header() {
   return (
-    <HeaderWrapper>
-      <LogoWrapper>
-        <img src="/logo.svg" alt="" />
-      </LogoWrapper>
+    <Wrapper>
+      <Logo />
       <SearchWrapper>
         <input type="text" placeholder="Search" />
       </SearchWrapper>
-    </HeaderWrapper>
+    </Wrapper>
   );
 }
