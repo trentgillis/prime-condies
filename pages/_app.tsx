@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Header from './components/Header';
 import styled from 'styled-components';
 
+import { Header } from '@/components';
 import GlobalStyles from '@/styles/global';
 
 const Layout = styled.div`
