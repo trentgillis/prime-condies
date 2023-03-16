@@ -29,7 +29,7 @@ export default function Home() {
     <Wrapper>
       <h1>Prime Condies</h1>
       {areas &&
-        areas.map((area: any) => {
+        areas.map((area) => {
           return <p key={area._id.$oid}>{area.name}</p>;
         })}
     </Wrapper>
