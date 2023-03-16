@@ -6,7 +6,7 @@ import prisma from '@/lib/db/prisma';
 const handler = nc();
 
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
-  const data = await prisma.area.findRaw({
+  const areas = await prisma.area.findRaw({
     filter: {
       location: {
         $near: {
@@ -19,6 +19,9 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
       limit: 10,
     },
   });
+
+  // TODO: Map over areas and append current weather data from OWM
+  const data = areas;
 
   return res.status(200).json(data);
 });
