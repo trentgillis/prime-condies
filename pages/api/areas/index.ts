@@ -8,30 +8,34 @@ import { getAreaWeather } from '@/lib/utils/openweathermap';
 const handler = nc();
 
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
-  const areas = (await prisma.area.findRaw({
-    filter: {
-      location: {
-        $near: {
-          // TODO: Update to get lon/lat from req query params if they exist
-          $geometry: { type: 'Point', coordinates: [-105.188846, 38.898925] },
+  try {
+    const areas = (await prisma.area.findRaw({
+      filter: {
+        location: {
+          $near: {
+            // TODO: Update to get lon/lat from req query params if they exist
+            $geometry: { type: 'Point', coordinates: [-105.188846, 38.898925] },
+          },
         },
       },
-    },
-    options: {
-      limit: 10,
-    },
-  })) as unknown as Prisma.JsonArray;
+      options: {
+        limit: 10,
+      },
+    })) as unknown as Prisma.JsonArray;
 
-  const data = await Promise.all(
-    areas.map(async (area: any) => {
-      const [lon, lat] = area.location.coordinates;
-      const areaWeather = await getAreaWeather(lat, lon);
+    const data = await Promise.all(
+      areas.map(async (area: any) => {
+        const [lon, lat] = area.location.coordinates;
+        const areaWeather = await getAreaWeather(lat, lon);
 
-      return { ...area, weather: areaWeather.data };
-    })
-  );
+        return { ...area, weather: areaWeather.data };
+      })
+    );
 
-  return res.json(data);
+    return res.json(data);
+  } catch {
+    return res.status(500).json({ status: 500, message: 'Internal server error' });
+  }
 });
 
 export default handler;

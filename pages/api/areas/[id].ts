@@ -8,15 +8,19 @@ const handler = nc();
 
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   const id = req.query.id as string;
-  const area = await prisma.area.findUnique({ where: { id } });
 
-  // TODO: Throw 404
-  if (!area) return res.json({ no: 'bad' });
+  try {
+    const area = await prisma.area.findUnique({ where: { id } });
 
-  const [lon, lat] = area?.location?.coordinates;
-  const areaCurrentWeather = await getAreaWeather(lat, lon);
+    if (!area) return res.status(404).json({ status: 404, message: 'Area not found' });
 
-  res.json({ ...area, weather: areaCurrentWeather.data });
+    const [lon, lat] = area?.location?.coordinates;
+    const areaCurrentWeather = await getAreaWeather(lat, lon);
+
+    res.json({ ...area, weather: areaCurrentWeather.data });
+  } catch {
+    return res.status(500).json({ status: 500, message: 'Internal server error' });
+  }
 });
 
 export default handler;
