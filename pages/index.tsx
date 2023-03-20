@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import { useAreas } from '@/lib/hooks/useAreas';
 import styled from 'styled-components';
 
 const Wrapper = styled.main`
@@ -17,17 +17,21 @@ const Wrapper = styled.main`
   }
 `;
 
-export default function Home({ data }: any) {
-  console.log(data);
+export default function Home() {
+  const { data: areas, isLoading } = useAreas();
+
+  if (isLoading) {
+    // TODO: Loading spinner
+    return <p>Loading...</p>;
+  }
 
   return (
     <Wrapper>
       <h1>Prime Condies</h1>
+      {areas &&
+        areas.map((area) => {
+          return <p key={area._id.$oid}>{area.name}</p>;
+        })}
     </Wrapper>
   );
-}
-
-export async function getServerSideProps() {
-  const data = await prisma.area.findMany();
-  return { props: { data } };
 }
