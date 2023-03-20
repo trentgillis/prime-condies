@@ -4,6 +4,7 @@ import nc from 'next-connect';
 
 import prisma from '@/lib/db/prisma';
 import { getAreaWeather } from '@/lib/utils/openweathermap';
+import { redisClient } from '@/lib/db/redis';
 
 const handler = nc();
 
@@ -25,15 +26,23 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = await Promise.all(
       areas.map(async (area: any) => {
+        const id = area._id.$oid;
+
+        const cache = await redisClient.get(id);
+        if (cache) return JSON.parse(cache);
+
         const [lon, lat] = area.location.coordinates;
         const areaWeather = await getAreaWeather(lat, lon);
 
-        return { ...area, weather: areaWeather.data };
+        const data = { ...area, weather: areaWeather.data };
+        await redisClient.set(id, JSON.stringify(data));
+
+        return data;
       })
     );
 
     return res.json(data);
-  } catch {
+  } catch (e) {
     return res.status(500).json({ status: 500, message: 'Internal server error' });
   }
 });
