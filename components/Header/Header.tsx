@@ -6,16 +6,15 @@ import { SearchBar } from '../SeachBar/SearchBar';
 const Wrapper = styled.nav`
   height: 130px;
   display: flex;
-  flex-wrap: wrap;
   align-items: left;
   flex-direction: column;
   gap: 16px;
-  margin: 16px 16px 16px;
- @media(min-width: 450px) {
-    flex-direction: row;
+  margin: 16px;
+  @media only screen and (min-width: 768px)  {
+    display: grid
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
     height: 80px;
-    flex-wrap: wrap;
-    align-items: left;
   } 
 `
 
