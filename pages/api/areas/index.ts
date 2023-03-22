@@ -42,7 +42,7 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
     );
 
     return res.json(data);
-  } catch (e) {
+  } catch {
     return res.status(500).json({ status: 500, message: 'Internal server error' });
   }
 });
