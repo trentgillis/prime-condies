@@ -26,7 +26,7 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = await Promise.all(
       areas.map(async (area: any) => {
-        const id = area._id.$oid;
+        const id: string = area._id.$oid;
 
         const cache = await redisClient.get(id);
         if (cache) return JSON.parse(cache);
