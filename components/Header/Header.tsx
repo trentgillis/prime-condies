@@ -10,14 +10,15 @@ const Wrapper = styled.nav`
   flex-direction: column;
   gap: 16px;
   margin: 16px;
-  @media only screen and (min-width: 768px)  {
+  @media only screen and (min-width: 768px) {
+    height: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: column;
-    height: 80px;
-  } 
-`
 
+    object-fit: contain;
+  }
+`;
 
 export function Header() {
   return (
