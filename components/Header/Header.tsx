@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Logo } from '@/components';
-import { SearchBar } from '../SeachBar/SearchBar';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 const Wrapper = styled.nav`
   height: 130px;
@@ -11,7 +11,7 @@ const Wrapper = styled.nav`
   gap: 16px;
   margin: 16px;
   @media only screen and (min-width: 768px)  {
-    display: grid
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: column;
     height: 80px;
