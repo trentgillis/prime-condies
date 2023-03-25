@@ -1,4 +1,4 @@
-import { WeatherData } from './WeatherData';
+import { WeatherData } from '@/lib/types/WeatherData';
 
 export type WeatherResponse = {
   lat: number;

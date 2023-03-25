@@ -1,4 +1,4 @@
-import { WeatherResponse } from './WeatherResponse';
+import { WeatherResponse } from '@/lib/types/WeatherResponse';
 
 export type AreaResponse = {
   _id: { $oid: string };

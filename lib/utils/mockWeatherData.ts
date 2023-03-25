@@ -1,4 +1,4 @@
-import { WeatherResponse } from '../types/WeatherResponse';
+import { WeatherResponse } from '@/lib/types/WeatherResponse';
 
 export function getMockWeatherData() {
   return Promise.resolve<{ data: WeatherResponse }>({
