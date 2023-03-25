@@ -1,3 +1,5 @@
+import { WeatherResponse } from './WeatherResponse';
+
 export type AreaResponse = {
   _id: { $oid: string };
   __v: number;
@@ -8,4 +10,5 @@ export type AreaResponse = {
   location: {
     coordinates: [number, number];
   };
+  weather: WeatherResponse;
 };

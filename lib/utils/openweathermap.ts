@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { WeatherResponse } from '../types/WeatherResponse';
 import { getMockWeatherData } from './mockWeatherData';
 
 export function getAreaWeather(lat: number, lon: number) {
@@ -6,7 +7,7 @@ export function getAreaWeather(lat: number, lon: number) {
     return getMockWeatherData();
   }
 
-  return axios.get('https://api.openweathermap.org/data/3.0/onecall', {
+  return axios.get<WeatherResponse>('https://api.openweathermap.org/data/3.0/onecall', {
     params: {
       lat,
       lon,
