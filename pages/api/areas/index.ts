@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
 
 import prisma from '@/lib/db/prisma';
-import { getAreaWeather } from '@/lib/utils/openweathermap';
+import { getAreaWeather } from '@/lib/utils/openWeatherMap';
 import { redisClient } from '@/lib/db/redis';
 
 const handler = nc();
