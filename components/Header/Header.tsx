@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 
-import { Logo } from '@/components';
-import { SearchBar } from '../SearchBar/SearchBar';
+import { Logo, SearchBar } from '@/components';
 
 const Wrapper = styled.nav`
   height: 130px;
   display: flex;
-  align-items: left;
   flex-direction: column;
   gap: 16px;
   margin: 16px;
   @media only screen and (min-width: 768px) {
     height: 80px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: column;
-
-    object-fit: contain;
+    margin-left: 80px;
+    grid-template-columns: 179px minmax(auto, 768px) 1fr;
+    ${Logo} {
+      grid-column: 1;
+    }
+    ${SearchBar} {
+      grid-column: 2;
+    }
   }
 `;
 

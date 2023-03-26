@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>PrimeCondies</title>
       </Head>
       <Layout>
+        <Header />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
