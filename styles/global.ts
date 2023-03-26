@@ -19,7 +19,7 @@ export default createGlobalStyle`
   }
 
   html {
-    background-color: #f5f5f5;
+    background-color: ${({ theme }) => theme.colors.neutral.white};
   }
 
   body {

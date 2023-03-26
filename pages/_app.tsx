@@ -1,9 +1,10 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import { Header } from '@/components';
 import GlobalStyles from '@/styles/global';
+import { theme } from '@/styles/theme';
 
 const Layout = styled.div`
   display: grid;
@@ -17,8 +18,7 @@ const Layout = styled.div`
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Header />
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Head>
         <title>PrimeCondies</title>
@@ -26,6 +26,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </ThemeProvider>
   );
 }
