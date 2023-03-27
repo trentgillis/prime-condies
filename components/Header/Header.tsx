@@ -8,10 +8,10 @@ const Wrapper = styled.nav`
   flex-direction: column;
   gap: 16px;
   margin: 16px;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     height: 80px;
     display: grid;
-    margin-left: 80px;
+    margin-left: 40px;
     grid-template-columns: 179px minmax(auto, 768px) 1fr;
     ${Logo} {
       grid-column: 1;
