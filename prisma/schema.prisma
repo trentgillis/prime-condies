@@ -15,7 +15,6 @@ type AreaLocation {
 model area {
   id       String       @id @default(auto()) @map("_id") @db.ObjectId
   v        Int          @map("__v")
-  areaId   String
   country  String
   location AreaLocation
   name     String
