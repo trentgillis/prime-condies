@@ -19,7 +19,6 @@ export default createGlobalStyle`
   }
 
   html {
-    font-size: 16px;
     background-color: ${({ theme }) => theme.colors.neutral.white};
   }
 
