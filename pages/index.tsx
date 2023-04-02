@@ -1,3 +1,4 @@
+import { Header } from '@/components';
 import { useAreas } from '@/lib/hooks/useAreas';
 import styled from 'styled-components';
 
@@ -27,7 +28,7 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <h1>Prime Condies</h1>
+      <Header variant="H1">Prime Condies</Header>
       {areas &&
         areas.map((area) => {
           return <p key={area._id.$oid}>{area.name}</p>;
