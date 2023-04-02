@@ -18,12 +18,8 @@ const LogoWrapper = styled.div`
 const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 16px;
-
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
-    justify-content: flex-end;
-    padding: 0 32px;
-  }
+  margin: 0 16px;
+  min-width: 200px;
 `;
 
 const Wrapper = styled.nav`
@@ -35,15 +31,15 @@ const Wrapper = styled.nav`
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     height: 80px;
     display: grid;
-    margin-left: 40px;
     grid-template-columns: 1fr minmax(auto, ${({ theme }) => theme.breakpoint}) 1fr;
+    margin-left: 16px;
 
     ${LogoWrapper} {
-      grid-column: 0;
+      grid-column: 1;
     }
 
-    ${SearchBar as any} {
-      grid-column: 1;
+    ${SearchWrapper} {
+      grid-column: 2;
     }
   }
 `;
