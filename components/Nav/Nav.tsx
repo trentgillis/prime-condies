@@ -18,21 +18,26 @@ const LogoWrapper = styled.div`
 const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 32px;
+  margin: 0 16px;
   min-width: 200px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+    margin: 0 32px;
+  }
 `;
 
 const Wrapper = styled.nav`
   height: 130px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     height: 80px;
     display: grid;
     grid-template-columns: 1fr minmax(auto, ${({ theme }) => theme.breakpoint}) 1fr;
     margin-left: 16px;
+    gap: 40px;
 
     ${LogoWrapper} {
       grid-column: 1;

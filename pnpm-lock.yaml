@@ -9,7 +9,6 @@ specifiers:
   axios: ^1.3.4
   eslint: 8.32.0
   eslint-config-next: 13.2.3
-  feather-icons: ^4.29.0
   ioredis: ^5.3.1
   next: 13.2.3
   next-connect: ^0.13.0
@@ -27,7 +26,6 @@ specifiers:
 dependencies:
   '@prisma/client': 4.11.0_prisma@4.11.0
   axios: 1.3.4
-  feather-icons: 4.29.0
   ioredis: 5.3.1
   next: 13.2.3_5mhhrw5dq6gnbuirj2awdzvyuu
   next-connect: 0.13.0
@@ -833,10 +831,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
-
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
     dev: false
@@ -877,11 +871,6 @@ packages:
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
-
-  /core-js/3.30.0:
-    resolution: {integrity: sha512-hQotSSARoNh1mYPi9O2YaWeiq/cEB95kOrFb4NCrO4RIFt1qqNpKsaE+vy/L3oiqvND5cThqXzUU3r9F7Efztg==}
-    requiresBuild: true
-    dev: false
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
@@ -1436,13 +1425,6 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
-
-  /feather-icons/4.29.0:
-    resolution: {integrity: sha512-Y7VqN9FYb8KdaSF0qD1081HCkm0v4Eq/fpfQYQnubpqi0hXx14k+gF9iqtRys1SIcTEi97xDi/fmsPFZ8xo0GQ==}
-    dependencies:
-      classnames: 2.3.2
-      core-js: 3.30.0
-    dev: false
 
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
