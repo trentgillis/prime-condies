@@ -44,7 +44,7 @@ const Wrapper = styled.nav`
   }
 `;
 
-export function Header() {
+export function Nav() {
   return (
     <Wrapper>
       <LogoWrapper>
