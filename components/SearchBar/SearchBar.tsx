@@ -31,10 +31,6 @@ const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
-
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
-    border-width: 2px;
-  }
 `;
 
 const inter = Inter({ weight: '400', subsets: ['latin'] });
