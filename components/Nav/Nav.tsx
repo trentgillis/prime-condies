@@ -18,7 +18,7 @@ const LogoWrapper = styled.div`
 const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 16px;
+  margin: 0 32px;
   min-width: 200px;
 `;
 
@@ -26,7 +26,7 @@ const Wrapper = styled.nav`
   height: 130px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     height: 80px;
