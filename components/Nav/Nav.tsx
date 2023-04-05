@@ -20,6 +20,10 @@ const SearchWrapper = styled.div`
   align-items: center;
   margin: 0 16px;
   min-width: 200px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+    margin: 0 32px;
+  }
 `;
 
 const Wrapper = styled.nav`
@@ -33,6 +37,7 @@ const Wrapper = styled.nav`
     display: grid;
     grid-template-columns: 1fr minmax(auto, ${({ theme }) => theme.breakpoint}) 1fr;
     margin-left: 16px;
+    gap: 40px;
 
     ${LogoWrapper} {
       grid-column: 1;
