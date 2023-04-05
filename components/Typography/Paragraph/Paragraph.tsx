@@ -1,7 +1,8 @@
-import { ColorCodes } from '@/lib/types/ColorCodes';
-import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 import { Inter } from 'next/font/google';
 import styled from 'styled-components';
+
+import { ColorCodes } from '@/lib/types/ColorCodes';
+import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
 type StyledParagraphProps = {
   color?: ColorCodes;
@@ -16,6 +17,7 @@ type ParagraphProps = StyledParagraphProps & {
 const inter = Inter({ weight: ['400', '500'], subsets: ['latin'] });
 
 const P = styled.p<StyledParagraphProps>`
+  letter-spacing: 0.25px;
   font-size: ${({ variant }) => (variant === 's' ? '0.875rem' : '1rem')};
   color: ${({ color: colorCode }) => getColorFromColorCode(colorCode)};
   font-weight: ${({ bold }) => bold && '500'};
