@@ -16,7 +16,7 @@ type ParagraphProps = StyledParagraphProps & {
 
 const inter = Inter({ weight: ['400', '500'], subsets: ['latin'] });
 
-const P = styled.p<StyledParagraphProps>`
+const StyledParagraph = styled.p<StyledParagraphProps>`
   letter-spacing: 0.25px;
   font-size: ${({ variant }) => (variant === 's' ? '0.875rem' : '1rem')};
   color: ${({ color: colorCode }) => getColorFromColorCode(colorCode)};
@@ -25,8 +25,8 @@ const P = styled.p<StyledParagraphProps>`
 
 export function Paragraph({ variant = 'm', color = 'N800', bold = false, children }: ParagraphProps) {
   return (
-    <P className={inter.className} variant={variant} color={color} bold={bold}>
+    <StyledParagraph className={inter.className} variant={variant} color={color} bold={bold}>
       {children}
-    </P>
+    </StyledParagraph>
   );
 }
