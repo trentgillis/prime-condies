@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import logo from '@/public/logo.svg';
@@ -17,7 +18,9 @@ const LogoWrapper = styled.div`
 export function Logo() {
   return (
     <LogoWrapper>
-      <Image src={logo} alt="logo" fill priority sizes="100vh" />
+      <Link href="https://www.google.com/">
+        <Image src={logo} alt="logo" fill priority sizes="100vh" />
+      </Link>
     </LogoWrapper>
   );
 }
