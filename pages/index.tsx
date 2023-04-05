@@ -1,4 +1,4 @@
-import { Header } from '@/components';
+import { Header, Paragraph } from '@/components';
 import { useAreas } from '@/lib/hooks/useAreas';
 import styled from 'styled-components';
 
@@ -31,7 +31,7 @@ export default function Home() {
       <Header variant="H1">Prime Condies</Header>
       {areas &&
         areas.map((area) => {
-          return <p key={area._id.$oid}>{area.name}</p>;
+          return <Paragraph key={area._id.$oid}>{area.name}</Paragraph>;
         })}
     </Wrapper>
   );
