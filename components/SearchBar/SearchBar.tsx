@@ -3,9 +3,9 @@ import { IoSearchOutline } from 'react-icons/io5';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styled from 'styled-components';
 
-interface IFormInput {
+type FormInput = {
   q: string;
-}
+};
 
 const StyledForm = styled.form`
   position: relative;
@@ -36,9 +36,9 @@ const StyledInput = styled.input`
 const inter = Inter({ weight: '400', subsets: ['latin'] });
 
 export function SearchBar() {
-  const { register, handleSubmit, reset } = useForm<IFormInput>();
+  const { register, handleSubmit, reset } = useForm<FormInput>();
 
-  const onSubmit: SubmitHandler<IFormInput> = (formData) => {
+  const onSubmit: SubmitHandler<FormInput> = (formData) => {
     // TODO: Wire up with elastic
     console.log(formData);
     reset();
