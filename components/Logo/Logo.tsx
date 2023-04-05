@@ -3,6 +3,21 @@ import styled from 'styled-components';
 
 import logo from '@/public/logo.svg';
 
+const LogoWrapper = styled.div`
+  position: relative;
+  width: 164px;
+  height: 20px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+    width: 197px;
+    height: 24px;
+  }
+`;
+
 export function Logo() {
-  return <Image src={logo} alt="logo" height={24} priority />;
+  return (
+    <LogoWrapper>
+      <Image src={logo} alt="logo" fill priority sizes="100vh" />
+    </LogoWrapper>
+  );
 }
