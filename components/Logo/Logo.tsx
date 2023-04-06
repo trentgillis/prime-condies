@@ -18,7 +18,7 @@ const LogoWrapper = styled.div`
 export function Logo() {
   return (
     <LogoWrapper>
-      <Link href="https://www.google.com/">
+      <Link href="/">
         <Image src={logo} alt="logo" fill priority sizes="100vh" />
       </Link>
     </LogoWrapper>
