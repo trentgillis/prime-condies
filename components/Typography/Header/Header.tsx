@@ -15,36 +15,42 @@ const H1 = styled.h1`
   ${BaseStyles};
 
   font-size: 2.5rem;
+  letter-spacing: 1px;
 `;
 
 const H2 = styled.h2`
   ${BaseStyles};
 
   font-size: 2rem;
+  letter-spacing: 1px;
 `;
 
 const H3 = styled.h3`
   ${BaseStyles};
 
   font-size: 1.5rem;
+  letter-spacing: 0.5px;
 `;
 
 const H4 = styled.h4`
   ${BaseStyles};
 
   font-size: 1.25rem;
+  letter-spacing: 0.5px;
 `;
 
 const H5 = styled.h5`
   ${BaseStyles};
 
   font-size: 1rem;
+  letter-spacing: 1.5px;
 `;
 
 const H6 = styled.h6`
   ${BaseStyles};
 
   font-size: 0.875rem;
+  letter-spacing: 1.5px;
 `;
 
 const lato = Lato({ weight: '700', subsets: ['latin'] });

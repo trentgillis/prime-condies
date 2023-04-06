@@ -1,6 +1,7 @@
-import { Header } from '@/components';
-import { useAreas } from '@/lib/hooks/useAreas';
 import styled from 'styled-components';
+
+import { Header, Paragraph, Subscript } from '@/components';
+import { useAreas } from '@/lib/hooks/useAreas';
 
 const Wrapper = styled.main`
   grid-area: main;
@@ -31,8 +32,9 @@ export default function Home() {
       <Header variant="H1">Prime Condies</Header>
       {areas &&
         areas.map((area) => {
-          return <p key={area._id.$oid}>{area.name}</p>;
+          return <Paragraph key={area._id.$oid}>{area.name}</Paragraph>;
         })}
+      <Subscript>Hello</Subscript>
     </Wrapper>
   );
 }
