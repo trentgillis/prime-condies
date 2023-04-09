@@ -14,7 +14,7 @@ type Story = StoryObj<typeof ChanceOfRainIconComponent>;
 
 export const ChanceOfRainIcon: Story = {
   args: {
-    size: 80,
+    size: 160,
     strokeWidth: 2,
     color: getColorFromColorCode('N800'),
   },

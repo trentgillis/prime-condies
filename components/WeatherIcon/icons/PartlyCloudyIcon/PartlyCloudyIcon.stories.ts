@@ -14,7 +14,7 @@ type Story = StoryObj<typeof PartlyCloudyIconComponent>;
 
 export const PartlyCloudyIcon: Story = {
   args: {
-    size: 80,
+    size: 160,
     strokeWidth: 2,
     color: getColorFromColorCode('N800'),
   },
