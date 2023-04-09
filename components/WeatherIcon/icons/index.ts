@@ -1,2 +1,3 @@
-export * from './ChanceOfRain/ChanceOfRain';
-export * from './ChanceOfSnow/ChanceOfSnow';
+export * from './ChanceOfRainIcon/ChanceOfRainIcon';
+export * from './ChanceOfSnowIcon/ChanceOfSnowIcon';
+export * from './PartlyCloudyIcon/PartlyCloudyIcon';

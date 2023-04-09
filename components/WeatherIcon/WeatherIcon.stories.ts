@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { WeatherIcon as WeatherIconComponent } from './WeatherIcon';
 
 const meta: Meta<typeof WeatherIconComponent> = {
-  title: 'WeatherIcon',
+  title: 'Weather Icons',
   component: WeatherIconComponent,
 };
 
