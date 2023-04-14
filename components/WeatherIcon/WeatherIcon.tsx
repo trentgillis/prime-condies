@@ -1,4 +1,4 @@
-import { ColorCodes } from '@/lib/types/ColorCodes';
+import { ColorCode } from '@/lib/types/ColorCode';
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
 import { ChanceOfRainIcon } from './icons';
@@ -8,7 +8,7 @@ type WeatherIconProps = {
   weatherCode: any;
   size: number;
   // Rename to ColorCode
-  colorCode?: ColorCodes;
+  colorCode?: ColorCode;
   strokeWidth?: number;
 };
 

@@ -1,5 +1,5 @@
 import { theme } from '@/styles/theme';
-import { ColorCodes } from '@/lib/types/ColorCodes';
+import { ColorCode } from '@/lib/types/ColorCode';
 
 const validColorMap = {
   N300: theme.colors.neutral[300],
@@ -11,7 +11,7 @@ const validColorMap = {
 };
 
 export function getColorFromColorCode(
-  colorCode: ColorCodes | undefined,
+  colorCode: ColorCode | undefined,
   defaultColor: string = theme.colors.neutral[800]
 ) {
   if (colorCode) return validColorMap[colorCode];

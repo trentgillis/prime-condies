@@ -1,11 +1,11 @@
 import { Inter } from 'next/font/google';
 import styled from 'styled-components';
 
-import { ColorCodes } from '@/lib/types/ColorCodes';
+import { ColorCode } from '@/lib/types/ColorCode';
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
 type StyledParagraphProps = {
-  color?: ColorCodes;
+  color?: ColorCode;
   variant?: 's' | 'm';
   bold?: boolean;
 };
