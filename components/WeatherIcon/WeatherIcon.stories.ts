@@ -12,7 +12,8 @@ type Story = StoryObj<typeof WeatherIconComponent>;
 
 export const WeatherIcon: Story = {
   args: {
-    size: 80,
+    weatherCode: 201,
+    size: 160,
     colorCode: 'N800',
     strokeWidth: 2,
   },
