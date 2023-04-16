@@ -2,6 +2,7 @@ import { ColorCode } from '@/lib/types/ColorCode';
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
 import { ChanceOfRainIcon, ClearSkyIcon, PartlyCloudyIcon, RainIcon, SnowIcon, ThunderStormIcon } from './icons';
+import { CloudyIcon } from './icons/CloudyIcon/CloudyIcon';
 
 type WeatherIconCode =
   | '01d'
@@ -41,10 +42,8 @@ function getWeatherIconFromCode(weatherIconCode: string) {
   const weatherIconCodeMap: { [key: string]: Function } = {
     '01': ClearSkyIcon,
     '02': PartlyCloudyIcon,
-    // TODO: Add cloudy icon
-    '03': PartlyCloudyIcon,
-    // TODO: Add cloudy icon
-    '04': PartlyCloudyIcon,
+    '03': CloudyIcon,
+    '04': CloudyIcon,
     '09': RainIcon,
     '10': ChanceOfRainIcon,
     '11': ThunderStormIcon,
