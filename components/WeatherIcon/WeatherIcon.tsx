@@ -1,12 +1,30 @@
 import { ColorCode } from '@/lib/types/ColorCode';
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
-import { ChanceOfRainIcon } from './icons';
+import { ChanceOfRainIcon, ClearSkyIcon, PartlyCloudyIcon, RainIcon, SnowIcon, ThunderStormIcon } from './icons';
 
-type WeatherIconCode = '01' | '02' | '03' | '04' | '09' | '10' | '11' | '13' | '50';
+type WeatherIconCode =
+  | '01d'
+  | '01n'
+  | '02d'
+  | '02n'
+  | '03d'
+  | '03n'
+  | '04d'
+  | '04n'
+  | '09d'
+  | '09n'
+  | '10d'
+  | '10n'
+  | '11d'
+  | '11n'
+  | '13d'
+  | '13n'
+  | '50d'
+  | '50n';
 
 type WeatherIconProps = {
-  weatherIconCode: string;
+  weatherIconCode: WeatherIconCode;
   size: number;
   colorCode?: ColorCode;
   strokeWidth?: number;
@@ -20,9 +38,22 @@ export type WeatherIconSvgProps = {
 };
 
 function getWeatherIconFromCode(weatherIconCode: string) {
-  console.log(weatherIconCode);
+  const weatherIconCodeMap: { [key: string]: Function } = {
+    '01': ClearSkyIcon,
+    '02': PartlyCloudyIcon,
+    // TODO: Add cloudy icon
+    '03': PartlyCloudyIcon,
+    // TODO: Add cloudy icon
+    '04': PartlyCloudyIcon,
+    '09': RainIcon,
+    '10': ChanceOfRainIcon,
+    '11': ThunderStormIcon,
+    '13': SnowIcon,
+    // TODO: Add mist icon
+    '50': SnowIcon,
+  };
 
-  return ChanceOfRainIcon;
+  return weatherIconCodeMap[weatherIconCode];
 }
 
 export function WeatherIcon({ weatherIconCode, colorCode = 'N300', strokeWidth = 2, size }: WeatherIconProps) {
