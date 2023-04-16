@@ -1,6 +1,6 @@
 import { WeatherIconSvgProps } from '../../WeatherIcon';
 
-export function PartlyCloudyIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
+function PartlyCloudyDayIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -56,4 +56,29 @@ export function PartlyCloudyIcon({ size, color, strokeWidth }: WeatherIconSvgPro
       />
     </svg>
   );
+}
+
+function PartlyCloudyNightIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M56.3924 44.8724C61.6616 46.058 65.6015 50.7643 65.6015 56.3928C65.6015 62.9194 60.3084 68.2006 53.7937 68.2006H15.6041C9.07749 68.2006 3.79633 63.5541 3.79633 57.0395C3.79633 51.4589 7.66439 46.7765 12.8737 45.5431C12.5504 44.597 12.3827 43.5671 12.3827 42.5133C12.3827 37.2561 16.634 33.0048 21.8912 33.0048C24.5018 33.0048 26.861 34.0586 28.5735 35.7472C30.8847 30.6456 36.0222 27.1009 41.986 27.1009C50.1173 27.1009 56.7157 33.6874 56.7157 41.8307C56.7157 42.8725 56.4044 44.8724 56.4044 44.8724H56.3924Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M58.7276 42.3576C67.1942 42.3576 75.2657 35.4957 75.2657 27.0171C75.2657 26.9452 75.2657 26.8734 75.2657 26.8015C73.17 29.3643 69.9965 31.0049 66.4278 31.0049C60.1287 31.0049 55.0272 25.9034 55.0272 19.6043C55.0272 16.5745 56.2128 13.8321 58.1408 11.7963C50.5244 12.6945 44.6205 17.9637 44.6205 25.8196"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function PartlyCloudyIcon({ variant, ...rest }: WeatherIconSvgProps) {
+  return variant === 'night' ? <PartlyCloudyNightIcon {...rest} /> : <PartlyCloudyDayIcon {...rest} />;
 }
