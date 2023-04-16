@@ -1,8 +1,16 @@
 import { ColorCode } from '@/lib/types/ColorCode';
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
-import { ChanceOfRainIcon, ClearSkyIcon, PartlyCloudyIcon, RainIcon, SnowIcon, ThunderStormIcon } from './icons';
-import { CloudyIcon } from './icons/CloudyIcon/CloudyIcon';
+import {
+  ChanceOfRainIcon,
+  ClearSkyIcon,
+  CloudyIcon,
+  MistIcon,
+  PartlyCloudyIcon,
+  RainIcon,
+  SnowIcon,
+  ThunderStormIcon,
+} from './icons';
 
 type WeatherIconCode =
   | '01d'
@@ -48,8 +56,7 @@ function getWeatherIconFromCode(weatherIconCode: string) {
     '10': ChanceOfRainIcon,
     '11': ThunderStormIcon,
     '13': SnowIcon,
-    // TODO: Add mist icon
-    '50': SnowIcon,
+    '50': MistIcon,
   };
 
   return weatherIconCodeMap[weatherIconCode];
