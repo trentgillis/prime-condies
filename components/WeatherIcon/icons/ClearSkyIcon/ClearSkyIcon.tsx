@@ -1,6 +1,6 @@
 import { WeatherIconSvgProps } from '../../WeatherIcon';
 
-export function ClearSkyIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
+export function ClearSkyDayIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -112,4 +112,22 @@ export function ClearSkyIcon({ size, color, strokeWidth }: WeatherIconSvgProps) 
       />
     </svg>
   );
+}
+
+export function ClearSkyNightIcon({ size, color, strokeWidth }: WeatherIconSvgProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M53.5266 48.0773C40.3865 48.0773 29.7391 37.43 29.7391 24.2899C29.7391 17.971 32.2126 12.2512 36.2319 8C20.3285 9.8744 8 23.3623 8 39.7488C8 57.4106 22.3188 71.7488 40 71.7488C57.6812 71.7488 72 57.43 72 39.7488C72 39.5942 71.9807 39.4589 71.9807 39.3044C67.6135 44.657 60.9855 48.0773 53.5459 48.0773H53.5266Z"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function ClearSkyIcon({ variant, ...rest }: WeatherIconSvgProps) {
+  return variant === 'night' ? <ClearSkyNightIcon {...rest} /> : <ClearSkyDayIcon {...rest} />;
 }
