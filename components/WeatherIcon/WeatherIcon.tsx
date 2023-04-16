@@ -3,8 +3,10 @@ import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
 import { ChanceOfRainIcon } from './icons';
 
+type WeatherIconCode = '01' | '02' | '03' | '04' | '09' | '10' | '11' | '13' | '50';
+
 type WeatherIconProps = {
-  weatherCode: number;
+  weatherIconCode: string;
   size: number;
   colorCode?: ColorCode;
   strokeWidth?: number;
@@ -14,16 +16,20 @@ export type WeatherIconSvgProps = {
   color: string;
   strokeWidth: number;
   size: number;
+  variant?: 'day' | 'night';
 };
 
-function getWeatherIconFromCode(weatherCode: number) {
+function getWeatherIconFromCode(weatherIconCode: string) {
+  console.log(weatherIconCode);
+
   return ChanceOfRainIcon;
 }
 
-export function WeatherIcon({ weatherCode, colorCode = 'N300', strokeWidth = 2, size }: WeatherIconProps) {
+export function WeatherIcon({ weatherIconCode, colorCode = 'N300', strokeWidth = 2, size }: WeatherIconProps) {
   const color = getColorFromColorCode(colorCode);
 
-  const Icon = getWeatherIconFromCode(weatherCode);
+  const Icon = getWeatherIconFromCode(weatherIconCode.substring(0, 2));
+  const iconVariant = weatherIconCode.endsWith('n') ? 'night' : 'day';
 
-  return <Icon size={size} color={color} strokeWidth={strokeWidth} />;
+  return <Icon variant={iconVariant} size={size} color={color} strokeWidth={strokeWidth} />;
 }

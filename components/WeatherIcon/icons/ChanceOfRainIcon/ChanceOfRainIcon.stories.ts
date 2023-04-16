@@ -17,5 +17,6 @@ export const ChanceOfRainIcon: Story = {
     size: 160,
     strokeWidth: 2,
     color: getColorFromColorCode('N800'),
+    variant: 'day',
   },
 };
