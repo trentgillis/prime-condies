@@ -2,20 +2,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 
-import { SunnyIcon as SunnyIconComponent } from './SunnyIcon';
+import { ClearSkyIcon as ClearSkyIconComponent } from './ClearSkyIcon';
 
-const meta: Meta<typeof SunnyIconComponent> = {
+const meta: Meta<typeof ClearSkyIconComponent> = {
   title: 'Weather Icons/Icons',
-  component: SunnyIconComponent,
+  component: ClearSkyIconComponent,
 };
 
 export default meta;
-type Story = StoryObj<typeof SunnyIconComponent>;
+type Story = StoryObj<typeof ClearSkyIconComponent>;
 
-export const SunnyIcon: Story = {
+export const ClearSkyIcon: Story = {
   args: {
     size: 160,
     strokeWidth: 2,
     color: getColorFromColorCode('N800'),
+    variant: 'day',
   },
 };
