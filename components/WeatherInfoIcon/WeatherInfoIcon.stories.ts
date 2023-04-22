@@ -15,6 +15,5 @@ export const WeatherInfoIcon: Story = {
     icon: 'humidity',
     size: 160,
     colorCode: 'N800',
-    strokeWidth: 2,
   },
 };
