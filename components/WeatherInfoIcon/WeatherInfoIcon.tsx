@@ -4,9 +4,13 @@ type WeatherInfoIconProps = {
   icon: 'humidity' | 'windSpeed' | 'precipitation';
   size: number;
   colorCode?: ColorCode;
-  strokeWidth?: number;
 };
 
-export function WeatherInfoIcon({ icon, colorCode = 'N300', strokeWidth = 2, size }: WeatherInfoIconProps) {
+export type WeatherInfoIconSvgProps = {
+  color: string;
+  size: number;
+};
+
+export function WeatherInfoIcon({ icon, colorCode = 'N300', size }: WeatherInfoIconProps) {
   return <h1>WeatherInfoIconComponent</h1>;
 }
