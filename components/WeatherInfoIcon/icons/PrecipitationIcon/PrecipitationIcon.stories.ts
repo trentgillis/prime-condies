@@ -5,7 +5,7 @@ import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 import { PrecipitationIcon as PrecipitationIconComponent } from './PrecipitationIcon';
 
 const meta: Meta<typeof PrecipitationIconComponent> = {
-  title: 'Weather Info Icons/Icons',
+  title: 'Info Icons/Icons',
   component: PrecipitationIconComponent,
 };
 

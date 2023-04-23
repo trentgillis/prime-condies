@@ -5,7 +5,7 @@ import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 import { WindSpeedIcon as WindSpeedIconComponent } from './WindSpeedIcon';
 
 const meta: Meta<typeof WindSpeedIconComponent> = {
-  title: 'Weather Info Icons/Icons',
+  title: 'Info Icons/Icons',
   component: WindSpeedIconComponent,
 };
 

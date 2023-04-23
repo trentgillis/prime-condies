@@ -5,7 +5,7 @@ import { getColorFromColorCode } from '@/lib/utils/colorUtils';
 import { HumidityIcon as HumidityIconComponent } from './HumidityIcon';
 
 const meta: Meta<typeof HumidityIconComponent> = {
-  title: 'Weather Info Icons/Icons',
+  title: 'Info Icons/Icons',
   component: HumidityIconComponent,
 };
 
