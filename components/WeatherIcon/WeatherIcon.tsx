@@ -12,7 +12,7 @@ import {
   ThunderStormIcon,
 } from './icons';
 
-type WeatherIconCode =
+export type WeatherIconCode =
   | '01d'
   | '01n'
   | '02d'
@@ -62,7 +62,7 @@ function getWeatherIconFromCode(weatherIconCode: string) {
   return weatherIconCodeMap[weatherIconCode];
 }
 
-export function WeatherIcon({ weatherIconCode, colorCode = 'N300', strokeWidth = 2, size }: WeatherIconProps) {
+export function WeatherIcon({ weatherIconCode, colorCode = 'N800', strokeWidth = 2, size }: WeatherIconProps) {
   const color = getColorFromColorCode(colorCode);
 
   const Icon = getWeatherIconFromCode(weatherIconCode.substring(0, 2));
