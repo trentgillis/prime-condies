@@ -12,7 +12,12 @@ type Story = StoryObj<typeof AreaCardComponent>;
 
 export const AreaCard: Story = {
   args: {
-    weatherData: {
+    areaName: 'Eleven Mile Canyon',
+    areaPlace: 'Colorado',
+    areaCountry: 'USA',
+    todayMinTemp: 34.18,
+    todayMaxTemp: 54.18,
+    currentWeather: {
       dt: 1679542866,
       sunrise: 1679490086,
       sunset: 1679534030,
