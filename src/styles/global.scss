@@ -1,4 +1,13 @@
 :root {
-  --background-color: #020617;
+  --background-color: #0d0f12;
   --color-white: #f8fafc;
+}
+
+body {
+  font-family: var(--font-outfit);
+  background-color: var(--background-color);
+}
+
+* {
+  color: var(--color-white);
 }
