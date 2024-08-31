@@ -10,10 +10,12 @@ import { Outfit, Open_Sans } from "next/font/google";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 const outfit = Outfit({
+  subsets: ["latin"],
   variable: "--font-outfit",
 });
 
 const openSans = Open_Sans({
+  subsets: ["latin"],
   variable: "--font-open-sans",
 });
 
