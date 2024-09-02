@@ -1,6 +1,6 @@
 import "@/styles/reset.scss";
 import "@/styles/global.scss";
-import styles from "./page.module.scss";
+import styles from "./layout.module.scss";
 
 import type { Metadata } from "next";
 
