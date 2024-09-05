@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       {areas.map((area) => (
-        <p>{area.name}</p>
+        <p key={area.id}>{area.name}</p>
       ))}
     </main>
   );
