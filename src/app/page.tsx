@@ -1,9 +1,9 @@
 import 'server-only';
-
-import { db } from '@/db';
 import styles from './page.module.scss';
 
 import React from 'react';
+
+import { db } from '@/db';
 import { AreaTable } from '@/db/schema';
 import Title from '@/components/Title';
 
