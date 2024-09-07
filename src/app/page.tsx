@@ -6,6 +6,7 @@ import React from 'react';
 import { db } from '@/db';
 import { AreaTable } from '@/db/schema';
 import Title from '@/components/Title';
+import Text from '@/components/Text';
 
 export default async function Home() {
   const areas = await db.select().from(AreaTable);
@@ -13,8 +14,10 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <Title variant="h1">Areas</Title>
-      {areas.map((area) => (
-        <p key={area.id}>{area.name}</p>
+      {areas.map(({ id, name }) => (
+        <>
+          <Text key={id}>{name}</Text>
+        </>
       ))}
     </main>
   );
