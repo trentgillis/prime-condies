@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <Title variant="h1">Areas</Title>
-      <WeatherIcon size={80} />
+      <WeatherIcon iconCode="02d" size={80} />
       {areas.map(({ id, name }) => (
         <>
           <Text key={id}>{name}</Text>
