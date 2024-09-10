@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { WeatherIconProps } from './WeatherIcon';
 
 function PartlyCloudyDayIcon({ size, strokeWidth }: Partial<WeatherIconProps>) {
