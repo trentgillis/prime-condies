@@ -1,0 +1,1 @@
+ALTER TABLE "areas_table" ADD COLUMN "location" geometry(point) NOT NULL;
