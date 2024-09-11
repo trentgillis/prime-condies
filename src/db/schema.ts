@@ -5,5 +5,5 @@ export const AreaTable = pgTable('areas_table', {
   name: varchar('name', { length: 256 }).notNull(),
   countryCode: varchar('country', { length: 3 }).notNull(),
   place: varchar('place', { length: 256 }).notNull(),
-  location: geometry('location', { mode: 'xy', srid: 4326 }).notNull(),
+  location: geometry('location', { type: 'point', mode: 'xy', srid: 4326 }).notNull(),
 });
