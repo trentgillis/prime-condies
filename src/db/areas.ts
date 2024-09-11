@@ -1,4 +1,5 @@
 import { InferInsertModel } from 'drizzle-orm';
+
 import { AreaTable } from './schema';
 
 const areas: InferInsertModel<typeof AreaTable>[] = [
@@ -22,6 +23,13 @@ const areas: InferInsertModel<typeof AreaTable>[] = [
     place: 'Colorado',
     countryCode: 'USA',
     location: { x: -105.19522954244155, y: 38.25898012121234 },
+  },
+  {
+    id: 4,
+    name: 'Guanella Pass',
+    place: 'Colorado',
+    countryCode: 'USA',
+    location: { x: -105.709348, y: 39.635572 },
   },
 ];
 
