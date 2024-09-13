@@ -1,0 +1,38 @@
+{
+  "id": "fc0b531d-d6fe-457a-bc7c-d77697a57250",
+  "prevId": "12f58d59-8a93-4a29-8848-0ff0b2b8094e",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.areas_table": {
+      "name": "areas_table",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
