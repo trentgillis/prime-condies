@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "prebuild": "pnpm db:migrate",
+    "prebuild": "pnpm db:setup",
     "start": "next start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
