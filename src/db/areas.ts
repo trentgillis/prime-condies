@@ -1,4 +1,6 @@
-const areas: any[] = [
+import { Areas } from './types';
+
+const areas: Areas = [
   {
     id: 1,
     name: 'Eleven Mile Canyon',

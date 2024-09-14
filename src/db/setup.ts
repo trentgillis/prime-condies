@@ -1,15 +1,16 @@
 import { loadEnvConfig } from '@next/env';
-
 import { sql } from '@vercel/postgres';
+
 import areas from './areas';
+import { AREA_TABLE } from './types';
 
 loadEnvConfig(process.cwd());
 
 async function setupAreas() {
   console.log('🔄 Setting up areas table...');
-  await sql.query('DROP TABLE IF EXISTS areas');
+  await sql.query(`DROP TABLE IF EXISTS ${AREA_TABLE};`);
   await sql.query(`
-    CREATE TABLE IF NOT EXISTS areas (
+    CREATE TABLE IF NOT EXISTS ${AREA_TABLE} (
       id serial PRIMARY KEY NOT NULL,
       name varchar(256) NOT NULL,
       place varchar(256) NOT NULL,
@@ -24,9 +25,8 @@ async function seedAreas() {
   await Promise.all(
     areas.map((area) => {
       return sql.query(`
-      INSERT INTO areas (name, place, country_code)
-      VALUES ('${area.name}', '${area.place}', '${area.countryCode}')
-      ON CONFLICT (id) DO NOTHING;
+      INSERT INTO ${AREA_TABLE} (name, place, country_code)
+      VALUES ('${area.name}', '${area.place}', '${area.countryCode}');
     `);
     }),
   );
