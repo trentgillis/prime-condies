@@ -1,8 +1,6 @@
-import { InferInsertModel } from 'drizzle-orm';
+import { Areas } from './types';
 
-import { AreaTable } from './schema';
-
-const areas: InferInsertModel<typeof AreaTable>[] = [
+const areas: Areas = [
   {
     id: 1,
     name: 'Eleven Mile Canyon',
