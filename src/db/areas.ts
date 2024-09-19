@@ -7,7 +7,7 @@ const areas: Areas = [
     areaSlug: 'eleven-mile-canyon',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.390119, y: 38.954708 },
+    location: { lng: -105.390119, lat: 38.954708 },
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const areas: Areas = [
     name: 'Boulder Canyon',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.454755, y: 39.979815 },
+    location: { lng: -105.454755, lat: 39.979815 },
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const areas: Areas = [
     name: 'Newlin Creek',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.187546, y: 38.266725 },
+    location: { lng: -105.187546, lat: 38.266725 },
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const areas: Areas = [
     name: 'Guanella Pass',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.709348, y: 39.635572 },
+    location: { lng: -105.709348, lat: 39.635572 },
   },
 ];
 

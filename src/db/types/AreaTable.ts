@@ -1,8 +1,8 @@
 export const AREA_TABLE = 'areas';
 
 export type AreaLocation = {
-  x: number;
-  y: number;
+  lng: number;
+  lat: number;
 };
 
 export type Area = {

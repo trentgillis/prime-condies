@@ -20,7 +20,7 @@ async function setupAreas(client: any) {
   await client.query(`
     CREATE TABLE IF NOT EXISTS ${AREA_TABLE} (
       id serial PRIMARY KEY NOT NULL,
-      area_slug UNIQUE NOT NULL,
+      area_slug varchar(256) UNIQUE NOT NULL,
       name varchar(256) NOT NULL,
       place varchar(256) NOT NULL,
       country_code varchar(3) NOT NULL
@@ -34,9 +34,13 @@ async function seedAreas(client: any) {
   await Promise.all(
     areas.map((area) => {
       return client.query(`
-      INSERT INTO ${AREA_TABLE} (name, place, country_code)
-      VALUES ('${area.name}', '${area.place}', '${area.countryCode}');
-    `);
+        INSERT INTO ${AREA_TABLE} (area_slug, name, place, country_code)
+        VALUES (
+          '${area.areaSlug}',
+          '${area.name}', 
+          '${area.place}', 
+          '${area.countryCode}'
+        );`);
     }),
   );
   console.log('✅ Areas successfully seeded');
