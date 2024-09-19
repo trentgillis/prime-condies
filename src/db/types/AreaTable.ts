@@ -6,7 +6,7 @@ export type AreaLocation = {
 };
 
 export type Area = {
-  id: number;
+  id?: number;
   areaSlug: string;
   name: string;
   place: string;

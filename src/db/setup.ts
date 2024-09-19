@@ -16,16 +16,11 @@ async function getDevClient() {
 
 async function setupAreas(client: any) {
   console.log('🔄 Setting up areas table...');
-  await client.query(`DROP TABLE IF EXISTS ${AREA_TABLE};`);
-  await client.query(`
-    CREATE TABLE IF NOT EXISTS ${AREA_TABLE} (
-      id serial PRIMARY KEY NOT NULL,
-      area_slug varchar(256) UNIQUE NOT NULL,
-      name varchar(256) NOT NULL,
-      place varchar(256) NOT NULL,
-      country_code varchar(3) NOT NULL
-    );
-`);
+  await client.query(`CREATE TABLE IF NOT EXISTS ${AREA_TABLE} (id serial PRIMARY KEY NOT NULL);`);
+  await client.query(`ALTER TABLE ${AREA_TABLE} ADD COLUMN IF NOT EXISTS area_slug varchar(256) UNIQUE NOT NULL;`);
+  await client.query(`ALTER TABLE ${AREA_TABLE} ADD COLUMN IF NOT EXISTS name varchar(256) NOT NULL;`);
+  await client.query(`ALTER TABLE ${AREA_TABLE} ADD COLUMN IF NOT EXISTS place varchar(256) NOT NULL;`);
+  await client.query(`ALTER TABLE ${AREA_TABLE} ADD COLUMN IF NOT EXISTS country_code varchar(3) NOT NULL;`);
   console.log('✅ Areas table successfully created');
 }
 
@@ -40,7 +35,7 @@ async function seedAreas(client: any) {
           '${area.name}', 
           '${area.place}', 
           '${area.countryCode}'
-        );`);
+        ) ON CONFLICT (area_slug) DO NOTHING;`);
     }),
   );
   console.log('✅ Areas successfully seeded');
