@@ -23,8 +23,13 @@ async function getAreas() {
       place,
       country_code AS "countryCode",
       ST_X(location::geometry) AS lng,
-      ST_Y(location::geometry) AS lat
+      ST_Y(location::geometry) AS lat,
+      ST_Distance(
+        location,
+        ST_GeographyFromText('POINT(-104.826855 38.898881)')
+      ) AS distance
     FROM ${AREA_TABLE}
+    ORDER BY distance
     LIMIT 10;
   `);
 
