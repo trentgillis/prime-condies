@@ -7,6 +7,7 @@ export type AreaLocation = {
 
 export type Area = {
   id: number;
+  areaSlug: string;
   name: string;
   place: string;
   countryCode: string;

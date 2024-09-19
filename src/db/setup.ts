@@ -20,6 +20,7 @@ async function setupAreas(client: any) {
   await client.query(`
     CREATE TABLE IF NOT EXISTS ${AREA_TABLE} (
       id serial PRIMARY KEY NOT NULL,
+      area_slug UNIQUE NOT NULL,
       name varchar(256) NOT NULL,
       place varchar(256) NOT NULL,
       country_code varchar(3) NOT NULL
