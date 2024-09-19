@@ -5,7 +5,7 @@ export type AreaLocation = {
   lat: number;
 };
 
-export type Area = {
+export type AreaShema = {
   id?: number;
   areaSlug: string;
   name: string;
@@ -14,4 +14,14 @@ export type Area = {
   location: AreaLocation;
 };
 
-export type Areas = Area[];
+export type AreaSelect = {
+  id?: number;
+  areaSlug: string;
+  name: string;
+  place: string;
+  countryCode: string;
+  lat: number;
+  lng: number;
+};
+
+export type Areas = AreaSelect[];
