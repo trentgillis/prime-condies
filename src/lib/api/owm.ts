@@ -4,7 +4,7 @@ import { getOwmMockWeatherData } from './owmMock';
 const OWM_API_URL = `https://api.openweathermap.org/data/3.0/onecall`;
 
 export async function fetchOwmWeatherData(area: AreaSelect) {
-  if (process.env.VERCEL_ENV === 'not_development') {
+  if (process.env.VERCEL_ENV === 'development') {
     return Promise.resolve(getOwmMockWeatherData());
   }
 
