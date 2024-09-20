@@ -10,8 +10,6 @@ import Text from '@/components/Text';
 import WeatherIcon from '@/components/WeatherIcon/WeatherIcon';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
 
-//const sqlPoint = sql`ST_SetSRID(ST_MakePoint(-104.826855, 38.898881), 4326)`;
-
 export const dynamic = 'force-dynamic';
 
 async function getAreas() {
@@ -35,7 +33,7 @@ async function getAreas() {
 
   return await Promise.all(
     areas.map(async (area) => {
-      const weatherData: any = await fetchOwmWeatherData(area);
+      const weatherData = await fetchOwmWeatherData(area);
       return { ...area, weatherData: weatherData };
     }),
   );
