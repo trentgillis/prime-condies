@@ -31,18 +31,17 @@ const WEATHER_ICONS = {
   '50n': MistIcon,
 };
 
-type IconCode = keyof typeof WEATHER_ICONS;
+export type IconCode = keyof typeof WEATHER_ICONS;
 
 export interface WeatherIconProps {
   iconCode: IconCode;
-  size: number;
   strokeWidth?: number;
 }
 
-function WeatherIcon({ iconCode, size, strokeWidth = 2 }: WeatherIconProps) {
+function WeatherIcon({ iconCode, strokeWidth = 2 }: WeatherIconProps) {
   const Icon = WEATHER_ICONS[iconCode];
 
-  return Icon ? <Icon size={size} strokeWidth={strokeWidth} /> : null;
+  return Icon ? <Icon strokeWidth={strokeWidth} /> : null;
 }
 
 export default WeatherIcon;

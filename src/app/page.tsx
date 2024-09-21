@@ -5,9 +5,7 @@ import React from 'react';
 
 import { sql } from '@/db';
 import { AreaSelect, AREA_TABLE } from '@/db/types';
-import Title from '@/components/Title';
-import Text from '@/components/Text';
-import WeatherIcon from '@/components/WeatherIcon/WeatherIcon';
+import AreasList from '@/components/AreasList';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
 
 export const dynamic = 'force-dynamic';
@@ -44,11 +42,8 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <Title variant="h1">Areas</Title>
-      <WeatherIcon iconCode="01d" size={60} />
-      {areas.map((area) => (
-        <Text key={area.id}>{area.name}</Text>
-      ))}
+      <h1>Areas</h1>
+      <AreasList areas={areas} />
     </main>
   );
 }

@@ -1,3 +1,5 @@
+import { IconCode } from '@/components/WeatherIcon/WeatherIcon';
+
 export type WeatherResponse = {
   lat: number;
   lon: number;
@@ -8,14 +10,14 @@ export type WeatherResponse = {
   daily: DailyWeatherData[];
 };
 
-type WeatherDescription = {
+export type WeatherDescription = {
   id: number;
   main: string;
   description: string;
-  icon: string;
+  icon: IconCode;
 };
 
-type CurrentWeatherData = {
+export type CurrentWeatherData = {
   dt: number;
   sunrise: number;
   sunset: number;
@@ -33,7 +35,7 @@ type CurrentWeatherData = {
   weather: WeatherDescription[];
 };
 
-type HourlyWeatherData = {
+export type HourlyWeatherData = {
   dt: number;
   temp: number;
   feels_like: number;
@@ -52,7 +54,7 @@ type HourlyWeatherData = {
   weather: WeatherDescription[];
 };
 
-type DailyWeatherData = {
+export type DailyWeatherData = {
   dt: number;
   sunrise: number;
   sunset: number;

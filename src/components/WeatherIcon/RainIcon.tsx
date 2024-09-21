@@ -1,8 +1,8 @@
 import { WeatherIconProps } from './WeatherIcon';
 
-function RainIcon({ size, strokeWidth }: Partial<WeatherIconProps>) {
+function RainIcon({ strokeWidth }: Partial<WeatherIconProps>) {
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
