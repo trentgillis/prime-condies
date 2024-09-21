@@ -1,8 +1,6 @@
-import { WeatherIconProps } from './WeatherIcon';
-
-function ThunderStormIcon({ size }: Partial<WeatherIconProps>) {
+function ThunderStormIcon() {
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_113_1530)">
         <path
           d="M34.0419 52.7394L24.3811 65.0074L33.6491 65.1273L22.9411 79.5L54.7249 61.5974L43.5718 61.5308L49.4756 52.7394H34.0419Z"

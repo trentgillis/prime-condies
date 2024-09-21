@@ -8,6 +8,7 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import { getWeatherDescription } from '@/lib/utils/weather';
 
 import AreaSummary from './AreaSummary';
+import WeatherSummary from './WeatherSummary';
 
 type AreaListItemProps = {
   area: AreaResponse;
@@ -26,12 +27,7 @@ function AreasListItem({ area }: AreaListItemProps) {
         tempMin={area.weatherData.daily[0].temp.min}
         tempMax={area.weatherData.daily[0].temp.max}
       />
-      <div className={styles.weatherIcon}>
-        <WeatherIcon iconCode={currentWeatherData.weather[0].icon} size={40} />
-        <Text size="xs">
-          {getWeatherDescription(currentWeatherData.weather[0].id, currentWeatherData.weather[0].main)}
-        </Text>
-      </div>
+      <WeatherSummary weatherDescription={currentWeatherData.weather[0]} />
     </div>
   );
 }

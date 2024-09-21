@@ -1,8 +1,8 @@
 import { WeatherIconProps } from './WeatherIcon';
 
-function MistIcon({ size, strokeWidth }: Partial<WeatherIconProps>) {
+function MistIcon({ strokeWidth }: Partial<WeatherIconProps>) {
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M8.40088 55.5494H71.9892"
         stroke="#CBD5E1"

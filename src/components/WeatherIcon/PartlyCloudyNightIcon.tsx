@@ -1,8 +1,6 @@
-import { WeatherIconProps } from './WeatherIcon';
-
-function PartlyCloudyNightIcon({ size }: Partial<WeatherIconProps>) {
+function PartlyCloudyNightIcon() {
   return (
-    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M61.5288 46.4042C70.7831 46.4042 79.6053 38.904 79.6053 29.6367C79.6053 29.5581 79.6053 29.4796 79.6053 29.401C77.3147 32.2022 73.846 33.9954 69.9453 33.9954C63.0603 33.9954 57.4842 28.4193 57.4842 21.5343C57.4842 18.2227 58.7801 15.2252 60.8875 13C52.5626 13.9817 46.1095 19.7411 46.1095 28.3277"
         fill="#CBD5E1"
