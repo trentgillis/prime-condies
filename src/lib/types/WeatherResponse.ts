@@ -42,11 +42,13 @@ type HourlyWeatherData = {
   dew_point: number;
   uvi: number;
   clouds: number;
-  visibility: number;
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
   pop: number;
+  visibility?: number;
+  rain?: any;
+  snow?: any;
   weather: WeatherDescription[];
 };
 
@@ -81,5 +83,7 @@ type DailyWeatherData = {
   clouds: number;
   pop: number;
   uvi: number;
+  rain?: number;
+  snow?: number;
   weather: WeatherDescription[];
 };

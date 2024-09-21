@@ -15,6 +15,7 @@ export async function fetchOwmWeatherData(area: AreaSelect): Promise<WeatherResp
         lat: area.lat.toString(),
         lon: area.lng.toString(),
         exclude: 'hourly',
+        units: 'imperial',
         appid: process.env.OWM_API_KEY!,
       }).toString(),
     { next: { revalidate: 3600 } },

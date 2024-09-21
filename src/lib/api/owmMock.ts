@@ -1,4 +1,6 @@
-export function getOwmMockWeatherData() {
+import { WeatherResponse } from '../types/WeatherResponse';
+
+export function getOwmMockWeatherData(): WeatherResponse {
   return {
     lat: 38.9547,
     lon: -105.3901,
