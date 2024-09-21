@@ -1,16 +1,27 @@
 export const AREA_TABLE = 'areas';
 
 export type AreaLocation = {
-  x: number;
-  y: number;
+  lng: number;
+  lat: number;
 };
 
-export type Area = {
-  id: number;
+export type AreaShema = {
+  id?: number;
+  areaSlug: string;
   name: string;
   place: string;
   countryCode: string;
   location: AreaLocation;
 };
 
-export type Areas = Area[];
+export type AreaSelect = {
+  id?: number;
+  areaSlug: string;
+  name: string;
+  place: string;
+  countryCode: string;
+  lat: number;
+  lng: number;
+};
+
+export type Areas = AreaSelect[];

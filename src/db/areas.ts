@@ -1,33 +1,33 @@
-import { Areas } from './types';
+import { AreaShema } from './types';
 
-const areas: Areas = [
+const areas: AreaShema[] = [
   {
-    id: 1,
     name: 'Eleven Mile Canyon',
+    areaSlug: 'eleven-mile-canyon',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.39031100011304, y: 38.952944973361745 },
+    location: { lat: 38.954708, lng: -105.390119 },
   },
   {
-    id: 2,
+    areaSlug: 'boulder-canyon',
     name: 'Boulder Canyon',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.45476358906625, y: 39.97983493878136 },
+    location: { lat: 39.979815, lng: -105.454755 },
   },
   {
-    id: 3,
+    areaSlug: 'newlin-creek',
     name: 'Newlin Creek',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.19522954244155, y: 38.25898012121234 },
+    location: { lat: 38.266725, lng: -105.187546 },
   },
   {
-    id: 4,
+    areaSlug: 'guanella-pass',
     name: 'Guanella Pass',
     place: 'Colorado',
     countryCode: 'USA',
-    location: { x: -105.709348, y: 39.635572 },
+    location: { lat: 39.635572, lng: -105.709348 },
   },
 ];
 
