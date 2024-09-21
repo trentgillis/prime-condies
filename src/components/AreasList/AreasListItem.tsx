@@ -22,13 +22,15 @@ function AreasListItem({ area }: AreaListItemProps) {
         areaName={area.name}
         areaPlace={area.place}
         areaCountryCode={area.countryCode}
-        temp={0}
-        tempMin={0}
-        tempMax={0}
+        currentTemp={currentWeatherData.temp}
+        tempMin={area.weatherData.daily[0].temp.min}
+        tempMax={area.weatherData.daily[0].temp.max}
       />
       <div className={styles.weatherIcon}>
         <WeatherIcon iconCode={currentWeatherData.weather[0].icon} size={40} />
-        <Text size="xs">Partly Cloudy</Text>
+        <Text size="xs">
+          {getWeatherDescription(currentWeatherData.weather[0].id, currentWeatherData.weather[0].main)}
+        </Text>
       </div>
     </div>
   );

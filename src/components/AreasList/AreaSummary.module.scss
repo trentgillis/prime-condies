@@ -1,11 +1,13 @@
 .wrapper {
   grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .areaTitle {
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
 
 .areaName {
@@ -20,6 +22,16 @@
 
 .areaLocation {
   order: -9999;
-  font-size: 0.625rem;
+  font-size: var(--text-xs);
   color: var(--color-neutral-300);
+}
+
+.highLowWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highLowText {
+  font-size: var(--text-xs);
 }

@@ -6,12 +6,12 @@ type AreaSummaryProps = {
   areaName: string;
   areaPlace: string;
   areaCountryCode: string;
-  temp: number;
+  currentTemp: number;
   tempMax: number;
   tempMin: number;
 };
 
-function AreaSummary({ areaName, areaPlace, areaCountryCode, temp, tempMax, tempMin }: AreaSummaryProps) {
+function AreaSummary({ areaName, areaPlace, areaCountryCode, currentTemp, tempMax, tempMin }: AreaSummaryProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.areaTitle}>
@@ -20,7 +20,13 @@ function AreaSummary({ areaName, areaPlace, areaCountryCode, temp, tempMax, temp
           {areaPlace}, {areaCountryCode}
         </span>
       </div>
-      <div className={styles.tempWrapper}></div>
+      <div className={styles.tempWrapper}>
+        <h3>{Math.round(currentTemp)}&deg;</h3>
+        <div className={styles.highLowWrapper}>
+          <span className={styles.highLowText}>H: {Math.round(tempMax)}&deg;</span>
+          <span className={styles.highLowText}>L: {Math.round(tempMin)}&deg;</span>
+        </div>
+      </div>
     </div>
   );
 }
