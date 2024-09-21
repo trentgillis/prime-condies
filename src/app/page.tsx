@@ -5,7 +5,6 @@ import React from 'react';
 
 import { sql } from '@/db';
 import { AreaSelect, AREA_TABLE } from '@/db/types';
-import Title from '@/components/Title';
 import AreasList from '@/components/AreasList';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
 
@@ -43,7 +42,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <Title variant="h1">Areas</Title>
+      <h1>Areas</h1>
       <AreasList areas={areas} />
     </main>
   );

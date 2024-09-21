@@ -1,5 +1,4 @@
 :root {
-  --mobile-breakpoint: 1024px;
   --background-color: #0d0f12;
   --color-white: #f8fafc;
   --color-neutral-200: #e2e8f0;
@@ -19,4 +18,38 @@ body {
 
 * {
   color: var(--color-white);
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 2.25rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+h5 {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+h6 {
+  font-size: 0.875rem;
+  letter-spacing: 1.5px;
 }

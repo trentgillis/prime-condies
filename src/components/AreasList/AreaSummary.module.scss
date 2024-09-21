@@ -1,4 +1,5 @@
 .wrapper {
+  grid-column: 1;
 }
 
 .areaTitle {
@@ -11,7 +12,7 @@
   font-size: 0.875rem;
   letter-spacing: 1.5px;
 
-  @media only screen and (min-width: var(--mobile-breakpoint)) {
+  @media only screen and (min-width: 1024px) {
     font-size: 1.25rem;
     letter-spacing: 0.5px;
   }

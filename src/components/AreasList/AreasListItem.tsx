@@ -7,7 +7,6 @@ import { AreaResponse } from '@/lib/types/AreaResponse';
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import { getWeatherDescription } from '@/lib/utils/weather';
 
-import Title from '../Title';
 import AreaSummary from './AreaSummary';
 
 type AreaListItemProps = {

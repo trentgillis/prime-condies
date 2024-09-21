@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 24px;
 
-  @media only screen and (min-width: var(--mobile-breakpoint)) {
+  @media only screen and (min-width: 1024px) {
     padding: 40px 0;
   }
 }

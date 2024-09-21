@@ -1,4 +1,3 @@
-import Title from '../Title';
 import styles from './AreaSummary.module.scss';
 
 import React from 'react';
@@ -16,9 +15,7 @@ function AreaSummary({ areaName, areaPlace, areaCountryCode, temp, tempMax, temp
   return (
     <div className={styles.wrapper}>
       <div className={styles.areaTitle}>
-        <Title variant="h2" className={styles.areaName}>
-          {areaName}
-        </Title>
+        <h2 className={styles.areaName}>{areaName}</h2>
         <span className={styles.areaLocation}>
           {areaPlace}, {areaCountryCode}
         </span>
