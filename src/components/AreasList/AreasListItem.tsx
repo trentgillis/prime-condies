@@ -5,6 +5,8 @@ import React from 'react';
 import Text from '@/components/Text';
 import { AreaResponse } from '@/lib/types/AreaResponse';
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
+import { getWeatherDescription } from '@/lib/utils/weather';
+
 import Title from '../Title';
 
 type AreaListItemProps = {
@@ -12,14 +14,18 @@ type AreaListItemProps = {
 };
 
 function AreasListItem({ area }: AreaListItemProps) {
+  const currentWeatherData = area.weatherData.current;
+
   return (
     <div className={styles.wrapper}>
       <div>
         <Title variant="h6">{area.name}</Title>
       </div>
       <div className={styles.weatherIcon}>
-        <WeatherIcon iconCode="01d" size={40} />
-        <Text size="xs">{area.weatherData.current.weather[0].main}</Text>
+        <WeatherIcon iconCode={currentWeatherData.weather[0].icon} size={40} />
+        <Text size="xs">
+          {getWeatherDescription(currentWeatherData.weather[0].id, currentWeatherData.weather[0].main)}
+        </Text>
       </div>
     </div>
   );

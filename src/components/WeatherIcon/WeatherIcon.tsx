@@ -31,7 +31,7 @@ const WEATHER_ICONS = {
   '50n': MistIcon,
 };
 
-type IconCode = keyof typeof WEATHER_ICONS;
+export type IconCode = keyof typeof WEATHER_ICONS;
 
 export interface WeatherIconProps {
   iconCode: IconCode;
