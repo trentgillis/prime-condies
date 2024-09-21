@@ -20,10 +20,21 @@
   }
 }
 
+.currentTemp {
+  @media only screen and (min-width: 1024px) {
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+  }
+}
+
 .areaLocation {
   order: -9999;
   font-size: var(--text-xs);
   color: var(--color-neutral-300);
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--text-sm);
+  }
 }
 
 .highLowWrapper {
@@ -34,4 +45,8 @@
 
 .highLowText {
   font-size: var(--text-xs);
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--text-sm);
+  }
 }

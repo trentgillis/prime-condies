@@ -21,7 +21,7 @@ function AreaSummary({ areaName, areaPlace, areaCountryCode, currentTemp, tempMa
         </span>
       </div>
       <div className={styles.tempWrapper}>
-        <h3>{Math.round(currentTemp)}&deg;</h3>
+        <h3 className={styles.currentTemp}>{Math.round(currentTemp)}&deg;</h3>
         <div className={styles.highLowWrapper}>
           <span className={styles.highLowText}>H: {Math.round(tempMax)}&deg;</span>
           <span className={styles.highLowText}>L: {Math.round(tempMin)}&deg;</span>
