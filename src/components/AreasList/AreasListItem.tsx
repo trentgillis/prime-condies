@@ -2,10 +2,7 @@ import styles from './AreasListItem.module.scss';
 
 import React from 'react';
 
-import Text from '@/components/Text';
 import { AreaResponse } from '@/lib/types/AreaResponse';
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
-import { getWeatherDescription } from '@/lib/utils/weather';
 
 import AreaSummary from './AreaSummary';
 import WeatherSummary from './WeatherSummary';
