@@ -2,28 +2,32 @@ import styles from './Title.module.scss';
 
 import React from 'react';
 
-function H1({ children }: React.PropsWithChildren) {
-  return <h1 className={`${styles.title} ${styles.h1}`}>{children}</h1>;
+interface HeaderTagProps extends React.PropsWithChildren {
+  className: string;
 }
 
-function H2({ children }: React.PropsWithChildren) {
-  return <h2 className={`${styles.title} ${styles.h2}`}>{children}</h2>;
+function H1({ className, children }: HeaderTagProps) {
+  return <h1 className={`${styles.title} ${styles.h1} ${className}`}>{children}</h1>;
 }
 
-function H3({ children }: React.PropsWithChildren) {
-  return <h3 className={`${styles.title} ${styles.h3}`}>{children}</h3>;
+function H2({ className, children }: HeaderTagProps) {
+  return <h2 className={`${styles.title} ${styles.h2} ${className}`}>{children}</h2>;
 }
 
-function H4({ children }: React.PropsWithChildren) {
-  return <h4 className={`${styles.title} ${styles.h4}`}>{children}</h4>;
+function H3({ className, children }: HeaderTagProps) {
+  return <h3 className={`${styles.title} ${styles.h3} ${className}`}>{children}</h3>;
 }
 
-function H5({ children }: React.PropsWithChildren) {
-  return <h5 className={`${styles.title} ${styles.h5}`}>{children}</h5>;
+function H4({ className, children }: HeaderTagProps) {
+  return <h4 className={`${styles.title} ${styles.h4} ${className}`}>{children}</h4>;
 }
 
-function H6({ children }: React.PropsWithChildren) {
-  return <h6 className={`${styles.title} ${styles.h6}`}>{children}</h6>;
+function H5({ className, children }: HeaderTagProps) {
+  return <h5 className={`${styles.title} ${styles.h5} ${className}`}>{children}</h5>;
+}
+
+function H6({ className, children }: HeaderTagProps) {
+  return <h6 className={`${styles.title} ${styles.h6} ${className}`}>{children}</h6>;
 }
 
 const titleComponents = {
@@ -37,12 +41,13 @@ const titleComponents = {
 
 interface TitleProps extends React.PropsWithChildren {
   variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  className?: string;
 }
 
-function Title({ variant, children }: TitleProps) {
+function Title({ variant, className, children }: TitleProps) {
   const TitleComponent = titleComponents[variant] ?? H1;
 
-  return <TitleComponent>{children}</TitleComponent>;
+  return <TitleComponent className={className ? className : ''}>{children}</TitleComponent>;
 }
 
 export default Title;

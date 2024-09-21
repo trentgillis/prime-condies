@@ -8,6 +8,7 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import { getWeatherDescription } from '@/lib/utils/weather';
 
 import Title from '../Title';
+import AreaSummary from './AreaSummary';
 
 type AreaListItemProps = {
   area: AreaResponse;
@@ -18,14 +19,17 @@ function AreasListItem({ area }: AreaListItemProps) {
 
   return (
     <div className={styles.wrapper}>
-      <div>
-        <Title variant="h6">{area.name}</Title>
-      </div>
+      <AreaSummary
+        areaName={area.name}
+        areaPlace={area.place}
+        areaCountryCode={area.countryCode}
+        temp={0}
+        tempMin={0}
+        tempMax={0}
+      />
       <div className={styles.weatherIcon}>
         <WeatherIcon iconCode={currentWeatherData.weather[0].icon} size={40} />
-        <Text size="xs">
-          {getWeatherDescription(currentWeatherData.weather[0].id, currentWeatherData.weather[0].main)}
-        </Text>
+        <Text size="xs">Partly Cloudy</Text>
       </div>
     </div>
   );

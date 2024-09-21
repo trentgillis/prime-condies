@@ -1,0 +1,24 @@
+.wrapper {
+}
+
+.areaTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.areaName {
+  font-size: 0.875rem;
+  letter-spacing: 1.5px;
+
+  @media only screen and (min-width: var(--mobile-breakpoint)) {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.areaLocation {
+  order: -9999;
+  font-size: 0.625rem;
+  color: var(--color-neutral-300);
+}
