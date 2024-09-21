@@ -6,6 +6,7 @@ import { AreaResponse } from '@/lib/types/AreaResponse';
 
 import AreaSummary from './AreaSummary';
 import WeatherSummary from './WeatherSummary';
+import WeatherDetails from './WeatherDetails';
 
 type AreaListItemProps = {
   area: AreaResponse;
@@ -23,6 +24,11 @@ function AreasListItem({ area }: AreaListItemProps) {
         currentTemp={currentWeatherData.temp}
         tempMin={area.weatherData.daily[0].temp.min}
         tempMax={area.weatherData.daily[0].temp.max}
+      />
+      <WeatherDetails
+        percipitation={area.weatherData.hourly[0].pop}
+        humidity={currentWeatherData.humidity}
+        windSpeed={currentWeatherData.wind_speed}
       />
       <WeatherSummary weatherDescription={currentWeatherData.weather[0]} />
     </div>
