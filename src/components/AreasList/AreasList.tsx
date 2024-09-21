@@ -14,7 +14,7 @@ function AreasList({ areas }: AreasListProps) {
   return (
     <div className={styles.wrapper}>
       {areas.map((area) => {
-        return <AreasListItem area={area} />;
+        return <AreasListItem key={area.id} area={area} />;
       })}
     </div>
   );

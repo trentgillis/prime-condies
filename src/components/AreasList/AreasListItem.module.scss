@@ -1,3 +1,29 @@
 .wrapper {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 100px;
   border: 1px solid var(--color-white);
+  border-radius: 4px;
+
+  @media only screen and (min-width: var(--mobile-breakpoint)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.weather-summary {
+  grid-column: 1;
+}
+
+.weather-details {
+  display: none;
+}
+
+.weatherIcon {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }

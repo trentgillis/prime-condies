@@ -1,7 +1,10 @@
 .main {
   padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: var(--mobile-breakpoint)) {
     padding: 40px 0;
   }
 }
