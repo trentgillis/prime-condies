@@ -1,7 +1,10 @@
-import { WeatherDescription } from '@/lib/types/WeatherResponse';
 import styles from './WeatherSummary.module.scss';
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
+import React from 'react';
+
 import { getWeatherDescription } from '@/lib/utils/weather';
+import { WeatherDescription } from '@/lib/types/WeatherResponse';
+
+import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
 interface WeatherSummaryProps {
   weatherDescription: WeatherDescription;
@@ -10,12 +13,14 @@ interface WeatherSummaryProps {
 function WeatherSummary({ weatherDescription }: WeatherSummaryProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.iconWrapper}>
-        <WeatherIcon iconCode={weatherDescription.icon} />
+      <div className={styles.detailWrapper}>
+        <div className={styles.iconWrapper}>
+          <WeatherIcon iconCode={weatherDescription.icon} />
+        </div>
+        <span className={styles.weatherDescription}>
+          {getWeatherDescription(weatherDescription.id, weatherDescription.main)}
+        </span>
       </div>
-      <span className={styles.weatherDescription}>
-        {getWeatherDescription(weatherDescription.id, weatherDescription.main)}
-      </span>
     </div>
   );
 }
