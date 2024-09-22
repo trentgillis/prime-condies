@@ -7,6 +7,8 @@ import React from 'react';
 import { AREA_TABLE, AreaSelect } from '@/db/types';
 import { notFound } from 'next/navigation';
 
+export const revalidate = 3600;
+
 async function getArea(areaSlug: string) {
   const { rows: areas } = await sql.query<Partial<AreaSelect>>(`
     SELECT
