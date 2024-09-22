@@ -37,7 +37,7 @@ async function getAreas() {
   );
 }
 
-export default async function Home() {
+async function Home() {
   const areas = await getAreas();
 
   return (
@@ -47,3 +47,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export default Home;
