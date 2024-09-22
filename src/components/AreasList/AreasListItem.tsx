@@ -1,6 +1,7 @@
 import styles from './AreasListItem.module.scss';
 
 import React from 'react';
+import Link from 'next/link';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
@@ -16,7 +17,7 @@ function AreasListItem({ area }: AreaListItemProps) {
   const currentWeatherData = area.weatherData.current;
 
   return (
-    <div className={styles.wrapper}>
+    <Link href={`/${area.areaSlug}`} className={styles.wrapper}>
       <AreaSummary
         areaName={area.name}
         areaPlace={area.place}
@@ -31,7 +32,7 @@ function AreasListItem({ area }: AreaListItemProps) {
         windSpeed={currentWeatherData.wind_speed}
       />
       <WeatherSummary weatherDescription={currentWeatherData.weather[0]} />
-    </div>
+    </Link>
   );
 }
 
