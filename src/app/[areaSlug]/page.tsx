@@ -4,8 +4,9 @@ import styles from './page.module.scss';
 import { sql } from '@/db';
 
 import React from 'react';
-import { AREA_TABLE, AreaSelect } from '@/db/types';
 import { notFound } from 'next/navigation';
+
+import { AREA_TABLE, AreaSelect } from '@/db/types';
 
 export const revalidate = 3600;
 

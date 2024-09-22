@@ -1,13 +1,13 @@
 import styles from './AreasListItem.module.scss';
 
 import React from 'react';
+import Link from 'next/link';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
 import AreaSummary from './AreaSummary';
 import WeatherSummary from './WeatherSummary';
 import WeatherDetails from './WeatherDetails';
-import Link from 'next/link';
 
 type AreaListItemProps = {
   area: AreaResponse;
