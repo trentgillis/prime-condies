@@ -9,3 +9,30 @@
     gap: 24px;
   }
 }
+
+.detailWrapper {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.detailTextLabel {
+  color: var(--color-neutral-400);
+  font-size: var(--text-xs);
+}
+
+.detailText {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-family: var(--font-outfit);
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}

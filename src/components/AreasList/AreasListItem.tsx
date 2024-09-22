@@ -26,7 +26,7 @@ function AreasListItem({ area }: AreaListItemProps) {
         tempMax={area.weatherData.daily[0].temp.max}
       />
       <WeatherDetails
-        percipitation={area.weatherData.hourly[0].pop}
+        precipitation={area.weatherData.hourly[0].pop}
         humidity={currentWeatherData.humidity}
         windSpeed={currentWeatherData.wind_speed}
       />
