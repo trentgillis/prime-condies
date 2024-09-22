@@ -7,6 +7,7 @@ import { AreaResponse } from '@/lib/types/AreaResponse';
 import AreaSummary from './AreaSummary';
 import WeatherSummary from './WeatherSummary';
 import WeatherDetails from './WeatherDetails';
+import Link from 'next/link';
 
 type AreaListItemProps = {
   area: AreaResponse;
@@ -16,7 +17,7 @@ function AreasListItem({ area }: AreaListItemProps) {
   const currentWeatherData = area.weatherData.current;
 
   return (
-    <div className={styles.wrapper}>
+    <Link href={`/${area.areaSlug}`} className={styles.wrapper}>
       <AreaSummary
         areaName={area.name}
         areaPlace={area.place}
@@ -31,7 +32,7 @@ function AreasListItem({ area }: AreaListItemProps) {
         windSpeed={currentWeatherData.wind_speed}
       />
       <WeatherSummary weatherDescription={currentWeatherData.weather[0]} />
-    </div>
+    </Link>
   );
 }
 
