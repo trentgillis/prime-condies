@@ -1,5 +1,5 @@
 const CLEAR_WEATHER_TYPE_DESCRIPTIONS: { [weatherId: number]: string } = {
-  800: 'Sunny',
+  800: 'Clear',
   801: 'Partly Cloudy',
   802: 'Partly Cloudy',
   803: 'Cloudy',
