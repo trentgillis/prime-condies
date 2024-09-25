@@ -45,7 +45,7 @@ const areas: AreaShema[] = [
   },
   {
     areaSlug: 'heavans-gate',
-    name: "Heavan's Gate",
+    name: "Heavan''s Gate",
     place: 'Colorado',
     countryCode: 'USA',
     location: { lat: 38.932987, lng: -105.367974 },
