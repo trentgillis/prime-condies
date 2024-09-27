@@ -1,0 +1,25 @@
+.main {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 40px 0;
+    gap: 24px;
+  }
+}
+
+.areaHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: 1024px) {
+    align-items: flex-start;
+  }
+}
+
+.areaLocation {
+  order: -999;
+}
