@@ -5,7 +5,7 @@ import React from 'react';
 function CurrentWeatherDetails() {
   return (
     <div className={styles.wrapper}>
-      <h1>current weather details</h1>;
+      <h1>CurrentWeatherDetails</h1>
     </div>
   );
 }

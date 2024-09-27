@@ -1,4 +1,5 @@
 .main {
+  height: 100%;
   padding: 24px 0;
   display: flex;
   flex-direction: column;
@@ -22,4 +23,18 @@
 
 .areaLocation {
   order: -999;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 16px;
+
+  @media only screen and (min-width: 1024px) {
+    flex-grow: 1;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+  }
 }

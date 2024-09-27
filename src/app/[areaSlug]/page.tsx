@@ -36,7 +36,6 @@ interface AreaDetailsProps {
 
 async function AreaDetails({ params }: AreaDetailsProps) {
   const area = await getArea(params.areaSlug);
-
   console.log(area);
 
   return (
