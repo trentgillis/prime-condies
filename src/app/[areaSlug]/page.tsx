@@ -17,9 +17,13 @@ export const revalidate = 3600;
 async function getArea(areaSlug: string) {
   const { rows: areas } = await sql.query<AreaSelect>(`
     SELECT
+      id,
+      area_slug AS "areaSlug",
       name,
       place,
-      country_code AS "countryCode"
+      country_code AS "countryCode",
+      ST_X(location::geometry) AS lng,
+      ST_Y(location::geometry) AS lat
     FROM ${AREA_TABLE}
     WHERE area_slug = '${areaSlug}'
   `);
