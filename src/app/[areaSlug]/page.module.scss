@@ -50,7 +50,7 @@
 
   @media only screen and (min-width: 1024px) {
     flex-grow: 1;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 35% 65%;
     grid-template-rows: min-content 1fr;
   }
 }
