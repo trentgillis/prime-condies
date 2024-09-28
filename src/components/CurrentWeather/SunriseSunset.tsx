@@ -5,24 +5,17 @@ import styles from './SunriseSunset.module.scss';
 import React from 'react';
 
 interface SunriseSunsetProps {
+  areaTimezone: string;
   sunriseDatetime: number;
   sunsetDatetime: number;
 }
 
-function SunriseSunset({ sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) {
-  console.log(
-    new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/Denver',
-      hour: 'numeric',
-      minute: 'numeric',
-    }).format(new Date(sunriseDatetime * 1000)),
-  );
-
+function SunriseSunset({ areaTimezone, sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) {
   return (
     <div className={styles.wrapper}>
       <WeatherDetail variant="sunrise" label="Sunrise">
         {new Date(sunriseDatetime * 1000).toLocaleString('en-US', {
-          timeZone: 'America/Denver',
+          timeZone: areaTimezone,
           hour: 'numeric',
           minute: 'numeric',
         })}
@@ -43,7 +36,7 @@ function SunriseSunset({ sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) 
       </div>
       <WeatherDetail variant="sunset" label="Sunset">
         {new Date(sunsetDatetime * 1000).toLocaleString('en-US', {
-          timeZone: 'America/Denver',
+          timeZone: areaTimezone,
           hour: 'numeric',
           minute: 'numeric',
         })}
