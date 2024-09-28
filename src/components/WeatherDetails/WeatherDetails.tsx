@@ -1,9 +1,7 @@
+import WeatherDetail from '../WeatherDetail';
 import styles from './WeatherDetails.module.scss';
 
 import React from 'react';
-
-import WeatherInfoIcon from '../WeatherInfoIcon/WeatherInfoIcon';
-import WeatherDetail from '../WeatherDetail';
 
 interface WeatherDetailsProps {
   precipitation: number;

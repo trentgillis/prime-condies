@@ -33,3 +33,14 @@
   justify-content: center;
   align-items: center;
 }
+
+.detailsWrapper {
+  display: none;
+
+  @media only screen and (min-width: 1024px) {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
