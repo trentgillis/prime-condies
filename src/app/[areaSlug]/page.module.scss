@@ -21,8 +21,24 @@
   }
 }
 
+.areaName {
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+
+  @media only screen and (min-width: 1024px) {
+    letter-spacing: 1px;
+  }
+}
+
 .areaLocation {
   order: -999;
+  font-family: var(--font-outfit);
+  letter-spacing: 1px;
+  font-size: var(--text-sm);
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
 }
 
 .contentWrapper {
