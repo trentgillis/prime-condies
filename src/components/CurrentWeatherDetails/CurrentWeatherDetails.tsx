@@ -2,10 +2,26 @@ import styles from './CurrentWeatherDetails.module.scss';
 
 import React from 'react';
 
-function CurrentWeatherDetails() {
+import { CurrentWeatherData, DailyWeatherData } from '@/lib/types/WeatherResponse';
+
+import CurrentWeatherSummary from './CurrentWeatherSummary';
+
+interface CurrentWeatherDetailsProps {
+  currentForecast: CurrentWeatherData;
+  todayWeather: DailyWeatherData;
+}
+
+function CurrentWeatherDetails({ currentForecast, todayWeather }: CurrentWeatherDetailsProps) {
   return (
     <div className={styles.wrapper}>
-      <h1>CurrentWeatherDetails</h1>
+      <div className={styles.time}>
+        <span>Now</span>
+      </div>
+      <CurrentWeatherSummary
+        todayTempMax={todayWeather.temp.max}
+        todayTempMin={todayWeather.temp.min}
+        weatherDescription={currentForecast.weather[0]}
+      />
     </div>
   );
 }

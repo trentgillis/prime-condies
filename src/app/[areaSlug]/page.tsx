@@ -10,11 +10,12 @@ import { AREA_TABLE, AreaSelect } from '@/db/types';
 import CurrentWeatherDetails from '@/components/CurrentWeatherDetails';
 import HourlyForecast from '@/components/HourlyForecast';
 import DailyForecast from '@/components/DailyForecast';
+import { fetchOwmWeatherData } from '@/lib/api/owm';
 
 export const revalidate = 3600;
 
 async function getArea(areaSlug: string) {
-  const { rows: areas } = await sql.query<Partial<AreaSelect>>(`
+  const { rows: areas } = await sql.query<AreaSelect>(`
     SELECT
       name,
       place,
@@ -27,7 +28,8 @@ async function getArea(areaSlug: string) {
     notFound();
   }
 
-  return areas[0];
+  const weatherData = await fetchOwmWeatherData(areas[0]);
+  return { ...areas[0], weatherData: weatherData };
 }
 
 interface AreaDetailsProps {
@@ -46,7 +48,7 @@ async function AreaDetails({ params }: AreaDetailsProps) {
         </span>
       </div>
       <div className={styles.contentWrapper}>
-        <CurrentWeatherDetails />
+        <CurrentWeatherDetails todayWeather={area.weatherData.daily[0]} currentForecast={area.weatherData.current} />
         <HourlyForecast />
         <DailyForecast />
       </div>
