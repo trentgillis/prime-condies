@@ -1,3 +1,4 @@
+import WeatherDetail from '../WeatherDetail';
 import WeatherInfoIcon from '../WeatherInfoIcon/WeatherInfoIcon';
 import styles from './SunriseSunset.module.scss';
 
@@ -19,32 +20,20 @@ function SunriseSunset({ sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) 
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.dataWrapper}>
-        <div className={styles.iconWrapper}>
-          <WeatherInfoIcon icon="sunrise" />
-        </div>
-        <span className={styles.labelText}>Sunrise</span>
-        <span className={styles.dataText}>
-          {new Date(sunriseDatetime * 1000).toLocaleString('en-US', {
-            timeZone: 'America/Denver',
-            hour: 'numeric',
-            minute: 'numeric',
-          })}
-        </span>
-      </div>
-      <div className={styles.dataWrapper}>
-        <div className={styles.iconWrapper}>
-          <WeatherInfoIcon icon="sunset" />
-        </div>
-        <span className={styles.labelText}>Sunset</span>
-        <span className={styles.dataText}>
-          {new Date(sunsetDatetime * 1000).toLocaleString('en-US', {
-            timeZone: 'America/Denver',
-            hour: 'numeric',
-            minute: 'numeric',
-          })}
-        </span>
-      </div>
+      <WeatherDetail variant="sunrise" label="Sunrise">
+        {new Date(sunriseDatetime * 1000).toLocaleString('en-US', {
+          timeZone: 'America/Denver',
+          hour: 'numeric',
+          minute: 'numeric',
+        })}
+      </WeatherDetail>
+      <WeatherDetail variant="sunset" label="Sunset">
+        {new Date(sunsetDatetime * 1000).toLocaleString('en-US', {
+          timeZone: 'America/Denver',
+          hour: 'numeric',
+          minute: 'numeric',
+        })}
+      </WeatherDetail>
     </div>
   );
 }

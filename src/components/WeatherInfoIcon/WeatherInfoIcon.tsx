@@ -14,8 +14,10 @@ const WEATHER_INFO_ICONS = {
   sunset: SunsetIcon,
 };
 
+export type WeatherInfoVarient = keyof typeof WEATHER_INFO_ICONS;
+
 interface WeatherInfoIconProps {
-  icon: keyof typeof WEATHER_INFO_ICONS;
+  icon: WeatherInfoVarient;
 }
 
 function WeatherInfoIcon({ icon }: WeatherInfoIconProps) {
