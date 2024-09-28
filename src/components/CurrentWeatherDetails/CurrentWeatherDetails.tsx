@@ -1,4 +1,4 @@
-import { CurrentWeatherData } from '@/lib/types/WeatherResponse';
+import { CurrentWeatherData, DailyWeatherData } from '@/lib/types/WeatherResponse';
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import styles from './CurrentWeatherDetails.module.scss';
 
@@ -8,15 +8,20 @@ import CurrentWeatherSummary from './CurrentWeatherSummary';
 
 interface CurrentWeatherDetailsProps {
   currentForecast: CurrentWeatherData;
+  todayWeather: DailyWeatherData;
 }
 
-function CurrentWeatherDetails({ currentForecast }: CurrentWeatherDetailsProps) {
+function CurrentWeatherDetails({ currentForecast, todayWeather }: CurrentWeatherDetailsProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.time}>
         <span>Now</span>
       </div>
-      <CurrentWeatherSummary weatherDescription={currentForecast.weather[0]} />
+      <CurrentWeatherSummary
+        todayTempMax={todayWeather.temp.max}
+        todayTempMin={todayWeather.temp.min}
+        weatherDescription={currentForecast.weather[0]}
+      />
     </div>
   );
 }

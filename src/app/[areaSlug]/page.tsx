@@ -48,7 +48,7 @@ async function AreaDetails({ params }: AreaDetailsProps) {
         </span>
       </div>
       <div className={styles.contentWrapper}>
-        <CurrentWeatherDetails currentForecast={area.weatherData.current} />
+        <CurrentWeatherDetails todayWeather={area.weatherData.daily[0]} currentForecast={area.weatherData.current} />
         <HourlyForecast />
         <DailyForecast />
       </div>

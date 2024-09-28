@@ -7,9 +7,11 @@ import { WeatherDescription } from '@/lib/types/WeatherResponse';
 
 interface CurrentWeatherSummaryProps {
   weatherDescription: WeatherDescription;
+  todayTempMax: number;
+  todayTempMin: number;
 }
 
-function CurrentWeatherSummary({ weatherDescription }: CurrentWeatherSummaryProps) {
+function CurrentWeatherSummary({ weatherDescription, todayTempMax, todayTempMin }: CurrentWeatherSummaryProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.summaryWrapper}>
@@ -24,8 +26,8 @@ function CurrentWeatherSummary({ weatherDescription }: CurrentWeatherSummaryProp
         <div className={styles.temperature}>
           <h2>70&deg;</h2>
           <div className={styles.highLowWrapper}>
-            <span className={styles.highLowText}>H: {Math.round(100)}&deg;</span>
-            <span className={styles.highLowText}>L: {Math.round(0)}&deg;</span>
+            <span className={styles.highLowText}>H: {Math.round(todayTempMax)}&deg;</span>
+            <span className={styles.highLowText}>L: {Math.round(todayTempMin)}&deg;</span>
           </div>
         </div>
       </div>
