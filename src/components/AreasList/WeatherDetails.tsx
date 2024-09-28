@@ -3,6 +3,7 @@ import styles from './WeatherDetails.module.scss';
 import React from 'react';
 
 import WeatherInfoIcon from '../WeatherInfoIcon/WeatherInfoIcon';
+import WeatherDetail from '../WeatherDetail';
 
 interface WeatherDetailsProps {
   precipitation: number;
@@ -13,27 +14,15 @@ interface WeatherDetailsProps {
 function WeatherDetails({ precipitation, humidity, windSpeed }: WeatherDetailsProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.detailWrapper}>
-        <div className={styles.iconWrapper}>
-          <WeatherInfoIcon icon="precipitation" />
-        </div>
-        <span className={styles.detailTextLabel}>Precipitation</span>
-        <span className={styles.detailText}>{precipitation === 0 ? 0 : Math.round(precipitation * 100)}%</span>
-      </div>
-      <div className={styles.detailWrapper}>
-        <div className={styles.iconWrapper}>
-          <WeatherInfoIcon icon="humidity" />
-        </div>
-        <span className={styles.detailTextLabel}>Humidity</span>
-        <span className={styles.detailText}>{humidity}%</span>
-      </div>
-      <div className={styles.detailWrapper}>
-        <div className={styles.iconWrapper}>
-          <WeatherInfoIcon icon="windSpeed" />
-        </div>
-        <span className={styles.detailTextLabel}>Wind Speed</span>
-        <span className={styles.detailText}>{Math.round(windSpeed)}mph</span>
-      </div>
+      <WeatherDetail variant="precipitation" label="Precipitation">
+        <>{precipitation === 0 ? 0 : Math.round(precipitation * 100)}%</>
+      </WeatherDetail>
+      <WeatherDetail variant="humidity" label="Humidity">
+        <>{humidity}%</>
+      </WeatherDetail>
+      <WeatherDetail variant="windSpeed" label="Wind Speed">
+        <>{Math.round(windSpeed)}mph</>
+      </WeatherDetail>
     </div>
   );
 }
