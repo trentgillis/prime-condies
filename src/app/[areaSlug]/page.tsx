@@ -7,7 +7,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 
 import { AREA_TABLE, AreaSelect } from '@/db/types';
-import CurrentWeatherDetails from '@/components/CurrentWeatherDetails';
+import CurrentWeatherDetails from '@/components/CurrentWeather';
 import HourlyForecast from '@/components/HourlyForecast';
 import DailyForecast from '@/components/DailyForecast';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
@@ -48,7 +48,11 @@ async function AreaDetails({ params }: AreaDetailsProps) {
         </span>
       </div>
       <div className={styles.contentWrapper}>
-        <CurrentWeatherDetails todayWeather={area.weatherData.daily[0]} currentForecast={area.weatherData.current} />
+        <CurrentWeatherDetails
+          areaTimezone={area.weatherData.timezone}
+          todayWeather={area.weatherData.daily[0]}
+          currentForecast={area.weatherData.current}
+        />
         <HourlyForecast />
         <DailyForecast />
       </div>

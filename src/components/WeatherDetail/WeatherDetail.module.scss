@@ -1,0 +1,26 @@
+.wrapper {
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.detailLabel {
+  color: var(--color-neutral-300);
+  font-size: 0.75rem;
+}
+
+.detailText {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: var(--font-outfit);
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}

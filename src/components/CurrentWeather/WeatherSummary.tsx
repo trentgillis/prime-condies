@@ -1,4 +1,4 @@
-import styles from './CurrentWeatherSummary.module.scss';
+import styles from './WeatherSummary.module.scss';
 
 import React from 'react';
 
@@ -7,13 +7,13 @@ import { getWeatherDescription } from '@/lib/utils/weather';
 
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
-interface CurrentWeatherSummaryProps {
+interface WeatherSummaryProps {
   weatherDescription: WeatherDescription;
   todayTempMax: number;
   todayTempMin: number;
 }
 
-function CurrentWeatherSummary({ weatherDescription, todayTempMax, todayTempMin }: CurrentWeatherSummaryProps) {
+function WeatherSummary({ weatherDescription, todayTempMax, todayTempMin }: WeatherSummaryProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.summaryWrapper}>
@@ -37,4 +37,4 @@ function CurrentWeatherSummary({ weatherDescription, todayTempMax, todayTempMin 
   );
 }
 
-export default CurrentWeatherSummary;
+export default WeatherSummary;

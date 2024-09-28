@@ -4,10 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
+import WeatherDetails from '@/components/WeatherDetails';
 
 import AreaSummary from './AreaSummary';
 import WeatherSummary from './WeatherSummary';
-import WeatherDetails from './WeatherDetails';
 
 type AreaListItemProps = {
   area: AreaResponse;
@@ -26,11 +26,13 @@ function AreasListItem({ area }: AreaListItemProps) {
         tempMin={area.weatherData.daily[0].temp.min}
         tempMax={area.weatherData.daily[0].temp.max}
       />
-      <WeatherDetails
-        precipitation={area.weatherData.hourly[0].pop}
-        humidity={currentWeatherData.humidity}
-        windSpeed={currentWeatherData.wind_speed}
-      />
+      <div className={styles.detailsWrapper}>
+        <WeatherDetails
+          precipitation={area.weatherData.hourly[0].pop}
+          humidity={currentWeatherData.humidity}
+          windSpeed={currentWeatherData.wind_speed}
+        />
+      </div>
       <WeatherSummary weatherDescription={currentWeatherData.weather[0]} />
     </Link>
   );
