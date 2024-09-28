@@ -5,6 +5,7 @@ import React from 'react';
 import { CurrentWeatherData, DailyWeatherData } from '@/lib/types/WeatherResponse';
 
 import WeatherSummary from './WeatherSummary';
+import SunriseSunset from './SunriseSunset';
 
 interface CurrentWeatherProps {
   currentForecast: CurrentWeatherData;
@@ -22,6 +23,7 @@ function CurrentWeather({ currentForecast, todayWeather }: CurrentWeatherProps) 
         todayTempMin={todayWeather.temp.min}
         weatherDescription={currentForecast.weather[0]}
       />
+      <SunriseSunset sunriseDatetime={currentForecast.sunrise} sunsetDatetime={currentForecast.sunset} />
     </div>
   );
 }
