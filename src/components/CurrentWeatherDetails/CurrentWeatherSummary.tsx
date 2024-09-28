@@ -1,9 +1,11 @@
-import { getWeatherDescription } from '@/lib/utils/weather';
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
 import styles from './CurrentWeatherSummary.module.scss';
 
 import React from 'react';
+
 import { WeatherDescription } from '@/lib/types/WeatherResponse';
+import { getWeatherDescription } from '@/lib/utils/weather';
+
+import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
 interface CurrentWeatherSummaryProps {
   weatherDescription: WeatherDescription;
