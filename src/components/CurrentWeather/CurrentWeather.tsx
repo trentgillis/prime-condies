@@ -17,8 +17,11 @@ interface CurrentWeatherProps {
 function CurrentWeather({ areaTimezone, currentForecast, todayWeather }: CurrentWeatherProps) {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.time}>
-        <span>Now</span>
+      <div className={styles.timeWrapper}>
+        <span className={styles.timeLabel}>Now</span>
+        <span className={styles.timeText}>
+          {new Date().toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric', minute: 'numeric' })}
+        </span>
       </div>
       <WeatherSummary
         todayTempMax={todayWeather.temp.max}
