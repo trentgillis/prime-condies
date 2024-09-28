@@ -23,7 +23,7 @@ async function getArea(areaSlug: string) {
       place,
       country_code AS "countryCode",
       ST_X(location::geometry) AS lng,
-      ST_Y(location::geometry) AS lat,
+      ST_Y(location::geometry) AS lat
     FROM ${AREA_TABLE}
     WHERE area_slug = '${areaSlug}'
   `);
