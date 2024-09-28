@@ -1,6 +1,13 @@
 .wrapper {
   width: 100%;
+  padding: 8px 0;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
 }

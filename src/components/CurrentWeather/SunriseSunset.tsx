@@ -27,6 +27,20 @@ function SunriseSunset({ sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) 
           minute: 'numeric',
         })}
       </WeatherDetail>
+      <div className={styles.arrowIcon}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 8L22 12L18 16" />
+          <path d="M2 12H22" />
+        </svg>
+      </div>
       <WeatherDetail variant="sunset" label="Sunset">
         {new Date(sunsetDatetime * 1000).toLocaleString('en-US', {
           timeZone: 'America/Denver',
