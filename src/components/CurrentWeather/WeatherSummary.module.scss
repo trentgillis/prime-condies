@@ -1,9 +1,9 @@
 .wrapper {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 24px;
 
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
@@ -34,12 +34,12 @@
 }
 
 .weatherIcon {
-  width: 100px;
-  height: 100px;
+  width: 64px;
+  height: 64px;
 
   @media only screen and (min-width: 1024px) {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
 }
 

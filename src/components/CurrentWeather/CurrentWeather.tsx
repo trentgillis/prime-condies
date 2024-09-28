@@ -6,6 +6,7 @@ import { CurrentWeatherData, DailyWeatherData } from '@/lib/types/WeatherRespons
 
 import WeatherSummary from './WeatherSummary';
 import SunriseSunset from './SunriseSunset';
+import WeatherDetails from '../WeatherDetails';
 
 interface CurrentWeatherProps {
   currentForecast: CurrentWeatherData;
@@ -24,6 +25,13 @@ function CurrentWeather({ currentForecast, todayWeather }: CurrentWeatherProps) 
         weatherDescription={currentForecast.weather[0]}
       />
       <SunriseSunset sunriseDatetime={currentForecast.sunrise} sunsetDatetime={currentForecast.sunset} />
+      <div className={styles.detailsWrapper}>
+        <WeatherDetails
+          precipitation={todayWeather.pop}
+          humidity={currentForecast.humidity}
+          windSpeed={currentForecast.wind_speed}
+        />
+      </div>
     </div>
   );
 }
