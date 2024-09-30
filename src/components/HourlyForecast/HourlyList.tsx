@@ -18,7 +18,7 @@ function HourlyList({ areaTimezone, hourlyForecast }: HourlyListProps) {
         <h2>Hourly Forecast</h2>
       </div>
       <div className={styles.listWrapper}>
-        {hourlyForecast.map((hour, index) => {
+        {hourlyForecast.slice(0, 24).map((hour, index) => {
           return (
             <div key={hour.dt} className={styles.hourDataWrapper}>
               <span className={styles.hourText}>
