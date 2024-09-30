@@ -57,7 +57,7 @@ async function AreaDetails({ params }: AreaDetailsProps) {
           todayWeather={area.weatherData.daily[0]}
           currentForecast={area.weatherData.current}
         />
-        <HourlyForecast />
+        <HourlyForecast areaTimezone={area.weatherData.timezone} hourlyForecast={area.weatherData.hourly} />
         <DailyForecast />
       </div>
     </main>
