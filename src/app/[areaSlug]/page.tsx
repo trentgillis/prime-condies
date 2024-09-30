@@ -1,11 +1,10 @@
 import 'server-only';
 import styles from './page.module.scss';
 
-import { sql } from '@/db';
-
 import React from 'react';
 import { notFound } from 'next/navigation';
 
+import { sql } from '@/db';
 import { AREA_TABLE, AreaSelect } from '@/db/types';
 import CurrentWeatherDetails from '@/components/CurrentWeather';
 import HourlyForecast from '@/components/HourlyForecast';

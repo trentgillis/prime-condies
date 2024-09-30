@@ -1,7 +1,9 @@
-import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
 import styles from './HourlyList.module.scss';
 
 import React from 'react';
+
+import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
+
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
 interface HourlyListProps {

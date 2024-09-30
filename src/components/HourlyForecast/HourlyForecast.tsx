@@ -1,9 +1,11 @@
 import styles from './HourlyForecast.module.scss';
 
 import React from 'react';
+
+import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
+
 import HourlyList from './HourlyList';
 import HourlyGraph from './HourlyGraph';
-import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
 
 interface HourlyForecastProps {
   areaTimezone: string;
