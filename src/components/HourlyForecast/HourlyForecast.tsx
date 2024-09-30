@@ -2,10 +2,21 @@ import styles from './HourlyForecast.module.scss';
 
 import React from 'react';
 
-function HourlyForecast() {
+import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
+
+import HourlyList from './HourlyList';
+import HourlyGraph from './HourlyGraph';
+
+interface HourlyForecastProps {
+  areaTimezone: string;
+  hourlyForecast: HourlyWeatherData[];
+}
+
+function HourlyForecast({ areaTimezone, hourlyForecast }: HourlyForecastProps) {
   return (
     <div className={styles.wrapper}>
-      <h1>HourlyForecast</h1>
+      <HourlyList areaTimezone={areaTimezone} hourlyForecast={hourlyForecast} />
+      <HourlyGraph />
     </div>
   );
 }

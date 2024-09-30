@@ -44,13 +44,13 @@
 .contentWrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, min-content);
   column-gap: 24px;
   row-gap: 16px;
 
   @media only screen and (min-width: 1024px) {
     flex-grow: 1;
     grid-template-columns: 35% 65%;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: repeat(2, min-content);
   }
 }
