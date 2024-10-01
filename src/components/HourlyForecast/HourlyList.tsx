@@ -3,8 +3,7 @@ import styles from './HourlyList.module.scss';
 import React from 'react';
 
 import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
-
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
+import WeatherIcon from '@/components/WeatherIcon';
 
 interface HourlyListProps {
   areaTimezone: string;
