@@ -46,7 +46,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, min-content);
   column-gap: 24px;
-  row-gap: 16px;
+  row-gap: 24px;
 
   @media only screen and (min-width: 1024px) {
     flex-grow: 1;

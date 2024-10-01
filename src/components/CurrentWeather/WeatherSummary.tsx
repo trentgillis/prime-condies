@@ -2,10 +2,9 @@ import styles from './WeatherSummary.module.scss';
 
 import React from 'react';
 
+import WeatherIcon from '@/components/WeatherIcon';
 import { WeatherDescription } from '@/lib/types/WeatherResponse';
 import { getWeatherDescription } from '@/lib/utils/weather';
-
-import WeatherIcon from '../WeatherIcon/WeatherIcon';
 
 interface WeatherSummaryProps {
   weatherDescription: WeatherDescription;
