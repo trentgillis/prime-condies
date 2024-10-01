@@ -18,13 +18,27 @@
 .listWrapper {
   display: flex;
   flex-direction: column;
+
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
 }
 
 .dayDataWrapper {
-  height: 48px;
+  min-height: 48px;
   padding: 8px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @media only screen and (min-width: 1024px) {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 .dayText {
@@ -44,6 +58,11 @@
   svg {
     width: 24px;
     height: 24px;
+
+    @media only screen and (min-width: 1024px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
@@ -60,6 +79,10 @@
   font-family: var(--font-outfit);
   font-weight: 500;
   color: var(--color-neutral-300);
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--text-md);
+  }
 }
 
 .highText {
@@ -67,4 +90,8 @@
   font-size: var(--text-sm);
   font-family: var(--font-outfit);
   font-weight: 700;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: var(--text-md);
+  }
 }
