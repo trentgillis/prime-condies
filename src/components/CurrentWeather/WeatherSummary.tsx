@@ -8,11 +8,12 @@ import { getWeatherDescription } from '@/lib/utils/weather';
 
 interface WeatherSummaryProps {
   weatherDescription: WeatherDescription;
+  currentTemp: number;
   todayTempMax: number;
   todayTempMin: number;
 }
 
-function WeatherSummary({ weatherDescription, todayTempMax, todayTempMin }: WeatherSummaryProps) {
+function WeatherSummary({ weatherDescription, currentTemp, todayTempMax, todayTempMin }: WeatherSummaryProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.summaryWrapper}>
@@ -25,7 +26,7 @@ function WeatherSummary({ weatherDescription, todayTempMax, todayTempMin }: Weat
       </div>
       <div className={styles.temperatureWrapper}>
         <div className={styles.temperature}>
-          <h2>70&deg;</h2>
+          <h2>{currentTemp}&deg;</h2>
           <div className={styles.highLowWrapper}>
             <span className={styles.highLowText}>H: {Math.round(todayTempMax)}&deg;</span>
             <span className={styles.highLowText}>L: {Math.round(todayTempMin)}&deg;</span>
