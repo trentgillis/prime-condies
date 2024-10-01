@@ -24,6 +24,7 @@ function CurrentWeather({ areaTimezone, currentForecast, todayWeather }: Current
         </span>
       </div>
       <WeatherSummary
+        currentTemp={Math.round(currentForecast.temp)}
         todayTempMax={todayWeather.temp.max}
         todayTempMin={todayWeather.temp.min}
         weatherDescription={currentForecast.weather[0]}
