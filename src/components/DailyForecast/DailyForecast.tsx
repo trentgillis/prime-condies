@@ -2,10 +2,19 @@ import styles from './DailyForecast.module.scss';
 
 import React from 'react';
 
-function DailyForecast() {
+import { DailyWeatherData } from '@/lib/types/WeatherResponse';
+
+import DailyList from './DailyList';
+
+interface DailyForecastProps {
+  areaTimezone: string;
+  dailyForecast: DailyWeatherData[];
+}
+
+function DailyForecast({ areaTimezone, dailyForecast }: DailyForecastProps) {
   return (
     <div className={styles.wrapper}>
-      <h1>DailyForecast</h1>
+      <DailyList areaTimezone={areaTimezone} dailyForecast={dailyForecast} />
     </div>
   );
 }
