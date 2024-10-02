@@ -9,6 +9,7 @@ import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
 import WeatherIcon from '../WeatherIcon';
 
 interface HourlyGraphProps {
+  areaTimezone: string;
   hourlyForecast: HourlyWeatherData[];
 }
 
@@ -35,7 +36,7 @@ function HourWeatherLabel({ x, y, width, height, value }: any) {
   );
 }
 
-function HourlyGraph({ hourlyForecast }: HourlyGraphProps) {
+function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
   const graphData = React.useMemo(() => {
     return hourlyForecast.slice(0, 13).map((hour) => {
       return { ...hour, labelData: { icon: hour.weather[0].icon, temp: hour.temp } };
@@ -45,7 +46,7 @@ function HourlyGraph({ hourlyForecast }: HourlyGraphProps) {
   return (
     <div className={styles.wrapper}>
       <ResponsiveContainer>
-        <AreaChart margin={{ left: -48, bottom: 0, right: 24, top: 24 }} data={graphData}>
+        <AreaChart margin={{ left: -48, bottom: 0, right: 24, top: 40 }} data={graphData}>
           <defs>
             <linearGradient id="tempColor" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#0ea5e9" />
@@ -56,7 +57,9 @@ function HourlyGraph({ hourlyForecast }: HourlyGraphProps) {
             dataKey="dt"
             interval="preserveEnd"
             tick={{ fill: '#f8fafc', fontSize: '0.625rem' }}
-            tickFormatter={(value) => new Date(value * 1000).toLocaleString('en-US', { hour: 'numeric' })}
+            tickFormatter={(value) =>
+              new Date(value * 1000).toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric' })
+            }
           />
           <YAxis tick={false} style={{ strokeWidth: 0 }} />
           <Area type="monotone" stroke="none" dataKey="temp" fill="url(#tempColor)" opacity="0.7">
