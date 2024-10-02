@@ -16,7 +16,7 @@ function HourlyForecast({ areaTimezone, hourlyForecast }: HourlyForecastProps) {
   return (
     <div className={styles.wrapper}>
       <HourlyList areaTimezone={areaTimezone} hourlyForecast={hourlyForecast} />
-      <HourlyGraph />
+      <HourlyGraph hourlyForecast={hourlyForecast} />
     </div>
   );
 }

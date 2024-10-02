@@ -1,9 +1,16 @@
 .wrapper {
   display: none;
   height: 100%;
-  border: 1px solid white;
 
   @media only screen and (min-width: 1024px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.titleWrapper {
+  h2 {
+    font-size: var(--text-md);
   }
 }
