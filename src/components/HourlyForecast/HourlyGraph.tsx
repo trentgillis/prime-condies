@@ -45,7 +45,7 @@ function HourlyGraph({ hourlyForecast }: HourlyGraphProps) {
   return (
     <div className={styles.wrapper}>
       <ResponsiveContainer>
-        <AreaChart margin={{ left: -48, bottom: 0, right: 24, top: 24 }} data={graphData}>
+        <AreaChart margin={{ left: -48, bottom: 0, right: 24, top: 40 }} data={graphData}>
           <defs>
             <linearGradient id="tempColor" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#0ea5e9" />
