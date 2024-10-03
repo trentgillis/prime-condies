@@ -13,7 +13,7 @@ interface HourlyGraphProps {
   hourlyForecast: HourlyWeatherData[];
 }
 
-function HourWeatherLabel({ x, y, width, height, value }: any) {
+function HourWeatherLabel({ x, y, value }: any) {
   return (
     <g>
       <text
@@ -62,7 +62,14 @@ function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
             }
           />
           <YAxis tick={false} style={{ strokeWidth: 0 }} />
-          <Area type="monotone" stroke="none" dataKey="temp" fill="url(#tempColor)" opacity="0.7">
+          <Area
+            type="monotone"
+            stroke="none"
+            dataKey="temp"
+            fill="url(#tempColor)"
+            opacity="0.7"
+            animationDuration={500}
+          >
             <LabelList dataKey="labelData" position="top" content={<HourWeatherLabel />} />
           </Area>
         </AreaChart>
