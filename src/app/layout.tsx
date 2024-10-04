@@ -2,6 +2,7 @@ import '@/styles/reset.scss';
 import '@/styles/global.scss';
 import styles from './layout.module.scss';
 
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 
 import Link from 'next/link';
@@ -47,6 +48,7 @@ export default function RootLayout({
           </Link>
         </header>
         <MaxWidthWrapper>{children}</MaxWidthWrapper>
+        <Analytics />
       </body>
     </html>
   );
