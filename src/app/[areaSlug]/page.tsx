@@ -13,7 +13,15 @@ import { fetchOwmWeatherData } from '@/lib/api/owm';
 
 export const revalidate = 3600;
 
-async function getArea(areaSlug: string) {
+export async function generateMetadata({ params }: { params: { areaSlug: string } }) {
+  const area = await getArea(params.areaSlug);
+
+  return {
+    title: `${area.name} - PrimeCondies`,
+  };
+}
+
+const getArea = React.cache(async function getArea(areaSlug: string) {
   const { rows: areas } = await sql.query<AreaSelect>(`
     SELECT
       id,
@@ -33,7 +41,7 @@ async function getArea(areaSlug: string) {
 
   const weatherData = await fetchOwmWeatherData(areas[0]);
   return { ...areas[0], weatherData: weatherData };
-}
+});
 
 interface AreaDetailsProps {
   params: { areaSlug: string };
