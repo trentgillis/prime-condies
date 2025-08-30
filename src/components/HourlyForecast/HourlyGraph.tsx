@@ -41,7 +41,7 @@ function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
     return hourlyForecast.slice(0, 13).map((hour) => {
       return { ...hour, labelData: { icon: hour.weather[0].icon, temp: hour.temp } };
     });
-  }, hourlyForecast);
+  }, [hourlyForecast]);
 
   return (
     <div className={styles.wrapper}>
