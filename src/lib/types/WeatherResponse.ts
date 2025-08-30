@@ -49,8 +49,8 @@ export type HourlyWeatherData = {
   wind_gust: number;
   pop: number;
   visibility?: number;
-  rain?: number;
-  snow?: number;
+  rain?: Record<string, number>;
+  snow?: Record<string, number>;
   weather: WeatherDescription[];
 };
 
