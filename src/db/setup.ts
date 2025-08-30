@@ -14,7 +14,7 @@ async function getDevClient() {
   return client;
 }
 
-async function setupAreas(client: any) {
+async function setupAreas(client: Client) {
   console.log('🔄 Setting up areas table...');
 
   await client.query(`CREATE EXTENSION IF NOT EXISTS postgis;`);
@@ -28,7 +28,7 @@ async function setupAreas(client: any) {
   console.log('✅ Areas table successfully created');
 }
 
-async function seedAreas(client: any) {
+async function seedAreas(client: Client) {
   console.log('🌱 Seeding area data...');
   await Promise.all(
     areas.map((area) => {
@@ -50,8 +50,8 @@ async function seedAreas(client: any) {
   const client = process.env.VERCEL_ENV === 'development' ? await getDevClient() : sql;
 
   try {
-    await setupAreas(client);
-    await seedAreas(client);
+    await setupAreas(client as Client);
+    await seedAreas(client as Client);
   } finally {
     if (process.env.VERCEL_ENV === 'development') await client.end();
   }
