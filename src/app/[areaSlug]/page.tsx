@@ -13,7 +13,8 @@ import { fetchOwmWeatherData } from '@/lib/api/owm';
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: { params: { areaSlug: string } }) {
+export async function generateMetadata(props: { params: Promise<{ areaSlug: string }> }) {
+  const params = await props.params;
   const area = await getArea(params.areaSlug);
 
   return {
@@ -44,10 +45,11 @@ const getArea = React.cache(async function getArea(areaSlug: string) {
 });
 
 interface AreaDetailsProps {
-  params: { areaSlug: string };
+  params: Promise<{ areaSlug: string }>;
 }
 
-async function AreaDetails({ params }: AreaDetailsProps) {
+async function AreaDetails(props: AreaDetailsProps) {
+  const params = await props.params;
   const area = await getArea(params.areaSlug);
 
   return (

@@ -1,6 +1,6 @@
-import WeatherDetail from '../WeatherDetail';
-import WeatherInfoIcon from '../WeatherInfoIcon/WeatherInfoIcon';
 import styles from './SunriseSunset.module.scss';
+
+import WeatherDetail from '../WeatherDetail';
 
 import React from 'react';
 

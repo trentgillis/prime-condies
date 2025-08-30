@@ -6,6 +6,7 @@ import React from 'react';
 import { Area, AreaChart, LabelList, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
+
 import WeatherIcon from '../WeatherIcon';
 
 interface HourlyGraphProps {
@@ -13,6 +14,7 @@ interface HourlyGraphProps {
   hourlyForecast: HourlyWeatherData[];
 }
 
+// eslint-disable-next-line
 function HourWeatherLabel({ x, y, value }: any) {
   return (
     <g>
@@ -41,7 +43,7 @@ function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
     return hourlyForecast.slice(0, 13).map((hour) => {
       return { ...hour, labelData: { icon: hour.weather[0].icon, temp: hour.temp } };
     });
-  }, hourlyForecast);
+  }, [hourlyForecast]);
 
   return (
     <div className={styles.wrapper}>
