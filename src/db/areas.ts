@@ -45,7 +45,7 @@ const areas: AreaShema[] = [
   },
   {
     areaSlug: 'heavens-gate',
-    name: "Heaven''s Gate",
+    name: "Heaven's Gate",
     place: 'Colorado',
     countryCode: 'USA',
     location: { lat: 38.932987, lng: -105.367974 },
