@@ -19,7 +19,7 @@ function WeatherSummary({ weatherDescription, currentTemp, todayTempMax, todayTe
       <div className={styles.summaryWrapper}>
         <div className={styles.summary}>
           <div className={styles.weatherIcon}>
-            <WeatherIcon iconCode="01d" />
+            <WeatherIcon iconCode={weatherDescription.icon} />
           </div>
           <span>{getWeatherDescription(weatherDescription.id, weatherDescription.main)}</span>
         </div>

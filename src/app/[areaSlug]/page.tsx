@@ -5,15 +5,16 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 
 import { sql } from '@/db';
-import { AREA_TABLE, AreaSelect } from '@/db/types';
+import { AreaSelect } from '@/db/types';
 import CurrentWeatherDetails from '@/components/CurrentWeather';
 import HourlyForecast from '@/components/HourlyForecast';
 import DailyForecast from '@/components/DailyForecast';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
+import { Metadata } from 'next';
 
 export const revalidate = 3600;
 
-export async function generateMetadata(props: { params: Promise<{ areaSlug: string }> }) {
+export async function generateMetadata(props: { params: Promise<{ areaSlug: string }> }): Promise<Metadata> {
   const params = await props.params;
   const area = await getArea(params.areaSlug);
 
@@ -23,18 +24,17 @@ export async function generateMetadata(props: { params: Promise<{ areaSlug: stri
 }
 
 const getArea = React.cache(async function getArea(areaSlug: string) {
-  const { rows: areas } = await sql.query<AreaSelect>(`
-    SELECT
-      id,
-      area_slug AS "areaSlug",
-      name,
-      place,
-      country_code AS "countryCode",
-      ST_X(location::geometry) AS lng,
-      ST_Y(location::geometry) AS lat
-    FROM ${AREA_TABLE}
-    WHERE area_slug = '${areaSlug}'
-  `);
+  const areas = await sql<AreaSelect>`
+    SELECT id,
+           area_slug                AS "areaSlug",
+           name,
+           place,
+           country_code             AS "countryCode",
+           ST_X(location::geometry) AS lng,
+           ST_Y(location::geometry) AS lat
+    FROM areas
+    WHERE area_slug = ${areaSlug}
+  `;
 
   if (areas.length === 0) {
     notFound();
