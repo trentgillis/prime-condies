@@ -1,8 +1,12 @@
 import React from 'react';
 
-function HumidityIcon() {
+interface HumidityIconProps {
+  className: string;
+}
+
+function HumidityIcon({ className }: HumidityIconProps) {
   return (
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
