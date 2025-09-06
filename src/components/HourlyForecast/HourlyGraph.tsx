@@ -30,7 +30,7 @@ function HourWeatherLabel({ x, y, value }: any) {
         {Math.round(value.temp)}&deg;
       </text>
       <foreignObject x={x - 8} y={y - 44} width={16} height={16}>
-        <WeatherIcon iconCode={value.icon} />
+        <WeatherIcon isDay iconCode={value.icon} />
       </foreignObject>
     </g>
   );
@@ -58,7 +58,10 @@ function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
             interval="preserveEnd"
             tick={{ fill: '#f8fafc', fontSize: '0.625rem' }}
             tickFormatter={(value) =>
-              new Date(value * 1000).toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric' })
+              new Date(value * 1000).toLocaleString('en-US', {
+                timeZone: areaTimezone,
+                hour: 'numeric',
+              })
             }
           />
           <YAxis tick={false} style={{ strokeWidth: 0 }} />

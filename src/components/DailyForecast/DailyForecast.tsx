@@ -24,13 +24,16 @@ function DailyForecast({ areaTimezone, dailyForecast }: DailyForecastProps) {
               <span className="font-outfit flex items-center justify-start text-sm font-medium">
                 {index === 0
                   ? 'Today'
-                  : new Date(day.dt * 1000).toLocaleString('en-US', { timeZone: areaTimezone, weekday: 'long' })}
+                  : new Date(day.dt * 1000).toLocaleString('en-US', {
+                      timeZone: areaTimezone,
+                      weekday: 'long',
+                    })}
               </span>
               <div className="hidden items-center justify-center lg:flex">
-                <WeatherIcon size={40} iconCode={day.weather[0].icon} />
+                <WeatherIcon isDay size={40} iconCode={day.weather[0].icon} />
               </div>
               <div className="flex items-center justify-center lg:hidden">
-                <WeatherIcon size={24} iconCode={day.weather[0].icon} />
+                <WeatherIcon isDay size={24} iconCode={day.weather[0].icon} />
               </div>
               <div className="flex items-center justify-end gap-2">
                 <span className="font-outfit min-w-6 text-sm font-medium text-neutral-300 lg:text-base">
