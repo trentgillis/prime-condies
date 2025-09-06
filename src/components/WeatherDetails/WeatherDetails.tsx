@@ -1,5 +1,4 @@
 import WeatherDetail from '../WeatherDetail';
-import styles from './WeatherDetails.module.scss';
 
 import React from 'react';
 
@@ -11,7 +10,7 @@ interface WeatherDetailsProps {
 
 function WeatherDetails({ precipitation, humidity, windSpeed }: WeatherDetailsProps) {
   return (
-    <div className={styles.wrapper}>
+    <div className="flex gap-6">
       <WeatherDetail variant="precipitation" label="Precipitation">
         <>{precipitation === 0 ? 0 : Math.round(precipitation * 100)}%</>
       </WeatherDetail>

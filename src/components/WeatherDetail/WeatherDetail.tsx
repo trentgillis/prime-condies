@@ -1,5 +1,3 @@
-import styles from './WeatherDetail.module.scss';
-
 import React from 'react';
 
 import WeatherInfoIcon, { WeatherInfoVarient } from '@/components/WeatherInfoIcon';
@@ -11,12 +9,12 @@ interface WeatherDataProps extends React.PropsWithChildren {
 
 function WeatherData({ variant, label, children }: WeatherDataProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.iconWrapper}>
+    <div className="flex w-16 flex-col items-center justify-center gap-0.5">
+      <div className="h-6 w-6 lg:h-5 lg:w-5">
         <WeatherInfoIcon icon={variant} />
       </div>
-      <span className={styles.detailLabel}>{label}</span>
-      <span className={styles.detailText}>{children}</span>
+      <span className="text-xs text-neutral-300 lg:text-xs">{label}</span>
+      <span className="font-outfit text-xs font-bold tracking-wide text-white lg:text-sm">{children}</span>
     </div>
   );
 }

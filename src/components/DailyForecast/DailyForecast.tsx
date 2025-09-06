@@ -1,5 +1,3 @@
-import styles from './DailyForecast.module.scss';
-
 import React from 'react';
 
 import { DailyWeatherData } from '@/lib/types/WeatherResponse';
@@ -12,25 +10,35 @@ interface DailyForecastProps {
 
 function DailyForecast({ areaTimezone, dailyForecast }: DailyForecastProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.headerWrapper}>
-        <h2>Daily Forecast</h2>
+    <div className="col-span-2 flex w-full flex-grow flex-col rounded border border-white">
+      <div className="border-b border-white p-2 lg:px-4">
+        <h2 className="text-sm lg:text-base">Daily Forecast</h2>
       </div>
-      <div className={styles.listWrapper}>
+      <div className="flex flex-col lg:flex-row">
         {dailyForecast.map((day, index) => {
           return (
-            <div key={day.dt} className={styles.dayDataWrapper}>
-              <span className={styles.dayText}>
+            <div
+              key={day.dt}
+              className="grid min-h-12 grid-cols-3 p-2 lg:flex lg:flex-grow lg:flex-col lg:items-center lg:justify-center lg:gap-4 lg:p-4"
+            >
+              <span className="font-outfit flex items-center justify-start text-sm font-medium">
                 {index === 0
                   ? 'Today'
                   : new Date(day.dt * 1000).toLocaleString('en-US', { timeZone: areaTimezone, weekday: 'long' })}
               </span>
-              <div className={styles.dayIconWrapper}>
-                <WeatherIcon iconCode={day.weather[0].icon} />
+              <div className="flex hidden items-center justify-center lg:flex">
+                <WeatherIcon size={40} iconCode={day.weather[0].icon} />
               </div>
-              <div className={styles.highLowWrapper}>
-                <span className={styles.lowText}>{Math.round(day.temp.min)}&deg;</span>
-                <span className={styles.highText}>{Math.round(day.temp.max)}&deg;</span>
+              <div className="flex items-center justify-center lg:hidden">
+                <WeatherIcon size={24} iconCode={day.weather[0].icon} />
+              </div>
+              <div className="flex items-center justify-end gap-2">
+                <span className="font-outfit min-w-6 text-sm font-medium text-neutral-300 lg:text-base">
+                  {Math.round(day.temp.min)}&deg;
+                </span>
+                <span className="font-outfit min-w-6 text-sm font-bold lg:text-base">
+                  {Math.round(day.temp.max)}&deg;
+                </span>
               </div>
             </div>
           );

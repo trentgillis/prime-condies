@@ -35,13 +35,14 @@ export type IconCode = keyof typeof WEATHER_ICONS;
 
 export interface WeatherIconProps {
   iconCode: IconCode;
+  size?: number;
   strokeWidth?: number;
 }
 
-function WeatherIcon({ iconCode, strokeWidth = 2 }: WeatherIconProps) {
+function WeatherIcon({ iconCode, size = 24, strokeWidth = 2 }: WeatherIconProps) {
   const Icon = WEATHER_ICONS[iconCode];
 
-  return Icon ? <Icon strokeWidth={strokeWidth} /> : null;
+  return Icon ? <Icon size={size} strokeWidth={strokeWidth} /> : null;
 }
 
 export default WeatherIcon;
