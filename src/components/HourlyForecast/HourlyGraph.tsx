@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './HourlyGraph.module.scss';
-
 import React from 'react';
 import { Area, AreaChart, LabelList, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
@@ -46,7 +44,7 @@ function HourlyGraph({ areaTimezone, hourlyForecast }: HourlyGraphProps) {
   }, [hourlyForecast]);
 
   return (
-    <div className={styles.wrapper}>
+    <div className="hidden h-4/5 lg:block">
       <ResponsiveContainer>
         <AreaChart margin={{ left: -48, bottom: 0, right: 24, top: 40 }} data={graphData}>
           <defs>

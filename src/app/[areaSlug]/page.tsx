@@ -1,5 +1,4 @@
 import 'server-only';
-import styles from './page.module.scss';
 
 import React from 'react';
 import { notFound } from 'next/navigation';
@@ -53,14 +52,14 @@ async function AreaDetails(props: AreaDetailsProps) {
   const area = await getArea(params.areaSlug);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.areaHeaderWrapper}>
-        <h1>{area.name}</h1>
-        <span className={styles.areaLocation}>
+    <main className="flex h-full flex-col gap-4 py-6 lg:gap-6 lg:py-10">
+      <div className="flex flex-col items-center lg:items-start">
+        <h1 className="text-2xl tracking-wider lg:tracking-widest">{area.name}</h1>
+        <span className="font-outfit order-first text-sm tracking-wide lg:text-base">
           {area.place}, {area.countryCode}
         </span>
       </div>
-      <div className={styles.contentWrapper}>
+      <div className="grid grid-cols-1 grid-rows-[repeat(3,min-content)] gap-6 lg:flex-grow lg:grid-cols-[35%_65%] lg:grid-rows-[repeat(2,min-content)] lg:gap-x-6 lg:gap-y-10">
         <CurrentWeatherDetails
           areaTimezone={area.weatherData.timezone}
           todayWeather={area.weatherData.daily[0]}

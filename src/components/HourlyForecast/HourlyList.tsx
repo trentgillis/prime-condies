@@ -1,5 +1,3 @@
-import styles from './HourlyList.module.scss';
-
 import React from 'react';
 
 import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
@@ -12,23 +10,23 @@ interface HourlyListProps {
 
 function HourlyList({ areaTimezone, hourlyForecast }: HourlyListProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.headerWrapper}>
-        <h2>Hourly Forecast</h2>
+    <div className="flex w-full flex-col rounded border border-white lg:hidden">
+      <div className="border-b border-white p-2">
+        <h2 className="text-sm">Hourly Forecast</h2>
       </div>
-      <div className={styles.listWrapper}>
+      <div className="flex overflow-x-scroll">
         {hourlyForecast.slice(0, 24).map((hour, index) => {
           return (
-            <div key={hour.dt} className={styles.hourDataWrapper}>
-              <span className={styles.hourText}>
+            <div key={hour.dt} className="flex min-w-14 flex-col items-center gap-2 p-2">
+              <span className="text-xs">
                 {index === 0
                   ? 'Now'
                   : new Date(hour.dt * 1000).toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric' })}
               </span>
-              <div className={styles.hourIconWrapper}>
+              <div className="w-6">
                 <WeatherIcon iconCode={hour.weather[0].icon} />
               </div>
-              <span className={styles.hourWeatherText}>{Math.round(hour.temp)}&deg;</span>
+              <span className="font-outfit text-sm font-bold">{Math.round(hour.temp)}&deg;</span>
             </div>
           );
         })}

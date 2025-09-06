@@ -1,5 +1,3 @@
-import styles from './HourlyForecast.module.scss';
-
 import React from 'react';
 
 import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
@@ -14,7 +12,7 @@ interface HourlyForecastProps {
 
 function HourlyForecast({ areaTimezone, hourlyForecast }: HourlyForecastProps) {
   return (
-    <div className={styles.wrapper}>
+    <div className="col-span-2 lg:col-start-2 lg:flex lg:flex-col lg:justify-end">
       <HourlyList areaTimezone={areaTimezone} hourlyForecast={hourlyForecast} />
       <HourlyGraph areaTimezone={areaTimezone} hourlyForecast={hourlyForecast} />
     </div>

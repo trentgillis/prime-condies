@@ -1,5 +1,3 @@
-import styles from './AreasListItem.module.scss';
-
 import React from 'react';
 import Link from 'next/link';
 
@@ -17,7 +15,10 @@ function AreasListItem({ area }: AreaListItemProps) {
   const currentWeatherData = area.weatherData.current;
 
   return (
-    <Link href={`/${area.areaSlug}`} className={styles.wrapper}>
+    <Link
+      href={`/${area.areaSlug}`}
+      className="grid grid-cols-[1fr_80px] rounded border border-white p-4 no-underline hover:bg-neutral-700 lg:grid-cols-3 lg:p-6"
+    >
       <AreaSummary
         areaName={area.name}
         areaPlace={area.place}
@@ -26,7 +27,7 @@ function AreasListItem({ area }: AreaListItemProps) {
         tempMin={area.weatherData.daily[0].temp.min}
         tempMax={area.weatherData.daily[0].temp.max}
       />
-      <div className={styles.detailsWrapper}>
+      <div className="hidden lg:col-start-2 lg:flex lg:items-center lg:justify-center">
         <WeatherDetails
           precipitation={area.weatherData.hourly[0].pop}
           humidity={currentWeatherData.humidity}

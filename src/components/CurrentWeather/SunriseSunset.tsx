@@ -1,5 +1,3 @@
-import styles from './SunriseSunset.module.scss';
-
 import WeatherDetail from '../WeatherDetail';
 
 import React from 'react';
@@ -12,7 +10,7 @@ interface SunriseSunsetProps {
 
 function SunriseSunset({ areaTimezone, sunriseDatetime, sunsetDatetime }: SunriseSunsetProps) {
   return (
-    <div className={styles.wrapper}>
+    <div className="flex w-full items-center justify-center gap-2 pt-2 lg:pt-6">
       <WeatherDetail variant="sunrise" label="Sunrise">
         {new Date(sunriseDatetime * 1000).toLocaleString('en-US', {
           timeZone: areaTimezone,
@@ -20,7 +18,7 @@ function SunriseSunset({ areaTimezone, sunriseDatetime, sunsetDatetime }: Sunris
           minute: 'numeric',
         })}
       </WeatherDetail>
-      <div className={styles.arrowIcon}>
+      <div className="h-6 w-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

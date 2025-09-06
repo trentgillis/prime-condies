@@ -1,5 +1,3 @@
-import styles from './AreasList.module.scss';
-
 import React from 'react';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
@@ -12,7 +10,7 @@ type AreasListProps = {
 
 function AreasList({ areas }: AreasListProps) {
   return (
-    <div className={styles.wrapper}>
+    <div className="flex flex-col gap-2">
       {areas.map((area) => {
         return <AreasListItem key={area.id} area={area} />;
       })}

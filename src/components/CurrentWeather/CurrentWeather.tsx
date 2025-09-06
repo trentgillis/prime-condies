@@ -1,5 +1,3 @@
-import styles from './CurrentWeather.module.scss';
-
 import React from 'react';
 
 import { CurrentWeatherData, DailyWeatherData } from '@/lib/types/WeatherResponse';
@@ -16,10 +14,10 @@ interface CurrentWeatherProps {
 
 function CurrentWeather({ areaTimezone, currentForecast, todayWeather }: CurrentWeatherProps) {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.timeWrapper}>
-        <span className={styles.timeLabel}>Now</span>
-        <span className={styles.timeText}>
+    <div className="col-span-2 flex w-full flex-col items-center gap-4 pb-4 lg:col-span-1 lg:p-4">
+      <div className="flex w-full flex-col items-center">
+        <span className="text-xs">Now</span>
+        <span className="font-outfit text-sm">
           {new Date().toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric', minute: 'numeric' })}
         </span>
       </div>
@@ -34,7 +32,7 @@ function CurrentWeather({ areaTimezone, currentForecast, todayWeather }: Current
         sunriseDatetime={currentForecast.sunrise}
         sunsetDatetime={currentForecast.sunset}
       />
-      <div className={styles.detailsWrapper}>
+      <div className="pt-2 lg:pt-6">
         <WeatherDetails
           precipitation={todayWeather.pop}
           humidity={currentForecast.humidity}
