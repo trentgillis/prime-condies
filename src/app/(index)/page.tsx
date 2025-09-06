@@ -7,6 +7,7 @@ import { fetchOwmWeatherData } from '@/lib/api/owm';
 import { AreaSelect } from '@/db/types';
 
 import { AreasList } from './_components/area-list';
+import { fetchAreaWeather } from '@/lib/api/weather';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,7 +31,8 @@ async function getAreas() {
   return await Promise.all(
     areas.map(async (area) => {
       const weatherData = await fetchOwmWeatherData(area);
-      return { ...area, weatherData: weatherData };
+      const meteoData = await fetchAreaWeather(area.lat, area.lng);
+      return { ...area, weatherData, weather: meteoData };
     }),
   );
 }
