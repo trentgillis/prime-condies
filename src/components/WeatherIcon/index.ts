@@ -1,2 +1,2 @@
-export * from './WeatherIcon';
-export { default } from './WeatherIcon';
+export * from './weather-icon';
+export { default } from './weather-icon';

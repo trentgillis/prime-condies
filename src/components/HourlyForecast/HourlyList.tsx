@@ -21,10 +21,13 @@ function HourlyList({ areaTimezone, hourlyForecast }: HourlyListProps) {
               <span className="text-xs">
                 {index === 0
                   ? 'Now'
-                  : new Date(hour.dt * 1000).toLocaleString('en-US', { timeZone: areaTimezone, hour: 'numeric' })}
+                  : new Date(hour.dt * 1000).toLocaleString('en-US', {
+                      timeZone: areaTimezone,
+                      hour: 'numeric',
+                    })}
               </span>
               <div className="w-6">
-                <WeatherIcon iconCode={hour.weather[0].icon} />
+                <WeatherIcon isDay iconCode={hour.weather[0].icon} />
               </div>
               <span className="font-outfit text-sm font-bold">{Math.round(hour.temp)}&deg;</span>
             </div>
