@@ -2,7 +2,7 @@
 
 ## TODO:
 
-- [ ] Migrate to tailwind
+- [x] Migrate to tailwind
 - [ ] Migrate to open-meteo for weather data
 - [ ] New mockups in Figma
 - [ ] Map implementation architecture
