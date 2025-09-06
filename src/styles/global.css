@@ -33,7 +33,3 @@ body {
   font-family: var(--font-open-sans);
   background-color: var(--color-background);
 }
-
-* {
-  color: var(--color-white);
-}

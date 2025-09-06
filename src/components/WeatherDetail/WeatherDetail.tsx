@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherInfoIcon, { WeatherInfoVarient } from '@/components/WeatherInfoIcon';
+import { WeatherInfoIcon, WeatherInfoVarient } from '@/components';
 
 interface WeatherDataProps extends React.PropsWithChildren {
   variant: WeatherInfoVarient;

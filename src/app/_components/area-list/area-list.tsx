@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
-import AreasListItem from './AreasListItem';
+import AreasListItem from './area-list-item';
 
 type AreasListProps = {
   areas: AreaResponse[];
@@ -10,7 +10,7 @@ type AreasListProps = {
 
 function AreasList({ areas }: AreasListProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       {areas.map((area) => {
         return <AreasListItem key={area.id} area={area} />;
       })}

@@ -3,9 +3,11 @@ import 'server-only';
 import React from 'react';
 
 import { sql } from '@/db';
-import AreasList from '@/components/AreasList';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
 import { AreaSelect } from '@/db/types';
+
+import { AreasList } from './_components/area-list';
+
 export const dynamic = 'force-dynamic';
 
 async function getAreas() {
@@ -37,8 +39,8 @@ async function Home() {
   const areas = await getAreas();
 
   return (
-    <main className="flex flex-col gap-2 p-2 sm:gap-3 sm:p-5">
-      <h1>Areas</h1>
+    <main className="flex flex-col gap-2 p-2 lg:gap-4 lg:p-5">
+      <h1 className="text-xl text-zinc-50 lg:text-3xl">Areas</h1>
       <AreasList areas={areas} />
     </main>
   );
