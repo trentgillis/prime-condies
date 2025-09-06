@@ -11,18 +11,25 @@ interface WeatherSummaryProps {
   todayTempMin: number;
 }
 
-function WeatherSummary({ weatherDescription, currentTemp, todayTempMax, todayTempMin }: WeatherSummaryProps) {
+function WeatherSummary({
+  weatherDescription,
+  currentTemp,
+  todayTempMax,
+  todayTempMin,
+}: WeatherSummaryProps) {
   return (
     <div className="flex w-full items-center justify-center gap-6 lg:flex-row lg:gap-10">
       <div className="flex flex-col items-center lg:flex-grow lg:items-end">
         <div className="flex flex-col items-center gap-1">
           <div className="hidden h-16 w-16 lg:block lg:h-24 lg:w-24">
-            <WeatherIcon size={100} iconCode={weatherDescription.icon} />
+            <WeatherIcon size={100} iconCode={0} />
           </div>
           <div className="h-16 w-16 lg:hidden lg:h-24 lg:w-24">
-            <WeatherIcon size={64} iconCode={weatherDescription.icon} />
+            <WeatherIcon size={64} iconCode={0} />
           </div>
-          <span className="text-sm">{getWeatherDescription(weatherDescription.id, weatherDescription.main)}</span>
+          <span className="text-sm">
+            {getWeatherDescription(weatherDescription.id, weatherDescription.main)}
+          </span>
         </div>
       </div>
       <div className="flex flex-col items-center lg:flex-grow lg:items-start">
