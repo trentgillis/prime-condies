@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
-import AreasListItem from './AreasListItem';
+import AreasListItem from './area-list-item';
 
 type AreasListProps = {
   areas: AreaResponse[];
