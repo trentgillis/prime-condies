@@ -26,7 +26,7 @@ function DailyForecast({ areaTimezone, dailyForecast }: DailyForecastProps) {
                   ? 'Today'
                   : new Date(day.dt * 1000).toLocaleString('en-US', { timeZone: areaTimezone, weekday: 'long' })}
               </span>
-              <div className="flex hidden items-center justify-center lg:flex">
+              <div className="hidden items-center justify-center lg:flex">
                 <WeatherIcon size={40} iconCode={day.weather[0].icon} />
               </div>
               <div className="flex items-center justify-center lg:hidden">
