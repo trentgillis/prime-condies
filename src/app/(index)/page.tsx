@@ -32,7 +32,6 @@ async function getAreas() {
     areas.map(async (area) => {
       const weatherData = await fetchOwmWeatherData(area);
       const meteoData = await fetchAreaWeather(area.lat, area.lng);
-      console.log({ area, meteoData });
       return { ...area, weatherData, weather: meteoData };
     }),
   );
