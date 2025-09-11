@@ -37,7 +37,7 @@ function AreaListItemWeatherDetail({ area }: AreaListItemWeatherDetailProps) {
           {Math.round(area.weather.current.wind_speed_10m)}mph
         </div>
       </div>
-      <div className="hidden flex-1 flex-col items-center gap-1 p-2 lg:flex lg:p-3">
+      <div className="hidden flex-1 flex-col gap-1 p-2 lg:flex lg:p-3">
         <div className="flex items-center gap-1">
           {area.weather.current.is_day === 1 ? (
             <>
