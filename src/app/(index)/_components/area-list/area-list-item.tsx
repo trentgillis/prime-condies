@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
 import AreaListItemName from './area-list-item-name';
-import AreaListItemWeatherProps from './area-list-item-weather';
+import AreaListItemWeather from './area-list-item-weather';
 import AreaListItemWeatherDetail from './area-list-item-weather-detail';
 
 type AreaListItemProps = {
@@ -19,7 +19,7 @@ function AreasListItem({ area }: AreaListItemProps) {
     >
       <div className="grid grid-cols-[1fr_120px] p-2 pb-3 lg:p-3">
         <AreaListItemName area={area} />
-        <AreaListItemWeatherProps area={area} />
+        <AreaListItemWeather area={area} />
       </div>
       <div className="border-t border-zinc-700">
         <AreaListItemWeatherDetail area={area} />

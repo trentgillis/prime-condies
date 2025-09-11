@@ -7,15 +7,23 @@ interface AreaListItemWeatherProps {
   area: AreaResponse;
 }
 
-function AreaListItemWeatherProps({ area }: AreaListItemWeatherProps) {
+function AreaListItemWeather({ area }: AreaListItemWeatherProps) {
   return (
     <div className="flex flex-col items-end">
       <div className="flex h-full items-center gap-2">
         <div className="hidden lg:block">
-          <WeatherIcon isDay size={32} iconCode={area.weather.current.weather_code} />
+          <WeatherIcon
+            isDay={area.weather.current.is_day === 1}
+            size={32}
+            iconCode={area.weather.current.weather_code}
+          />
         </div>
         <div className="lg:hidden">
-          <WeatherIcon isDay size={24} iconCode={area.weather.current.weather_code} />
+          <WeatherIcon
+            isDay={area.weather.current.is_day === 1}
+            size={24}
+            iconCode={area.weather.current.weather_code}
+          />
         </div>
         <h3 className="text-xl text-zinc-50 lg:text-2xl">
           {Math.round(area.weather.current.temperature_2m)}&deg;
@@ -33,4 +41,4 @@ function AreaListItemWeatherProps({ area }: AreaListItemWeatherProps) {
   );
 }
 
-export default AreaListItemWeatherProps;
+export default AreaListItemWeather;
