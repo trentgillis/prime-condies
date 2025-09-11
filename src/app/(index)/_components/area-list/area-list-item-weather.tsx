@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherIcon from '@/components/WeatherIcon';
+import WeatherIcon from '@/components/weather-icon';
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
 interface AreaListItemWeatherProps {

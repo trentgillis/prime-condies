@@ -1,4 +1,4 @@
-import { IconCode } from '@/components/WeatherIcon';
+import { IconCode } from '@/components/weather-icon';
 
 export type WeatherResponse = {
   lat: number;

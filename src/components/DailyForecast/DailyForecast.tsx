@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { DailyWeatherData } from '@/lib/types/WeatherResponse';
-import WeatherIcon from '@/components/WeatherIcon';
+import WeatherIcon from '@/components/weather-icon';
 
 interface DailyForecastProps {
   areaTimezone: string;

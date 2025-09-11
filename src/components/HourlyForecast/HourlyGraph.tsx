@@ -5,7 +5,7 @@ import { Area, AreaChart, LabelList, ResponsiveContainer, XAxis, YAxis } from 'r
 
 import { HourlyWeatherData } from '@/lib/types/WeatherResponse';
 
-import WeatherIcon from '../WeatherIcon';
+import WeatherIcon from '../weather-icon';
 
 interface HourlyGraphProps {
   areaTimezone: string;
