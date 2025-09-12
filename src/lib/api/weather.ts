@@ -1,3 +1,4 @@
+import { AreaWeatherData } from '../types/AreaWeatherData';
 import { getOpenMeteoMockData } from './open-meteo-mock';
 
 const OPEN_METEO_API_URL = 'https://api.open-meteo.com/v1/forecast';
@@ -24,6 +25,8 @@ const OPEN_METEO_DAILY_DATA = [
   'temperature_2m_min',
   'sunset',
   'sunrise',
+  'precipitation_probability_max',
+  'dew_point_2m_max',
 ];
 
 /**
@@ -54,12 +57,14 @@ function buildQueryParams(lat: number, lng: number) {
  * @param lng longitude corrdinate
  * @returns Weather data for passed in coordinates
  */
-export async function fetchAreaWeather(lat: number, lng: number) {
+export async function fetchAreaWeather(lat: number, lng: number): Promise<AreaWeatherData> {
   if (process.env.MOCK_WEAHTER_API === 'true') {
     return Promise.resolve(getOpenMeteoMockData());
   }
 
-  const res = await fetch(`${OPEN_METEO_API_URL}?${buildQueryParams(lat, lng)}`, {
+  const url = `${OPEN_METEO_API_URL}?${buildQueryParams(lat, lng)}`;
+  console.log(url);
+  const res = await fetch(url, {
     next: { revalidate: 3600 },
   });
 

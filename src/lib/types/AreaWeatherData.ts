@@ -34,20 +34,24 @@ export interface AreaWeatherData {
   };
   daily_units: {
     time: string;
-    sunrise: string;
-    sunset: string;
     weather_code: string;
     relative_humidity_2m_mean: string;
     temperature_2m_max: string;
     temperature_2m_min: string;
+    sunset: string;
+    sunrise: string;
+    precipitation_probability_max: string;
+    dew_point_2m_max: string;
   };
   daily: {
     time: number[];
-    sunrise: number[];
-    sunset: number[];
     weather_code: number[];
     relative_humidity_2m_mean: number[];
     temperature_2m_max: number[];
     temperature_2m_min: number[];
+    sunset: number[];
+    sunrise: number[];
+    precipitation_probability_max: number[];
+    dew_point_2m_max: number[];
   };
 }

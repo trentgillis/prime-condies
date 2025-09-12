@@ -63,8 +63,14 @@ async function AreaDetails(props: AreaDetailsProps) {
         </span>
       </div>
       <WeatherDetailsGrid>
-        <PrecipitationCard />
-        <HumidityCard />
+        <PrecipitationCard
+          precipitation={area.weather.current.precipitation}
+          precipitationProbability={area.weather.daily.precipitation_probability_max[0]}
+        />
+        <HumidityCard
+          humidity={area.weather.daily.relative_humidity_2m_mean[0]}
+          dewPoint={area.weather.daily.dew_point_2m_max[0]}
+        />
       </WeatherDetailsGrid>
     </main>
   );
