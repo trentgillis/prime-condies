@@ -1,4 +1,5 @@
 import styles from './weather-details-grid.module.css';
+
 import React from 'react';
 
 interface WeatherDetailsGridProps {

@@ -2,9 +2,7 @@ import weatherGridStyles from './weather-details-grid.module.css';
 
 import React from 'react';
 
-import Card from '@/components/card/card';
-import { WeatherInfoIcon } from '@/components';
-import CardHeader from '@/components/card/card-header';
+import { Card, CardHeader, WeatherInfoIcon } from '@/components';
 
 function HumidityCard() {
   return (

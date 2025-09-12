@@ -3,11 +3,11 @@ import 'server-only';
 import React from 'react';
 
 import { sql } from '@/db';
-import { fetchOwmWeatherData } from '@/lib/api/owm';
 import { AreaSelect } from '@/db/types';
+import { fetchOwmWeatherData } from '@/lib/api/owm';
+import { fetchAreaWeather } from '@/lib/api/weather';
 
 import { AreasList } from './_components/area-list';
-import { fetchAreaWeather } from '@/lib/api/weather';
 
 export const dynamic = 'force-dynamic';
 
