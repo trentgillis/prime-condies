@@ -1,0 +1,32 @@
+/*
+Using grid template areas to define the space that elements will render in.
+This is not something supported by tailwind, so manually creating the layout
+in a css module here.
+*/
+
+.weatherGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'precipitation humidity'
+    'hourly-forecast hourly-forecast'
+    'wind sunrise-sunset';
+  grid-template-rows: 160px;
+  gap: 16px;
+}
+
+.gridAreaPrecipiration {
+  grid-area: precipitation;
+}
+
+.gridAreaHumidity {
+  grid-area: humidity;
+}
+
+@media (min-width: 1024px) {
+  .weatherGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 'current feels-like precipitation humidity wind sunrise-sunset';
+  }
+}
