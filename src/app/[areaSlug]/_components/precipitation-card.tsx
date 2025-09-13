@@ -12,7 +12,7 @@ interface PrecipitationCardProps {
 function PrecipitationCard({ precipitation, precipitationProbability }: PrecipitationCardProps) {
   return (
     <Card
-      className={`${weatherGridStyles.gridAreaPrecipitation} flex aspect-square w-full flex-col gap-2`}
+      className={`${weatherGridStyles.gridAreaPrecipitation} flex h-full w-full flex-col gap-2`}
     >
       <CardHeader>
         <WeatherInfoIcon className="fill-zinc-400" icon="precipitation" />

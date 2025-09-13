@@ -7,10 +7,13 @@ import { notFound } from 'next/navigation';
 import { sql } from '@/db';
 import { AreaSelect } from '@/db/types';
 import { fetchAreaWeather } from '@/lib/api/weather';
+import { Area } from '@/lib/types/Area';
 
 import WeatherDetailsGrid from './_components/weather-details-grid';
 import PrecipitationCard from './_components/precipitation-card';
 import HumidityCard from './_components/humidity-card';
+import CurrentWeather from './_components/current-weather';
+import AreaDetailsPageHeader from './_components/area-details-page-header';
 
 export const revalidate = 3600;
 
@@ -52,16 +55,11 @@ interface AreaDetailsProps {
 
 async function AreaDetails(props: AreaDetailsProps) {
   const params = await props.params;
-  const area = await getArea(params.areaSlug);
+  const area: Area = await getArea(params.areaSlug);
 
   return (
     <main className="flex h-full flex-col gap-4 py-6 lg:gap-6 lg:py-10">
-      <div className="flex flex-col items-center lg:items-start">
-        <h1 className="text-2xl tracking-wider text-zinc-50 lg:tracking-widest">{area.name}</h1>
-        <span className="font-outfit order-first text-sm tracking-wide text-zinc-200 lg:text-base">
-          {area.place}, {area.countryCode}
-        </span>
-      </div>
+      <AreaDetailsPageHeader area={area} />
       <WeatherDetailsGrid>
         <PrecipitationCard
           precipitation={area.weather.current.precipitation}

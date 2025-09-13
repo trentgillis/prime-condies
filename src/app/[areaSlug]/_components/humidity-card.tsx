@@ -11,9 +11,7 @@ interface HumidityCardProps {
 
 function HumidityCard({ humidity, dewPoint }: HumidityCardProps) {
   return (
-    <Card
-      className={`${weatherGridStyles.gridAreaHumidity} flex aspect-square w-full flex-col gap-2`}
-    >
+    <Card className={`${weatherGridStyles.gridAreaHumidity} flex h-full w-full flex-col gap-2`}>
       <CardHeader>
         <WeatherInfoIcon className="fill-zinc-400" icon="humidity" />
         Humidity

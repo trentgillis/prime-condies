@@ -11,7 +11,12 @@ in a css module here.
     'precipitation humidity'
     'hourly-forecast hourly-forecast'
     'wind sunrise-sunset';
+  grid-template-rows: 160px;
   gap: 16px;
+}
+
+.gridAreaCurrent {
+  grid-area: current;
 }
 
 .gridAreaPrecipitation {
