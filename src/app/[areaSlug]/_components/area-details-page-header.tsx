@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Area } from '@/lib/types/Area';
-import WeatherIcon from '@/components/weather-icon';
+import { WeatherIcon } from '@/components';
 
 interface AreaDetailsPageHeaderProps {
   area: Area;

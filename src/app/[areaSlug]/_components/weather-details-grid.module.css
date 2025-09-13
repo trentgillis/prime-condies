@@ -11,7 +11,7 @@ in a css module here.
     'precipitation humidity'
     'hourly-forecast hourly-forecast'
     'wind sunrise-sunset';
-  grid-template-rows: 160px;
+  grid-auto-rows: 160px;
   gap: 16px;
 }
 
@@ -21,6 +21,10 @@ in a css module here.
 
 .gridAreaHumidity {
   grid-area: humidity;
+}
+
+.gridAreaFeelsLike {
+  grid-area: feels-like;
 }
 
 @media (min-width: 1024px) {

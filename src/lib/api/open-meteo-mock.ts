@@ -26,6 +26,7 @@ export function getOpenMeteoMockData(): AreaWeatherData {
       temperature_2m: 54.8,
       precipitation: 0.0,
       wind_speed_10m: 6.6,
+      apparent_temperature: 54,
     },
     hourly_units: {
       time: 'unixtime',

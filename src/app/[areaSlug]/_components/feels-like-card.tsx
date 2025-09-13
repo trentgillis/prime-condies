@@ -12,7 +12,9 @@ interface FeelsLikeCardProps {
 
 function FeelsLikeCard({ feelsLikeTemp, actualTemp }: FeelsLikeCardProps) {
   return (
-    <Card className={`${weatherGridStyles.gridAreaFeelsLiks} flex h-full w-full flex-col gap-2`}>
+    <Card
+      className={`${weatherGridStyles.gridAreaFeelsLike} hidden h-full w-full flex-col gap-2 lg:flex`}
+    >
       <CardHeader>
         <Thermometer className="h-3 w-3" />
         Feels Like
