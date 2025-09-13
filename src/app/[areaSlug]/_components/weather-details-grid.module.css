@@ -31,6 +31,10 @@ in a css module here.
   grid-area: wind;
 }
 
+.gridAreaSunriseSunset {
+  grid-area: sunrise-sunset;
+}
+
 @media (min-width: 1024px) {
   .weatherGrid {
     display: grid;

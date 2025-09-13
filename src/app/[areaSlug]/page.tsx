@@ -15,6 +15,7 @@ import HumidityCard from './_components/humidity-card';
 import AreaDetailsPageHeader from './_components/area-details-page-header';
 import FeelsLikeCard from './_components/feels-like-card';
 import WindCard from './_components/wind-card';
+import SunsetCard from './_components/sunset-card';
 
 export const revalidate = 3600;
 
@@ -79,6 +80,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           windGusts={area.weather.current.wind_gusts_10m}
           windDirection={area.weather.current.wind_direction_10m}
         />
+        <SunsetCard sunset={area.weather.daily.sunset[0]} timezone={area.weather.timezone} />
       </WeatherDetailsGrid>
     </main>
   );
