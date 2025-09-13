@@ -14,6 +14,7 @@ import PrecipitationCard from './_components/precipitation-card';
 import HumidityCard from './_components/humidity-card';
 import AreaDetailsPageHeader from './_components/area-details-page-header';
 import FeelsLikeCard from './_components/feels-like-card';
+import WindCard from './_components/wind-card';
 
 export const revalidate = 3600;
 
@@ -72,6 +73,11 @@ async function AreaDetails(props: AreaDetailsProps) {
         <FeelsLikeCard
           feelsLikeTemp={area.weather.current.apparent_temperature}
           actualTemp={area.weather.current.temperature_2m}
+        />
+        <WindCard
+          windSpeed={area.weather.current.wind_speed_10m}
+          windGusts={area.weather.current.wind_gusts_10m}
+          windDirection={area.weather.current.wind_direction_10m}
         />
       </WeatherDetailsGrid>
     </main>

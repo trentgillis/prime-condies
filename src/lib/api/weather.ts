@@ -17,6 +17,9 @@ const OPEN_METEO_CURRENT_DATA = [
   'weather_code',
   'wind_speed_10m',
   'apparent_temperature',
+  'wind_speed_10m',
+  'wind_direction_10m',
+  'wind_gusts_10m',
 ];
 const OPEN_METEO_HOURLY_DATA = [...OPEN_METEO_BASE_DATA];
 const OPEN_METEO_DAILY_DATA = [

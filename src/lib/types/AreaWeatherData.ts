@@ -13,17 +13,22 @@ export interface AreaWeatherData {
     is_day: string;
     temperature_2m: string;
     precipitation: string;
+    apparent_temperature: string;
     wind_speed_10m: string;
+    wind_direction_10m: string;
+    wind_gusts_10m: string;
   };
   current: {
     time: number;
     interval: number;
     weather_code: number;
     is_day: number;
+    apparent_temperature: number;
     temperature_2m: number;
     precipitation: number;
     wind_speed_10m: number;
-    apparent_temperature: number;
+    wind_direction_10m: number;
+    wind_gusts_10m: number;
   };
   hourly_units: {
     time: string;

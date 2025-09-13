@@ -27,6 +27,10 @@ in a css module here.
   grid-area: feels-like;
 }
 
+.gridAreaWind {
+  grid-area: wind;
+}
+
 @media (min-width: 1024px) {
   .weatherGrid {
     display: grid;
