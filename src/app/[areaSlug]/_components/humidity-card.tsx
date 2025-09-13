@@ -2,7 +2,8 @@ import weatherGridStyles from './weather-details-grid.module.css';
 
 import React from 'react';
 
-import { Card, CardHeader, WeatherInfoIcon } from '@/components';
+import { Card, CardHeader } from '@/components';
+import { Waves } from 'lucide-react';
 
 interface HumidityCardProps {
   humidity: number;
@@ -13,7 +14,7 @@ function HumidityCard({ humidity, dewPoint }: HumidityCardProps) {
   return (
     <Card className={`${weatherGridStyles.gridAreaHumidity} flex h-full w-full flex-col gap-2`}>
       <CardHeader>
-        <WeatherInfoIcon className="fill-zinc-400" icon="humidity" />
+        <Waves className="h-3 w-3" />
         Humidity
       </CardHeader>
       <div className="flex flex-1 flex-col justify-between">

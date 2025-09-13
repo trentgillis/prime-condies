@@ -12,8 +12,8 @@ import { Area } from '@/lib/types/Area';
 import WeatherDetailsGrid from './_components/weather-details-grid';
 import PrecipitationCard from './_components/precipitation-card';
 import HumidityCard from './_components/humidity-card';
-import CurrentWeather from './_components/current-weather';
 import AreaDetailsPageHeader from './_components/area-details-page-header';
+import FeelsLikeCard from './_components/feels-like-card';
 
 export const revalidate = 3600;
 
@@ -68,6 +68,10 @@ async function AreaDetails(props: AreaDetailsProps) {
         <HumidityCard
           humidity={area.weather.daily.relative_humidity_2m_mean[0]}
           dewPoint={area.weather.daily.dew_point_2m_max[0]}
+        />
+        <FeelsLikeCard
+          feelsLikeTemp={area.weather.current.apparent_temperature}
+          actualTemp={area.weather.current.temperature_2m}
         />
       </WeatherDetailsGrid>
     </main>

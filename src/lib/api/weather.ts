@@ -16,6 +16,7 @@ const OPEN_METEO_CURRENT_DATA = [
   'precipitation',
   'weather_code',
   'wind_speed_10m',
+  'apparent_temperature',
 ];
 const OPEN_METEO_HOURLY_DATA = [...OPEN_METEO_BASE_DATA];
 const OPEN_METEO_DAILY_DATA = [

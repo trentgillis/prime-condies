@@ -2,7 +2,8 @@ import weatherGridStyles from './weather-details-grid.module.css';
 
 import React from 'react';
 
-import { Card, CardHeader, WeatherInfoIcon } from '@/components';
+import { Card, CardHeader } from '@/components';
+import { Droplet } from 'lucide-react';
 
 interface PrecipitationCardProps {
   precipitation: number;
@@ -15,7 +16,7 @@ function PrecipitationCard({ precipitation, precipitationProbability }: Precipit
       className={`${weatherGridStyles.gridAreaPrecipitation} flex h-full w-full flex-col gap-2`}
     >
       <CardHeader>
-        <WeatherInfoIcon className="fill-zinc-400" icon="precipitation" />
+        <Droplet className="h-3 w-3" />
         Precipitation
       </CardHeader>
       <div className="flex flex-1 flex-col justify-between">

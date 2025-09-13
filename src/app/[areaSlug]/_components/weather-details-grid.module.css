@@ -15,10 +15,6 @@ in a css module here.
   gap: 16px;
 }
 
-.gridAreaCurrent {
-  grid-area: current;
-}
-
 .gridAreaPrecipitation {
   grid-area: precipitation;
 }
@@ -31,6 +27,6 @@ in a css module here.
   .weatherGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: 'current feels-like precipitation humidity wind sunrise-sunset';
+    grid-template-areas: 'feels-like precipitation humidity wind sunrise-sunset';
   }
 }

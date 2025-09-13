@@ -23,6 +23,7 @@ export interface AreaWeatherData {
     temperature_2m: number;
     precipitation: number;
     wind_speed_10m: number;
+    apparent_temperature: number;
   };
   hourly_units: {
     time: string;

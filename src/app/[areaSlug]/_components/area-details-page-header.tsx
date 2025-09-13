@@ -33,15 +33,15 @@ function AreaDetailsPageHeader({ area }: AreaDetailsPageHeaderProps) {
             />
           </div>
           <h2 className="font-outfit text-5xl font-bold text-zinc-50 lg:text-3xl">
-            {area.weather.current.temperature_2m}&deg;
+            {Math.round(area.weather.current.temperature_2m)}&deg;
           </h2>
         </div>
         <div className="flex gap-2 text-zinc-200">
           <span className="text-sm text-zinc-200">
-            H: {area.weather.daily.temperature_2m_max[0]}&deg;
+            H: {Math.round(area.weather.daily.temperature_2m_max[0])}&deg;
           </span>
           <span className="text-sm text-zinc-200">
-            L: {area.weather.daily.temperature_2m_min[0]}&deg;
+            L: {Math.round(area.weather.daily.temperature_2m_min[0])}&deg;
           </span>
         </div>
       </div>
