@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherIcon from '@/components/weather-icon';
+import { WeatherIcon } from '@/components';
 import { AreaResponse } from '@/lib/types/AreaResponse';
 
 interface AreaListItemWeatherProps {
@@ -13,14 +13,14 @@ function AreaListItemWeather({ area }: AreaListItemWeatherProps) {
       <div className="flex h-full items-center gap-2">
         <div className="hidden lg:block">
           <WeatherIcon
-            isDay={area.weather.current.is_day === 1}
+            isDay={Boolean(area.weather.current.is_day)}
             size={32}
             iconCode={area.weather.current.weather_code}
           />
         </div>
         <div className="lg:hidden">
           <WeatherIcon
-            isDay={area.weather.current.is_day === 1}
+            isDay={Boolean(area.weather.current.is_day)}
             size={24}
             iconCode={area.weather.current.weather_code}
           />

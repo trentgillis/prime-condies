@@ -25,7 +25,7 @@ interface WeatherInfoIconProps {
 function WeatherInfoIcon({ icon, className }: WeatherInfoIconProps) {
   const Icon = WEATHER_INFO_ICONS[icon];
 
-  return Icon ? <Icon className={twMerge('h-4 w-4 fill-zinc-50', className)} /> : null;
+  return Icon ? <Icon className={twMerge('h-3 w-3 fill-zinc-50', className)} /> : null;
 }
 
 export default WeatherInfoIcon;
