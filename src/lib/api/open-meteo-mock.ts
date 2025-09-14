@@ -81,7 +81,7 @@ export function getOpenMeteoMockData(): AreaWeatherData {
       temperature_2m_min: '°F',
       sunset: 'unixtime',
       sunrise: 'unixtime',
-      precipitation_probability_max: '%',
+      precipitation_probability_mean: '%',
       dew_point_2m_max: '°F',
     },
     daily: {
@@ -92,7 +92,7 @@ export function getOpenMeteoMockData(): AreaWeatherData {
       temperature_2m_min: [40.4, 35.9, 38.4, 43.0, 41.6, 39.5, 43.3],
       sunset: [1757812368, 1757898670, 1757984972, 1758071275, 1758157578, 1758243880, 1758330184],
       sunrise: [1757767305, 1757853758, 1757940212, 1758026665, 1758113119, 1758199573, 1758286027],
-      precipitation_probability_max: [24, 6, 5, 34, 24, 6, 11],
+      precipitation_probability_mean: [24, 6, 5, 34, 24, 6, 11],
       dew_point_2m_max: [42.9, 37.8, 31.2, 38.7, 40.7, 38.1, 36.2],
     },
   };

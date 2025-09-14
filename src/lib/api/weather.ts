@@ -29,7 +29,7 @@ const OPEN_METEO_DAILY_DATA = [
   'temperature_2m_min',
   'sunset',
   'sunrise',
-  'precipitation_probability_max',
+  'precipitation_probability_mean',
   'dew_point_2m_max',
 ];
 

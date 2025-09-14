@@ -46,7 +46,7 @@ export interface AreaWeatherData {
     temperature_2m_min: string;
     sunset: string;
     sunrise: string;
-    precipitation_probability_max: string;
+    precipitation_probability_mean: string;
     dew_point_2m_max: string;
   };
   daily: {
@@ -57,7 +57,7 @@ export interface AreaWeatherData {
     temperature_2m_min: number[];
     sunset: number[];
     sunrise: number[];
-    precipitation_probability_max: number[];
+    precipitation_probability_mean: number[];
     dew_point_2m_max: number[];
   };
 }

@@ -15,7 +15,7 @@ import HumidityCard from './_components/humidity-card';
 import AreaDetailsPageHeader from './_components/area-details-page-header';
 import FeelsLikeCard from './_components/feels-like-card';
 import WindCard from './_components/wind-card';
-import SunsetCard from './_components/sunset-card';
+import SunriseSunsetCard from './_components/sunrise-sunset-card';
 
 export const revalidate = 3600;
 
@@ -65,7 +65,7 @@ async function AreaDetails(props: AreaDetailsProps) {
       <WeatherDetailsGrid>
         <PrecipitationCard
           precipitation={area.weather.current.precipitation}
-          precipitationProbability={area.weather.daily.precipitation_probability_max[0]}
+          precipitationProbability={area.weather.daily.precipitation_probability_mean[0]}
         />
         <HumidityCard
           humidity={area.weather.daily.relative_humidity_2m_mean[0]}
@@ -80,7 +80,13 @@ async function AreaDetails(props: AreaDetailsProps) {
           windGusts={area.weather.current.wind_gusts_10m}
           windDirection={area.weather.current.wind_direction_10m}
         />
-        <SunsetCard sunset={area.weather.daily.sunset[0]} timezone={area.weather.timezone} />
+        <SunriseSunsetCard
+          currentSunrise={area.weather.daily.sunrise[0]}
+          currentSunset={area.weather.daily.sunset[0]}
+          tomorrowSunrise={area.weather.daily.sunrise[1]}
+          tomorrowSunset={area.weather.daily.sunset[1]}
+          timezone={area.weather.timezone}
+        />
       </WeatherDetailsGrid>
     </main>
   );
