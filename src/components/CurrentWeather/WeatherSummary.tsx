@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherIcon from '@/components/weather-icon';
+import { WeatherIcon } from '@/components';
 import { WeatherDescription } from '@/lib/types/WeatherResponse';
 import { getWeatherDescription } from '@/lib/utils/weather';
 
