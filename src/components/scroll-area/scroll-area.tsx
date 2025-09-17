@@ -15,7 +15,7 @@ function ScrollArea({
   ...restProps
 }: ScrollAreaProps) {
   return (
-    <PrimitiveScrollArea.Root className={twMerge(className, 'h-full')} {...restProps}>
+    <PrimitiveScrollArea.Root className={twMerge(className, 'relative')} {...restProps}>
       <PrimitiveScrollArea.Viewport className="h-full w-full">
         {children}
       </PrimitiveScrollArea.Viewport>
