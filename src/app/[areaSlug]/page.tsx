@@ -16,6 +16,7 @@ import AreaDetailsPageHeader from './_components/area-details-page-header';
 import FeelsLikeCard from './_components/feels-like-card';
 import WindCard from './_components/wind-card';
 import SunriseSunsetCard from './_components/sunrise-sunset-card';
+import HourlyForecast from './_components/hourly-forecast/hourly-forecast';
 
 export const revalidate = 3600;
 
@@ -87,6 +88,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           tomorrowSunset={area.weather.daily.sunset[1]}
           timezone={area.weather.timezone}
         />
+        <HourlyForecast />
       </WeatherDetailsGrid>
     </main>
   );
