@@ -26,8 +26,6 @@ function getSunriseSunset(
 ): { sunriseTime: number; sunsetTime: number; isSunrise: boolean; nextTimeIsTomorrow: boolean } {
   const now = Math.trunc(new Date().valueOf() / 1000);
 
-  console.log({ now, currentSunrise });
-
   let sunriseTime = tomorrowSunrise;
   let sunsetTime = tomorrowSunset;
   let isSunrise = true;

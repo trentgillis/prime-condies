@@ -21,7 +21,7 @@ const OPEN_METEO_CURRENT_DATA = [
   'wind_direction_10m',
   'wind_gusts_10m',
 ];
-const OPEN_METEO_HOURLY_DATA = [...OPEN_METEO_BASE_DATA];
+const OPEN_METEO_HOURLY_DATA = [...OPEN_METEO_BASE_DATA, 'temperature_2m'];
 const OPEN_METEO_DAILY_DATA = [
   ...OPEN_METEO_BASE_DATA,
   'relative_humidity_2m_mean',
