@@ -16,7 +16,7 @@ function HourlyForecastItem({ hour }: HourlyForecastItemProps) {
         })}
       </span>
       <WeatherIcon isDay={hour.isDay} iconCode={hour.weatherCode} size={32} />
-      <span className="text-sm font-medium text-zinc-50">70&deg;</span>
+      <span className="text-sm font-medium text-zinc-50">{Math.round(hour.temperature)}&deg;</span>
     </div>
   );
 }

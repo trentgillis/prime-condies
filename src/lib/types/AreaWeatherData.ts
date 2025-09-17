@@ -33,10 +33,12 @@ export interface AreaWeatherData {
   hourly_units: {
     time: string;
     weather_code: string;
+    temperature_2m: string;
   };
   hourly: {
     time: number[];
     weather_code: number[];
+    temperature_2m: number[];
   };
   daily_units: {
     time: string;

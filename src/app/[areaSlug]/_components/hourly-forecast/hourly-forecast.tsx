@@ -26,6 +26,7 @@ function isHourDay(
 
 export interface HourlyForecastHour {
   time: number;
+  temperature: number;
   weatherCode: number;
   isDay: boolean;
   timezone: string;
@@ -43,6 +44,7 @@ function HourlyForecast({ area }: HourlyForecastProps) {
   const hours: HourlyForecastHour[] = Array.from({ length: 24 }).map((_, i) => {
     return {
       time: area.weather.hourly.time[firstHourIndex + i],
+      temperature: area.weather.hourly.temperature_2m[firstHourIndex + i],
       weatherCode: area.weather.hourly.weather_code[firstHourIndex + i],
       isDay: isHourDay(
         area.weather.hourly.time[firstHourIndex + i],
