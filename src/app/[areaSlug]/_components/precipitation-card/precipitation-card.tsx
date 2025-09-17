@@ -1,4 +1,4 @@
-import weatherGridStyles from './weather-details-grid.module.css';
+import { weatherGridStyles } from '../weather-details-grid';
 
 import React from 'react';
 

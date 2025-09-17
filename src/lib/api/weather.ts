@@ -67,7 +67,7 @@ export async function fetchAreaWeather(lat: number, lng: number): Promise<AreaWe
   }
 
   const url = `${OPEN_METEO_API_URL}?${buildQueryParams(lat, lng)}`;
-  console.log(url);
+  // console.log(url);
   const res = await fetch(url, {
     next: { revalidate: 3600 },
   });
