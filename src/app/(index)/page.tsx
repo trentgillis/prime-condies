@@ -7,7 +7,7 @@ import { AreaSelect } from '@/db/types';
 import { fetchOwmWeatherData } from '@/lib/api/owm';
 import { fetchAreaWeather } from '@/lib/api/weather';
 
-import { AreasList } from './_components/area-list';
+import { AreasList } from './_components';
 
 export const dynamic = 'force-dynamic';
 
