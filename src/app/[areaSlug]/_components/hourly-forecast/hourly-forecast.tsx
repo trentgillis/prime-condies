@@ -3,13 +3,13 @@ import { weatherGridStyles } from '../weather-details-grid';
 import React from 'react';
 
 import { Card, CardHeader, ScrollArea } from '@/components';
-import { AreaWeatherData } from '@/lib/types/AreaWeatherData';
+import { AreaWeather } from '@/lib/types';
 
 import HourlyForecastItem from './hourly-forecast-item';
 import { get24HourHourlyForeastData } from './hourly-forecast.util';
 
 interface HourlyForecastProps {
-  weather: AreaWeatherData;
+  weather: AreaWeather;
 }
 
 function HourlyForecast({ weather }: HourlyForecastProps) {

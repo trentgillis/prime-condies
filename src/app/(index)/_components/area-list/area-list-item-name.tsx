@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { AreaResponse } from '@/lib/types/AreaResponse';
+import { Area } from '@/lib/types';
 
 type AreaListItemNameProps = {
-  area: AreaResponse;
+  area: Area;
 };
 
 function AreaListItemName({ area }: AreaListItemNameProps) {

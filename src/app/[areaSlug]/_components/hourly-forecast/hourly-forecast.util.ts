@@ -1,4 +1,4 @@
-import { AreaWeatherData } from '@/lib/types/AreaWeatherData';
+import { AreaWeather } from '@/lib/types/AreaWeather';
 import { findIndex } from '@/lib/utils/find-index';
 
 /**
@@ -45,7 +45,7 @@ export function isHourDaytime(
  * @param weather weather data for the area
  * @returns weather data for 24 hours from the current forecast time
  */
-export function get24HourHourlyForeastData(weather: AreaWeatherData): HourlyWeather[] {
+export function get24HourHourlyForeastData(weather: AreaWeather): HourlyWeather[] {
   const firstHourIndex = findIndex(weather.hourly.time, (item) => {
     return (item as number) >= weather.current.time;
   });

@@ -4,10 +4,9 @@ import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { sql } from '@/db';
-import { AreaSelect } from '@/db/types';
-import { fetchAreaWeather } from '@/lib/api/weather';
-import { Area } from '@/lib/types/Area';
+import { sql, type AreaSelect } from '@/db';
+import { fetchAreaWeather } from '@/lib/api';
+import { Area } from '@/lib/types';
 
 import {
   AreaDetailsPageHeader,

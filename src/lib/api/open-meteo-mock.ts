@@ -1,6 +1,6 @@
-import { AreaWeatherData } from '../types/AreaWeatherData';
+import { AreaWeather } from '../types/AreaWeather';
 
-export function getOpenMeteoMockData(): AreaWeatherData {
+export function getOpenMeteoMockData(): AreaWeather {
   return {
     latitude: 38.90894,
     longitude: -105.38632,

@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { AreaResponse } from '@/lib/types/AreaResponse';
+import { Area } from '@/lib/types';
 
 import AreaListItemName from './area-list-item-name';
 import AreaListItemWeather from './area-list-item-weather';
 import AreaListItemWeatherDetail from './area-list-item-weather-detail';
 
 type AreaListItemProps = {
-  area: AreaResponse;
+  area: Area;
 };
 
 function AreasListItem({ area }: AreaListItemProps) {

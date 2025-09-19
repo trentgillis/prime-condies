@@ -1,7 +1,7 @@
 import { AreaSelect } from '@/db/types';
 
-import { AreaWeatherData } from './AreaWeatherData';
+import { AreaWeather } from './AreaWeather';
 
 export type Area = AreaSelect & {
-  weather: AreaWeatherData;
+  weather: AreaWeather;
 };
