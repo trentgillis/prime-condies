@@ -1,9 +1,9 @@
 import { WeatherIcon } from '@/components';
 import React from 'react';
-import { HourlyForecastHour } from './hourly-forecast';
+import { HourlyWeather } from './hourly-forecast.util';
 
 interface HourlyForecastItemProps {
-  hour: HourlyForecastHour;
+  hour: HourlyWeather;
 }
 
 function HourlyForecastItem({ hour }: HourlyForecastItemProps) {

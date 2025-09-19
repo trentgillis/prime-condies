@@ -90,7 +90,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           tomorrowSunset={area.weather.daily.sunset[1]}
           timezone={area.weather.timezone}
         />
-        <HourlyForecast area={area} />
+        <HourlyForecast weather={area.weather} />
       </WeatherDetailsGrid>
     </main>
   );
