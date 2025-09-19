@@ -1,6 +1,6 @@
 import { WeatherIconProps } from '../weather-icon';
 
-function ThunderStormIcon({ size }: Partial<WeatherIconProps>) {
+function ThunderStormIconSvg({ size }: Partial<WeatherIconProps>) {
   return (
     <svg
       width={size}
@@ -27,6 +27,21 @@ function ThunderStormIcon({ size }: Partial<WeatherIconProps>) {
         </clipPath>
       </defs>
     </svg>
+  );
+}
+
+function ThunderStormIcon({
+  size = 24,
+  precipitationProbability,
+  ...restProps
+}: Partial<WeatherIconProps>) {
+  return precipitationProbability ? (
+    <div className="flex flex-col items-center gap-0.5">
+      <ThunderStormIconSvg size={size * 0.7} {...restProps} />
+      <span className="text-xs font-bold text-sky-300">{precipitationProbability}%</span>
+    </div>
+  ) : (
+    <ThunderStormIconSvg size={size} {...restProps} />
   );
 }
 

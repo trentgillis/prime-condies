@@ -15,7 +15,12 @@ function HourlyForecastItem({ hour }: HourlyForecastItemProps) {
           hour: 'numeric',
         })}
       </span>
-      <WeatherIcon isDay={hour.isDay} iconCode={hour.weatherCode} size={32} />
+      <WeatherIcon
+        isDay={hour.isDay}
+        iconCode={hour.weatherCode}
+        precipitationProbability={hour.precipitationProbability}
+        size={32}
+      />
       <span className="text-sm font-medium text-zinc-50">{Math.round(hour.temperature)}&deg;</span>
     </div>
   );

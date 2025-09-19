@@ -29,6 +29,7 @@ export interface HourlyForecastHour {
   temperature: number;
   weatherCode: number;
   isDay: boolean;
+  precipitationProbability: number;
   timezone: string;
 }
 
@@ -46,6 +47,7 @@ function HourlyForecast({ area }: HourlyForecastProps) {
       time: area.weather.hourly.time[firstHourIndex + i],
       temperature: area.weather.hourly.temperature_2m[firstHourIndex + i],
       weatherCode: area.weather.hourly.weather_code[firstHourIndex + i],
+      precipitationProbability: area.weather.hourly.precipitation_probability[firstHourIndex + i],
       isDay: isHourDay(
         area.weather.hourly.time[firstHourIndex + i],
         area.weather.daily.sunrise[0],

@@ -34,11 +34,13 @@ export interface AreaWeatherData {
     time: string;
     weather_code: string;
     temperature_2m: string;
+    precipitation_probability: string;
   };
   hourly: {
     time: number[];
     weather_code: number[];
     temperature_2m: number[];
+    precipitation_probability: number[];
   };
   daily_units: {
     time: string;
