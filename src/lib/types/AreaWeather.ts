@@ -1,4 +1,4 @@
-export interface AreaWeatherData {
+export interface AreaWeather {
   latitude: number;
   longitude: number;
   generationtime_ms: number;

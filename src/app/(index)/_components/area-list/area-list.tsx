@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { AreaResponse } from '@/lib/types/AreaResponse';
+import { Area } from '@/lib/types';
 
 import AreasListItem from './area-list-item';
 
 type AreasListProps = {
-  areas: AreaResponse[];
+  areas: Area[];
 };
 
 function AreasList({ areas }: AreasListProps) {

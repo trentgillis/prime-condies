@@ -2,10 +2,8 @@ import 'server-only';
 
 import React from 'react';
 
-import { sql } from '@/db';
-import { AreaSelect } from '@/db/types';
-import { fetchOwmWeatherData } from '@/lib/api/owm';
-import { fetchAreaWeather } from '@/lib/api/weather';
+import { sql, type AreaSelect } from '@/db';
+import { fetchAreaWeather } from '@/lib/api';
 
 import { AreasList } from './_components';
 
@@ -30,9 +28,8 @@ async function getAreas() {
 
   return await Promise.all(
     areas.map(async (area) => {
-      const weatherData = await fetchOwmWeatherData(area);
-      const meteoData = await fetchAreaWeather(area.lat, area.lng);
-      return { ...area, weatherData, weather: meteoData };
+      const weather = await fetchAreaWeather(area.lat, area.lng);
+      return { ...area, weather };
     }),
   );
 }
