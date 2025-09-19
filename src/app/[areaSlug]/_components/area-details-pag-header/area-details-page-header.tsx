@@ -16,23 +16,16 @@ function AreaDetailsPageHeader({ area }: AreaDetailsPageHeaderProps) {
           {area.place}, {area.countryCode}
         </span>
       </div>
-      <div className="flex flex-col items-center pb-4 lg:pb-0">
-        <div className="flex w-full items-center justify-center gap-2 lg:justify-end">
-          <div className="lg:hidden">
+      <div className="flex flex-col items-center pb-4 lg:hidden">
+        <div className="flex w-full items-center justify-center gap-2">
+          <div>
             <WeatherIcon
               isDay={Boolean(area.weather.current.is_day)}
               size={64}
               iconCode={area.weather.current.weather_code}
             />
           </div>
-          <div className="hidden lg:block">
-            <WeatherIcon
-              isDay={Boolean(area.weather.current.is_day)}
-              size={40}
-              iconCode={area.weather.current.weather_code}
-            />
-          </div>
-          <h2 className="font-outfit text-5xl font-bold text-zinc-50 lg:text-3xl">
+          <h2 className="font-outfit text-5xl font-bold text-zinc-50">
             {Math.round(area.weather.current.temperature_2m)}&deg;
           </h2>
         </div>

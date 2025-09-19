@@ -13,7 +13,7 @@ interface PrecipitationCardProps {
 function PrecipitationCard({ precipitation, precipitationProbability }: PrecipitationCardProps) {
   return (
     <Card
-      className={`${weatherGridStyles.gridAreaPrecipitation} flex h-full w-full flex-col gap-2`}
+      className={`${weatherGridStyles.gridAreaPrecipitation} flex h-full w-full flex-col gap-3`}
     >
       <CardHeader>
         <Droplet className="h-3 w-3" />

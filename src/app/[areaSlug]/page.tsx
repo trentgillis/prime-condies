@@ -10,7 +10,6 @@ import { Area } from '@/lib/types';
 
 import {
   AreaDetailsPageHeader,
-  FeelsLikeCard,
   HourlyForecast,
   HumidityCard,
   PrecipitationCard,
@@ -18,6 +17,7 @@ import {
   WeatherDetailsGrid,
   WindCard,
 } from './_components';
+import { TemperatureCard } from './_components/temperature-card';
 
 export const revalidate = 3600;
 
@@ -73,9 +73,13 @@ async function AreaDetails(props: AreaDetailsProps) {
           humidity={area.weather.daily.relative_humidity_2m_mean[0]}
           dewPoint={area.weather.daily.dew_point_2m_max[0]}
         />
-        <FeelsLikeCard
+        <TemperatureCard
           feelsLikeTemp={area.weather.current.apparent_temperature}
           actualTemp={area.weather.current.temperature_2m}
+          maxTemp={area.weather.daily.temperature_2m_max[0]}
+          minTemp={area.weather.daily.temperature_2m_min[0]}
+          weatherCode={area.weather.current.weather_code}
+          isDay={Boolean(area.weather.current.is_day)}
         />
         <WindCard
           windSpeed={area.weather.current.wind_speed_10m}

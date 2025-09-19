@@ -69,7 +69,7 @@ function SunriseSunsetCard({
 
   return (
     <Card
-      className={`${weatherGridStyles.gridAreaSunriseSunset} flex h-full w-full flex-col gap-2`}
+      className={`${weatherGridStyles.gridAreaSunriseSunset} flex h-full w-full flex-col gap-3`}
     >
       <CardHeader>
         <Sunset className="h-3 w-3" />

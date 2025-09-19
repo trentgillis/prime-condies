@@ -1,5 +1,5 @@
 export * from './area-details-pag-header';
-export * from './feels-like-card';
+export * from './temperature-card';
 export * from './hourly-forecast';
 export * from './humidity-card';
 export * from './precipitation-card';
