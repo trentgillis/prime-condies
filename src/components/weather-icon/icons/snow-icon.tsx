@@ -1,6 +1,6 @@
 import { WeatherIconProps } from '../weather-icon';
 
-function SnowIcon({ size }: Partial<WeatherIconProps>) {
+function SnowIconSvg({ size }: Partial<WeatherIconProps>) {
   return (
     <svg
       width={size}
@@ -36,6 +36,21 @@ function SnowIcon({ size }: Partial<WeatherIconProps>) {
         fill="#E2E8F0"
       />
     </svg>
+  );
+}
+
+function SnowIcon({
+  size = 24,
+  precipitationProbability,
+  ...restProps
+}: Partial<WeatherIconProps>) {
+  return precipitationProbability ? (
+    <div className="flex flex-col items-center gap-0.5">
+      <SnowIconSvg size={size * 0.7} {...restProps} />
+      <span className="text-xs font-bold text-sky-300">{precipitationProbability}%</span>
+    </div>
+  ) : (
+    <SnowIconSvg size={size} {...restProps} />
   );
 }
 

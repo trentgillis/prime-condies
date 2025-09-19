@@ -21,7 +21,11 @@ const OPEN_METEO_CURRENT_DATA = [
   'wind_direction_10m',
   'wind_gusts_10m',
 ];
-const OPEN_METEO_HOURLY_DATA = [...OPEN_METEO_BASE_DATA];
+const OPEN_METEO_HOURLY_DATA = [
+  ...OPEN_METEO_BASE_DATA,
+  'temperature_2m',
+  'precipitation_probability',
+];
 const OPEN_METEO_DAILY_DATA = [
   ...OPEN_METEO_BASE_DATA,
   'relative_humidity_2m_mean',
@@ -67,7 +71,7 @@ export async function fetchAreaWeather(lat: number, lng: number): Promise<AreaWe
   }
 
   const url = `${OPEN_METEO_API_URL}?${buildQueryParams(lat, lng)}`;
-  console.log(url);
+  // console.log(url);
   const res = await fetch(url, {
     next: { revalidate: 3600 },
   });

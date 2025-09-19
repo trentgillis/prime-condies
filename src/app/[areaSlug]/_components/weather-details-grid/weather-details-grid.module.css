@@ -9,7 +9,7 @@ in a css module here.
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     'precipitation humidity'
-    'hourly-forecast hourly-forecast'
+    'hourly hourly'
     'wind sunrise-sunset';
   grid-auto-rows: 160px;
   gap: 16px;
@@ -35,10 +35,16 @@ in a css module here.
   grid-area: sunrise-sunset;
 }
 
+.gridAreaHourlyForecast {
+  grid-area: hourly;
+}
+
 @media (min-width: 1024px) {
   .weatherGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: 'feels-like precipitation humidity wind sunrise-sunset';
+    grid-template-areas:
+      'feels-like precipitation humidity wind sunrise-sunset'
+      'hourly hourly hourly hourly hourly';
   }
 }

@@ -46,12 +46,28 @@ export interface WeatherIconProps {
   isDay: boolean;
   size?: number;
   strokeWidth?: number;
+  precipitationProbability?: number;
 }
 
-function WeatherIcon({ iconCode, isDay, size = 24, strokeWidth = 2 }: WeatherIconProps) {
+function WeatherIcon({
+  iconCode,
+  isDay,
+  precipitationProbability,
+  size = 24,
+  strokeWidth = 2,
+}: WeatherIconProps) {
   const Icon = WEATHER_ICONS[iconCode];
 
-  return Icon ? <Icon isDay={isDay} size={size} strokeWidth={strokeWidth} /> : null;
+  if (!Icon) return null;
+
+  return (
+    <Icon
+      isDay={isDay}
+      size={size}
+      strokeWidth={strokeWidth}
+      precipitationProbability={precipitationProbability}
+    />
+  );
 }
 
 export default WeatherIcon;

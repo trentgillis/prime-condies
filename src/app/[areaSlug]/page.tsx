@@ -9,13 +9,16 @@ import { AreaSelect } from '@/db/types';
 import { fetchAreaWeather } from '@/lib/api/weather';
 import { Area } from '@/lib/types/Area';
 
-import WeatherDetailsGrid from './_components/weather-details-grid';
-import PrecipitationCard from './_components/precipitation-card';
-import HumidityCard from './_components/humidity-card';
-import AreaDetailsPageHeader from './_components/area-details-page-header';
-import FeelsLikeCard from './_components/feels-like-card';
-import WindCard from './_components/wind-card';
-import SunriseSunsetCard from './_components/sunrise-sunset-card';
+import {
+  AreaDetailsPageHeader,
+  FeelsLikeCard,
+  HourlyForecast,
+  HumidityCard,
+  PrecipitationCard,
+  SunriseSunsetCard,
+  WeatherDetailsGrid,
+  WindCard,
+} from './_components';
 
 export const revalidate = 3600;
 
@@ -87,6 +90,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           tomorrowSunset={area.weather.daily.sunset[1]}
           timezone={area.weather.timezone}
         />
+        <HourlyForecast weather={area.weather} />
       </WeatherDetailsGrid>
     </main>
   );
