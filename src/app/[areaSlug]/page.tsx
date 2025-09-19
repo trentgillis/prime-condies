@@ -14,10 +14,10 @@ import {
   HumidityCard,
   PrecipitationCard,
   SunriseSunsetCard,
+  TemperatureCard,
   WeatherDetailsGrid,
   WindCard,
 } from './_components';
-import { TemperatureCard } from './_components/temperature-card';
 
 export const revalidate = 3600;
 
