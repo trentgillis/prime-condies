@@ -13,7 +13,7 @@ interface WindCardProps {
 
 function WindCard({ windSpeed, windGusts, windDirection }: WindCardProps) {
   return (
-    <Card className={`${weatherGridStyles.gridAreaWind} flex h-full w-full flex-col gap-2`}>
+    <Card className={`${weatherGridStyles.gridAreaWind} flex h-full w-full flex-col gap-3`}>
       <CardHeader>
         <Wind className="h-3 w-3" />
         Wind
