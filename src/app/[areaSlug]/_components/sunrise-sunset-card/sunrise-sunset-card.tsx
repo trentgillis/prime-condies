@@ -3,7 +3,7 @@ import { weatherGridStyles } from '../weather-details-grid';
 import React from 'react';
 
 import { Card, CardHeader } from '@/components';
-import { Sunset } from 'lucide-react';
+import { Sunrise, Sunset } from 'lucide-react';
 
 interface SunriseSunsetCardProps {
   currentSunrise: number;
@@ -72,7 +72,7 @@ function SunriseSunsetCard({
       className={`${weatherGridStyles.gridAreaSunriseSunset} flex h-full w-full flex-col gap-3`}
     >
       <CardHeader>
-        <Sunset className="h-3 w-3" />
+        {isSunrise ? <Sunrise className="h-3 w-3" /> : <Sunset className="h-3 w-3" />}
         {isSunrise ? 'Sunrise' : 'Sunset'}
       </CardHeader>
       <div className="flex flex-1 flex-col justify-between">
