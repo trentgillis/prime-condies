@@ -18,6 +18,7 @@ import {
   WeatherDetailsGrid,
   WindCard,
 } from './_components';
+import DailyForecast from './_components/daily-forecast/daily-forecast';
 
 export const revalidate = 3600;
 
@@ -94,6 +95,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           timezone={area.weather.timezone}
         />
         <HourlyForecast weather={area.weather} />
+        <DailyForecast weather={area.weather} />
       </WeatherDetailsGrid>
     </main>
   );
