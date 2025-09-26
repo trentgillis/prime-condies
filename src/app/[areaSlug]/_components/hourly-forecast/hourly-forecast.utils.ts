@@ -6,11 +6,11 @@ import { findIndex } from '@/lib/utils/find-index';
  */
 export interface HourlyWeather {
   time: number;
+  timezone: string;
   temperature: number;
   weatherCode: number;
   isDay: boolean;
   precipitationProbability: number;
-  timezone: string;
 }
 
 /**

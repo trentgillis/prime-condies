@@ -1,0 +1,34 @@
+.dailyDetailGrid {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .dailyDetailGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+      'precipitation humidity wind sunrise-sunset'
+      'hourly hourly hourly hourly';
+  }
+}
+
+.dailyDetailGridAreaPrecipitation {
+  grid-area: precipitation;
+}
+
+.dailyDetailGridAreaHumidity {
+  grid-area: humidity;
+}
+
+.dailyDetailGridAreaWind {
+  grid-area: wind;
+}
+
+.dailyDetailGridAreaSunriseSunset {
+  grid-area: sunrise-sunset;
+}
+
+.dailyDetailGridAreaHourly {
+  grid-area: hourly;
+}

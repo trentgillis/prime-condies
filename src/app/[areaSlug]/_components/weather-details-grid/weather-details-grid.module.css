@@ -10,9 +10,23 @@ in a css module here.
   grid-template-areas:
     'precipitation humidity'
     'hourly hourly'
-    'wind sunrise-sunset';
+    'wind sunrise-sunset'
+    'daily daily'
+    'daily daily';
   grid-auto-rows: 160px;
   gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .weatherGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      'feels-like precipitation humidity wind sunrise-sunset'
+      'hourly hourly hourly hourly hourly'
+      'daily daily daily daily daily'
+      'daily daily daily daily daily';
+  }
 }
 
 .gridAreaPrecipitation {
@@ -39,12 +53,6 @@ in a css module here.
   grid-area: hourly;
 }
 
-@media (min-width: 1024px) {
-  .weatherGrid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas:
-      'feels-like precipitation humidity wind sunrise-sunset'
-      'hourly hourly hourly hourly hourly';
-  }
+.gridAreaDailyForecast {
+  grid-area: daily;
 }

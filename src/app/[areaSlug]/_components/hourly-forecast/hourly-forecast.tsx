@@ -6,7 +6,7 @@ import { Card, CardHeader, ScrollArea } from '@/components';
 import { AreaWeather } from '@/lib/types';
 
 import HourlyForecastItem from './hourly-forecast-item';
-import { get24HourHourlyForeastData } from './hourly-forecast.util';
+import { get24HourHourlyForeastData } from './hourly-forecast.utils';
 
 interface HourlyForecastProps {
   weather: AreaWeather;
