@@ -7,6 +7,7 @@ import { Card, CardHeader } from '@/components';
 import DailyDetail from './daily-detail';
 import DailyPrecipitation from './daily-precipitation';
 import { DailyWeather } from './daily-forecast.utils';
+import DailyHumidity from './daily-humidity';
 
 interface DailyForecastDetailGridProps {
   dayWeatherDetails: DailyWeather;
@@ -20,15 +21,11 @@ function DailyForecastDetailGrid({ dayWeatherDetails }: DailyForecastDetailGridP
         precipitation={dayWeatherDetails.precipitationSum}
         precipitationProbability={dayWeatherDetails.precipitationProbability}
       />
-      <DailyDetail className={`${styles.dailyDetailGridAreaHumidity} border-r`}>
-        <CardHeader>Humidity</CardHeader>
-        <div className="flex flex-grow flex-col justify-between">
-          <div className="font-outfit text-lg font-semibold text-zinc-50">{0}%</div>
-          <div className="text-xs text-zinc-200">
-            Dew point: <span className="font-semibold text-zinc-50">{Math.round(0)}&deg;</span>
-          </div>
-        </div>
-      </DailyDetail>
+      <DailyHumidity
+        className={styles.dailyDetailGridAreaHumidity}
+        humidity={dayWeatherDetails.humidity}
+        dewPoint={dayWeatherDetails.dewPoint}
+      />
       <DailyDetail className={`${styles.dailyDetailGridAreaWind} border-r`}>
         <CardHeader>Wind</CardHeader>
         <div className="flex flex-grow flex-col justify-between">

@@ -57,12 +57,12 @@ export interface AreaWeather {
     time: number[];
     weather_code: number[];
     relative_humidity_2m_mean: number[];
+    dew_point_2m_mean: number[];
     temperature_2m_max: number[];
     temperature_2m_min: number[];
     sunset: number[];
     sunrise: number[];
     precipitation_probability_mean: number[];
     precipitation_sum: number[];
-    dew_point_2m_max: number[];
   };
 }

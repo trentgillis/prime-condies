@@ -36,6 +36,8 @@ const OPEN_METEO_DAILY_DATA = [
   'precipitation_sum',
   'precipitation_probability_mean',
   'dew_point_2m_max',
+  'dew_point_2m_mean',
+  'relative_humidity_2m_mean',
 ];
 
 /**

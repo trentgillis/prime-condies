@@ -8,6 +8,8 @@ export interface DailyWeather {
   minTemperature: number;
   precipitationSum: number;
   precipitationProbability: number;
+  humidity: number;
+  dewPoint: number;
 }
 
 export function get7DayForecastData(weather: AreaWeather): DailyWeather[] {
@@ -20,6 +22,8 @@ export function get7DayForecastData(weather: AreaWeather): DailyWeather[] {
       minTemperature: weather.daily.temperature_2m_min[i],
       precipitationSum: weather.daily.precipitation_sum[i],
       precipitationProbability: weather.daily.precipitation_probability_mean[i],
+      humidity: weather.daily.relative_humidity_2m_mean[i],
+      dewPoint: weather.daily.dew_point_2m_mean[i],
     };
   });
 }
