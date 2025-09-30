@@ -7,7 +7,7 @@ import { AreaWeather } from '@/lib/types';
 
 import DailyForecastList from './daily-forecast-list';
 import { get7DayForecastData } from './daily-forecast.utils';
-import DailyForecastDetail from './daily-forecast-detail';
+import DailyForecastDetailGrid from './daily-forecast-detail-grid';
 
 interface DailyForecastProps {
   weather: AreaWeather;
@@ -21,7 +21,7 @@ function DailyForecast({ weather }: DailyForecastProps) {
       <CardHeader className="border-b border-zinc-700 p-3">7-Day Forecast</CardHeader>
       <div className="flex flex-grow">
         <DailyForecastList days={days} />
-        <DailyForecastDetail />
+        <DailyForecastDetailGrid />
       </div>
     </Card>
   );
