@@ -1,4 +1,5 @@
 import React from 'react';
+import { Droplet } from 'lucide-react';
 
 import { CardHeader } from '@/components';
 
@@ -17,7 +18,10 @@ function DailyPrecipitation({
 }: DailyPrecipitationProps) {
   return (
     <DailyDetail className={`${className} border-r`}>
-      <CardHeader>Precipitation</CardHeader>
+      <CardHeader>
+        <Droplet className="h-3 w-3" />
+        Precipitation
+      </CardHeader>
       <div className="flex flex-grow flex-col justify-between">
         <div className="font-outfit text-xl font-semibold text-zinc-50">{precipitation}&#8243;</div>
         <div className="text-xs text-zinc-200">
