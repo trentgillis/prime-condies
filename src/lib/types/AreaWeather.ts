@@ -62,6 +62,7 @@ export interface AreaWeather {
     sunset: number[];
     sunrise: number[];
     precipitation_probability_mean: number[];
+    precipitation_sum: number[];
     dew_point_2m_max: number[];
   };
 }

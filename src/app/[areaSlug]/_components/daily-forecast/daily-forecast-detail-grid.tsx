@@ -5,19 +5,21 @@ import React from 'react';
 import { Card, CardHeader } from '@/components';
 
 import DailyDetail from './daily-detail';
+import DailyPrecipitation from './daily-precipitation';
+import { DailyWeather } from './daily-forecast.utils';
 
-function DailyForecastDetailGrid() {
+interface DailyForecastDetailGridProps {
+  dayWeatherDetails: DailyWeather;
+}
+
+function DailyForecastDetailGrid({ dayWeatherDetails }: DailyForecastDetailGridProps) {
   return (
     <div className={`${styles.dailyDetailGrid} flex-grow`}>
-      <DailyDetail className={`${styles.dailyDetailGridAreaPrecipitation} border-r`}>
-        <CardHeader>Precipitation</CardHeader>
-        <div className="flex flex-grow flex-col justify-between">
-          <div className="font-outfit text-xl font-semibold text-zinc-50">{0}&#8243;</div>
-          <div className="text-xs text-zinc-200">
-            Probability: <span className="font-semibold text-zinc-50">{0}%</span>
-          </div>
-        </div>
-      </DailyDetail>
+      <DailyPrecipitation
+        className={styles.dailyDetailGridAreaPrecipitation}
+        precipitation={dayWeatherDetails.precipitationSum}
+        precipitationProbability={dayWeatherDetails.precipitationProbability}
+      />
       <DailyDetail className={`${styles.dailyDetailGridAreaHumidity} border-r`}>
         <CardHeader>Humidity</CardHeader>
         <div className="flex flex-grow flex-col justify-between">
