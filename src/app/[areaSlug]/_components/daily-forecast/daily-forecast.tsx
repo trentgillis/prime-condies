@@ -19,10 +19,18 @@ interface DailyForecastProps {
 function DailyForecast({ weather }: DailyForecastProps) {
   const [selectedDayIdx, setSelectedDayIdx] = React.useState(0);
 
+  const dailyForecastCtxValue = React.useMemo(
+    () => ({
+      selectedDayIdx,
+      setSelectedDayIdx,
+    }),
+    [selectedDayIdx],
+  );
+
   const days = get7DayForecastData(weather);
 
   return (
-    <DailyForecastContext value={{ selectedDayIdx, setSelectedDayIdx }}>
+    <DailyForecastContext value={dailyForecastCtxValue}>
       <Card
         className={`${weatherGridStyles.gridAreaDailyForecast} flex h-full w-full flex-col p-0`}
       >

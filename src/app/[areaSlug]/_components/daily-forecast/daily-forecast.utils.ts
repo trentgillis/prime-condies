@@ -10,6 +10,8 @@ export interface DailyWeather {
   precipitationProbability: number;
   humidity: number;
   dewPoint: number;
+  windSpeed: number;
+  gustSpeed: number;
 }
 
 export function get7DayForecastData(weather: AreaWeather): DailyWeather[] {
@@ -24,6 +26,8 @@ export function get7DayForecastData(weather: AreaWeather): DailyWeather[] {
       precipitationProbability: weather.daily.precipitation_probability_mean[i],
       humidity: weather.daily.relative_humidity_2m_mean[i],
       dewPoint: weather.daily.dew_point_2m_mean[i],
+      windSpeed: weather.daily.wind_speed_10m_max[i],
+      gustSpeed: weather.daily.wind_gusts_10m_max[i],
     };
   });
 }

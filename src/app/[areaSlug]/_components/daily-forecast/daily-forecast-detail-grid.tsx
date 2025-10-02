@@ -8,6 +8,7 @@ import DailyDetail from './daily-detail';
 import DailyPrecipitation from './daily-precipitation';
 import { DailyWeather } from './daily-forecast.utils';
 import DailyHumidity from './daily-humidity';
+import DailyWind from './daily-wind';
 
 interface DailyForecastDetailGridProps {
   dayWeatherDetails: DailyWeather;
@@ -26,17 +27,11 @@ function DailyForecastDetailGrid({ dayWeatherDetails }: DailyForecastDetailGridP
         humidity={dayWeatherDetails.humidity}
         dewPoint={dayWeatherDetails.dewPoint}
       />
-      <DailyDetail className={`${styles.dailyDetailGridAreaWind} border-r`}>
-        <CardHeader>Wind</CardHeader>
-        <div className="flex flex-grow flex-col justify-between">
-          <div className="font-outfit text-lg font-semibold text-zinc-50">{Math.round(0)}mph</div>
-          <div>
-            <div className="text-xs text-zinc-200">
-              Gust speed: <span className="font-semibold text-zinc-50">{Math.round(0)}mph</span>
-            </div>
-          </div>
-        </div>
-      </DailyDetail>
+      <DailyWind
+        className={styles.dailyDetailGridAreaWind}
+        windSpeed={dayWeatherDetails.windSpeed}
+        gustSpeed={dayWeatherDetails.gustSpeed}
+      />
       <DailyDetail className={`${styles.dailyDetailGridAreaSunriseSunset} border-r`}>
         <CardHeader>Sunrise</CardHeader>
         <div className="flex flex-grow flex-col justify-between">

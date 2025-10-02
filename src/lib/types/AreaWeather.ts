@@ -64,5 +64,7 @@ export interface AreaWeather {
     sunrise: number[];
     precipitation_probability_mean: number[];
     precipitation_sum: number[];
+    wind_speed_10m_max: number[];
+    wind_gusts_10m_max: number[];
   };
 }

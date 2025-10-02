@@ -38,6 +38,8 @@ const OPEN_METEO_DAILY_DATA = [
   'dew_point_2m_max',
   'dew_point_2m_mean',
   'relative_humidity_2m_mean',
+  'wind_speed_10m_max',
+  'wind_gusts_10m_max',
 ];
 
 /**
