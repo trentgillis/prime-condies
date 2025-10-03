@@ -2,13 +2,13 @@ import styles from './daily-forecast-detail-grid.module.css';
 
 import React from 'react';
 
-import { Card, CardHeader } from '@/components';
+import { Card } from '@/components';
 
-import DailyDetail from './daily-detail';
 import DailyPrecipitation from './daily-precipitation';
 import { DailyWeather } from './daily-forecast.utils';
 import DailyHumidity from './daily-humidity';
 import DailyWind from './daily-wind';
+import DailySunriseSunset from './daily-sunrise-sunset';
 
 interface DailyForecastDetailGridProps {
   dayWeatherDetails: DailyWeather;
@@ -32,28 +32,12 @@ function DailyForecastDetailGrid({ dayWeatherDetails }: DailyForecastDetailGridP
         windSpeed={dayWeatherDetails.windSpeed}
         gustSpeed={dayWeatherDetails.gustSpeed}
       />
-      <DailyDetail className={`${styles.dailyDetailGridAreaSunriseSunset} border-r`}>
-        <CardHeader>Sunrise</CardHeader>
-        <div className="flex flex-grow flex-col justify-between">
-          <div className="font-outfit text-lg font-semibold text-zinc-50">
-            {new Date(Date.now()).toLocaleString('en-US', {
-              timeZone: 'MST',
-              hour: 'numeric',
-              minute: 'numeric',
-            })}
-          </div>
-          <div className="text-xs text-zinc-200">
-            {true ? 'Sunset' : 'Sunrise'} {true ? 'tomorrow ' : ''} at{' '}
-            <span className="font-semibold text-zinc-50">
-              {new Date(Date.now()).toLocaleString('en-US', {
-                timeZone: 'MST',
-                hour: 'numeric',
-                minute: 'numeric',
-              })}
-            </span>
-          </div>
-        </div>
-      </DailyDetail>
+      <DailySunriseSunset
+        className={styles.dailyDetailGridAreaSunriseSunset}
+        sunrise={dayWeatherDetails.sunrise}
+        sunset={dayWeatherDetails.sunset}
+        timezone={dayWeatherDetails.timezone}
+      />
       <Card
         className={`${styles.dailyDetailGridAreaHourly} rounded-none border-0 border-t border-zinc-700`}
       >
