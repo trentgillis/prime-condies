@@ -72,7 +72,7 @@ async function AreaDetails(props: AreaDetailsProps) {
         />
         <HumidityCard
           humidity={area.weather.daily.relative_humidity_2m_mean[0]}
-          dewPoint={area.weather.daily.dew_point_2m_max[0]}
+          dewPoint={area.weather.daily.dew_point_2m_mean[0]}
         />
         <TemperatureCard
           feelsLikeTemp={area.weather.current.apparent_temperature}

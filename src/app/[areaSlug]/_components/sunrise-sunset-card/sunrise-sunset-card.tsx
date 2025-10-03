@@ -1,9 +1,9 @@
 import { weatherGridStyles } from '../weather-details-grid';
 
 import React from 'react';
+import { Sunrise, Sunset } from 'lucide-react';
 
 import { Card, CardHeader } from '@/components';
-import { Sunrise, Sunset } from 'lucide-react';
 
 interface SunriseSunsetCardProps {
   currentSunrise: number;

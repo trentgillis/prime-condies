@@ -1,4 +1,4 @@
-export * from './area-details-pag-header';
+export * from './area-details-page-header';
 export * from './temperature-card';
 export * from './hourly-forecast';
 export * from './humidity-card';
