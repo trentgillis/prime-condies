@@ -71,7 +71,7 @@ function buildQueryParams(lat: number, lng: number) {
  * @returns Weather data for passed in coordinates
  */
 export async function fetchAreaWeather(lat: number, lng: number): Promise<AreaWeather> {
-  if (process.env.MOCK_WEAHTER_API === 'true') {
+  if (process.env.MOCK_WEAHTER_API === 'development') {
     return Promise.resolve(getOpenMeteoMockData());
   }
 
