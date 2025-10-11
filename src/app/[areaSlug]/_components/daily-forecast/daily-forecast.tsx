@@ -34,7 +34,7 @@ function DailyForecast({ weather }: DailyForecastProps) {
       <Card
         className={`${weatherGridStyles.gridAreaDailyForecast} flex h-full w-full flex-col p-0`}
       >
-        <CardHeader className="border-b border-zinc-700 p-3">7-Day Forecast</CardHeader>
+        <CardHeader className="border-border border-b p-3">7-Day Forecast</CardHeader>
         <div className="flex flex-grow">
           <DailyForecastList days={days} />
           <DailyForecastDetailGrid dayWeatherDetails={days[selectedDayIdx]} />

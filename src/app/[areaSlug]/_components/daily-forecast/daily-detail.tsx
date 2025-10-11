@@ -7,7 +7,7 @@ interface DailyDetailProps extends React.PropsWithChildren {
 
 function DailyDetail({ children, className = '' }: DailyDetailProps) {
   return (
-    <div className={twMerge('flex flex-col gap-1 border-zinc-700 p-2', className)}>{children}</div>
+    <div className={twMerge('border-border flex flex-col gap-1 p-2', className)}>{children}</div>
   );
 }
 

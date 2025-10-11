@@ -34,18 +34,18 @@ function TemperatureCard({
         <div className="flex w-fit flex-col">
           <div className="flex gap-2">
             <WeatherIcon isDay={isDay} size={40} iconCode={weatherCode} />
-            <h2 className="font-outfit text-5xl font-bold text-zinc-50 lg:text-3xl">
+            <h2 className="font-outfit text-foreground text-5xl font-bold lg:text-3xl">
               {Math.round(actualTemp)}&deg;
             </h2>
           </div>
-          <div className="flex gap-1 self-center text-zinc-200">
-            <span className="text-xs text-zinc-200">H: {Math.round(maxTemp)}&deg;</span>
-            <span className="text-xs text-zinc-200">L: {Math.round(minTemp)}&deg;</span>
+          <div className="text-foreground flex gap-1 self-center">
+            <span className="text-foreground text-xs">H: {Math.round(maxTemp)}&deg;</span>
+            <span className="text-foreground text-xs">L: {Math.round(minTemp)}&deg;</span>
           </div>
         </div>
-        <div className="text-xs text-zinc-200">
+        <div className="text-foreground text-xs">
           Feels like{' '}
-          <span className="font-semibold text-zinc-50">{Math.round(feelsLikeTemp)}&deg;</span>
+          <span className="text-foreground font-semibold">{Math.round(feelsLikeTemp)}&deg;</span>
         </div>
       </div>
     </Card>

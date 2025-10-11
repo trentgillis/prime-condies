@@ -9,10 +9,10 @@ type AreaListItemNameProps = {
 function AreaListItemName({ area }: AreaListItemNameProps) {
   return (
     <div className="flex flex-col justify-center">
-      <h2 className="text-sm tracking-widest text-zinc-50 lg:text-xl lg:tracking-wide">
+      <h2 className="text-foreground text-sm tracking-widest lg:text-xl lg:tracking-wide">
         {area.name}
       </h2>
-      <span className="order-first text-xs text-zinc-400 lg:text-sm">
+      <span className="text-muted-foreground order-first text-xs lg:text-sm">
         {area.place}, {area.countryCode}
       </span>
     </div>

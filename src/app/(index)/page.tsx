@@ -39,7 +39,7 @@ async function Home() {
 
   return (
     <main className="flex flex-col gap-2 p-2 lg:gap-4 lg:p-5">
-      <h1 className="text-xl text-zinc-50 lg:text-3xl">Areas</h1>
+      <h1 className="text-foreground text-xl lg:text-3xl">Areas</h1>
       <AreasList areas={areas} />
     </main>
   );

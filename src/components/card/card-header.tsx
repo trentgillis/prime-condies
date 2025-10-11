@@ -8,7 +8,12 @@ interface CardHeaderProps {
 
 function CardHeader({ children, className = '' }: CardHeaderProps) {
   return (
-    <div className={twMerge('flex items-center gap-1 text-xs text-zinc-400 uppercase', className)}>
+    <div
+      className={twMerge(
+        'text-muted-foreground flex items-center gap-1 text-[0.625rem] uppercase',
+        className,
+      )}
+    >
       {children}
     </div>
   );

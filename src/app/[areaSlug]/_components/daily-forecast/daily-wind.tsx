@@ -17,13 +17,13 @@ function DailyWind({ className, windSpeed, gustSpeed }: DailyWindProps) {
         Wind
       </CardHeader>
       <div className="flex flex-grow flex-col justify-between">
-        <div className="font-outfit text-lg font-semibold text-zinc-50">
+        <div className="font-outfit text-foreground text-lg font-semibold">
           {Math.round(windSpeed)}mph
         </div>
         <div>
-          <div className="text-xs text-zinc-200">
+          <div className="text-foreground text-xs">
             Gust speed:{' '}
-            <span className="font-semibold text-zinc-50">{Math.round(gustSpeed)}mph</span>
+            <span className="text-foreground font-semibold">{Math.round(gustSpeed)}mph</span>
           </div>
         </div>
       </div>

@@ -20,12 +20,12 @@ function PrecipitationCard({ precipitation, precipitationProbability }: Precipit
         Precipitation
       </CardHeader>
       <div className="flex flex-1 flex-col justify-between">
-        <div className="font-outfit text-2xl font-semibold text-zinc-50">
+        <div className="font-outfit text-foreground text-2xl font-semibold">
           {precipitation}&#8243;
         </div>
-        <div className="text-xs text-zinc-200">
+        <div className="text-foreground text-xs">
           Precipitation probability is{' '}
-          <span className="font-semibold text-zinc-50">{precipitationProbability}%</span>
+          <span className="text-foreground font-semibold">{precipitationProbability}%</span>
         </div>
       </div>
     </Card>
