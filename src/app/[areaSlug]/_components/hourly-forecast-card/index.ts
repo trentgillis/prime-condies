@@ -1,1 +1,1 @@
-export { default as HourlyForecast } from './hourly-forecast';
+export { default as HourlyForecastCard } from './hourly-forecast-card';

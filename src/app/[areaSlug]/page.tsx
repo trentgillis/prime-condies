@@ -10,6 +10,7 @@ import { Area } from '@/lib/types';
 
 import {
   AreaDetailsPageHeader,
+  HourlyForecastCard,
   HumidityCard,
   PrecipitationCard,
   SunriseSunsetCard,
@@ -18,7 +19,6 @@ import {
   WindCard,
 } from './_components';
 import DailyForecast from './_components/daily-forecast/daily-forecast';
-import HourlyForecastCard from './_components/hourly-forecast-card/hourly-forecast-card';
 
 export const revalidate = 3600;
 
