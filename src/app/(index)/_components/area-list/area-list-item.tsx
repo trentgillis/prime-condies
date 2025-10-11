@@ -15,13 +15,13 @@ function AreasListItem({ area }: AreaListItemProps) {
   return (
     <Link
       href={`/${area.areaSlug}`}
-      className="flex flex-col rounded border border-zinc-700 bg-zinc-900 hover:bg-zinc-800"
+      className="border-border bg-muted hover:bg-muted-foreground/10 flex flex-col rounded border"
     >
       <div className="grid grid-cols-[1fr_120px] p-2 pb-3 lg:p-3">
         <AreaListItemName area={area} />
         <AreaListItemWeather area={area} />
       </div>
-      <div className="border-t border-zinc-700">
+      <div className="border-border border-t">
         <AreaListItemWeatherDetail area={area} />
       </div>
     </Link>

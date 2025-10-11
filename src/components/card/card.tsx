@@ -8,9 +8,7 @@ interface CardProps {
 
 function Card({ children, className = '' }: CardProps) {
   return (
-    <div className={twMerge('rounded border border-zinc-700 bg-zinc-900 p-3', className)}>
-      {children}
-    </div>
+    <div className={twMerge('border-border bg-card rounded border p-3', className)}>{children}</div>
   );
 }
 

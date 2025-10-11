@@ -9,7 +9,7 @@ interface HourlyForecastItemProps {
 function HourlyForecastItem({ hour }: HourlyForecastItemProps) {
   return (
     <div className="flex h-24 w-18 flex-col items-center justify-between py-1">
-      <span className="text-xs font-semibold text-zinc-200">
+      <span className="text-foreground text-xs font-semibold">
         {new Date(hour.time * 1000).toLocaleString('en-US', {
           timeZone: hour.timezone,
           hour: 'numeric',
@@ -21,7 +21,9 @@ function HourlyForecastItem({ hour }: HourlyForecastItemProps) {
         precipitationProbability={hour.precipitationProbability}
         size={24}
       />
-      <span className="text-sm font-medium text-zinc-50">{Math.round(hour.temperature)}&deg;</span>
+      <span className="text-foreground text-sm font-medium">
+        {Math.round(hour.temperature)}&deg;
+      </span>
     </div>
   );
 }

@@ -1,13 +1,5 @@
-# PrimeCondies
+<div align="center">
+<img alt="PrimeCondies logo" src="https://raw.githubusercontent.com/trentgillis/prime-condies/main/.github/static/images/prime-condies-logo.svg" width="700">
+</div>
 
-## TODO:
-
-- [x] Migrate to tailwind
-- [x] Add pre-commit hooks and PR linting
-- [x] Migrate to open-meteo for weather data
-- [x] New mockups in Figma
-- [ ] Map architecture
-- [ ] Implement area details
-  - [x] Current weather details
-  - [x] Hourly Forecast
-  - [ ] Daily Forecast
+This is the main repository for the [primecondies.com](www.primecondies.com/) web applicaiton that serves weather information for rock climbers.

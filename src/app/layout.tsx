@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html className="flex min-h-screen flex-col" lang="en">
       <body className={`flex flex-1 flex-col antialiased ${outfit.variable} ${openSans.variable}`}>
-        <header className="flex h-14 items-center border-b border-zinc-600 px-5 md:px-4">
+        <header className="border-border flex h-14 items-center border-b px-5 md:px-4">
           <Logo />
         </header>
         <div className="grid flex-grow grid-cols-1 px-4 lg:grid-cols-[1fr_1024px_1fr] lg:[&>*]:col-start-2">

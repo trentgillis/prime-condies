@@ -1,4 +1,5 @@
 import { AreaWeather } from '@/lib/types';
+
 import { HourlyWeather } from '../hourly-forecast/hourly-forecast.utils';
 
 /**

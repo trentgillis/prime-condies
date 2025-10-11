@@ -17,7 +17,7 @@ function HourlyForecastCard({ weather }: HourlyForecastCardProps) {
 
   return (
     <Card className={`${weatherGridStyles.gridAreaHourlyForecast} flex h-full w-full flex-col p-0`}>
-      <CardHeader className="border-b border-zinc-700 p-3">Hourly Forecast</CardHeader>
+      <CardHeader className="border-border border-b p-3">Hourly Forecast</CardHeader>
       <ScrollArea className="h-full w-full" orientation="horizontal">
         <HourlyForecast className="h-30" hourlyWeather={hourlyWeather} />
       </ScrollArea>

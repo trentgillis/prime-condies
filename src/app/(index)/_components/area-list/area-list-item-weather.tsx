@@ -25,15 +25,15 @@ function AreaListItemWeather({ area }: AreaListItemWeatherProps) {
             iconCode={area.weather.current.weather_code}
           />
         </div>
-        <h3 className="text-xl text-zinc-50 lg:text-2xl">
+        <h3 className="text-foreground text-xl lg:text-2xl">
           {Math.round(area.weather.current.temperature_2m)}&deg;
         </h3>
       </div>
       <div className="flex items-center gap-2">
-        <span className="text-xs text-zinc-400 lg:text-sm">
+        <span className="text-muted-foreground text-xs lg:text-sm">
           H: {Math.round(area.weather.daily.temperature_2m_max[0])}&deg;
         </span>
-        <span className="text-xs text-zinc-400 lg:text-sm">
+        <span className="text-muted-foreground text-xs lg:text-sm">
           L: {Math.round(area.weather.daily.temperature_2m_min[0])}&deg;
         </span>
       </div>
