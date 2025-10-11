@@ -10,7 +10,7 @@ import { Area } from '@/lib/types';
 
 import {
   AreaDetailsPageHeader,
-  HourlyForecast,
+  HourlyForecastCard,
   HumidityCard,
   PrecipitationCard,
   SunriseSunsetCard,
@@ -94,7 +94,7 @@ async function AreaDetails(props: AreaDetailsProps) {
           tomorrowSunset={area.weather.daily.sunset[1]}
           timezone={area.weather.timezone}
         />
-        <HourlyForecast weather={area.weather} />
+        <HourlyForecastCard weather={area.weather} />
         <DailyForecast weather={area.weather} />
       </WeatherDetailsGrid>
     </main>
