@@ -2,13 +2,12 @@ import styles from './daily-forecast-detail-grid.module.css';
 
 import React from 'react';
 
-import { Card } from '@/components';
-
 import DailyPrecipitation from './daily-precipitation';
 import { DailyWeather } from './daily-forecast.utils';
 import DailyHumidity from './daily-humidity';
 import DailyWind from './daily-wind';
 import DailySunriseSunset from './daily-sunrise-sunset';
+import DailyHourly from './daily-hourly';
 
 interface DailyForecastDetailGridProps {
   dayWeatherDetails: DailyWeather;
@@ -38,11 +37,10 @@ function DailyForecastDetailGrid({ dayWeatherDetails }: DailyForecastDetailGridP
         sunset={dayWeatherDetails.sunset}
         timezone={dayWeatherDetails.timezone}
       />
-      <Card
-        className={`${styles.dailyDetailGridAreaHourly} rounded-none border-0 border-t border-zinc-700`}
-      >
-        Hourly
-      </Card>
+      <DailyHourly
+        className={styles.dailyDetailGridAreaHourly}
+        hourlyWeather={dayWeatherDetails.hourly}
+      />
     </div>
   );
 }

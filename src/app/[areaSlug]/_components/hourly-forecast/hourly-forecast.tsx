@@ -1,31 +1,20 @@
-import { weatherGridStyles } from '../weather-details-grid';
-
 import React from 'react';
-
-import { Card, CardHeader, ScrollArea } from '@/components';
-import { AreaWeather } from '@/lib/types';
-
 import HourlyForecastItem from './hourly-forecast-item';
-import { get24HourHourlyForeastData } from './hourly-forecast.utils';
+import { HourlyWeather } from './hourly-forecast.utils';
+import { twMerge } from 'tailwind-merge';
 
 interface HourlyForecastProps {
-  weather: AreaWeather;
+  hourlyWeather: HourlyWeather[];
+  className?: string;
 }
 
-function HourlyForecast({ weather }: HourlyForecastProps) {
-  const hourlyWeather = get24HourHourlyForeastData(weather);
-
+function HourlyForecast({ hourlyWeather, className }: HourlyForecastProps) {
   return (
-    <Card className={`${weatherGridStyles.gridAreaHourlyForecast} flex h-full w-full flex-col p-0`}>
-      <CardHeader className="border-b border-zinc-700 p-3">Hourly Forecast</CardHeader>
-      <ScrollArea className="h-full w-full" orientation="horizontal">
-        <div className="flex h-30 items-center">
-          {hourlyWeather.map((hour) => {
-            return <HourlyForecastItem key={hour.time} hour={hour} />;
-          })}
-        </div>
-      </ScrollArea>
-    </Card>
+    <div className={twMerge(className, 'flex items-center')}>
+      {hourlyWeather.map((hour) => {
+        return <HourlyForecastItem key={hour.time} hour={hour} />;
+      })}
+    </div>
   );
 }
 
