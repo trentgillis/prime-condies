@@ -11,7 +11,7 @@
   </picture>
 </div>
 
-## PrimeCondies
+---
 
 This is the main repository for the [primecondies.com](https://primecondies.com/), a web applicaiton that serves weather information for rock climbers. It's goal is to provide climbers with a robust user experience that makes getting up-to-date weather information for their climbing projects easy.
 
