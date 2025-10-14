@@ -65,6 +65,13 @@ const areas: AreaShema[] = [
     location: { lat: 39.618521, lng: -105.602785 },
   },
   {
+    areaSlug: 'mount-blue-sky',
+    name: 'Mount Blue Sky',
+    place: 'Colorado',
+    countryCode: 'USA',
+    location: { lat: 39.633297, lng: -105.620366 },
+  },
+  {
     areaSlug: 'west-cliff',
     name: 'West Cliff',
     place: 'Colorado',
