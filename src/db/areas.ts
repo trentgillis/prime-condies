@@ -71,6 +71,20 @@ const areas: AreaShema[] = [
     countryCode: 'USA',
     location: { lat: 39.633297, lng: -105.620366 },
   },
+  {
+    areaSlug: 'west-cliff',
+    name: 'West Cliff',
+    place: 'Colorado',
+    countryCode: 'USA',
+    location: { lat: 38.08857, lng: -105.67732 },
+  },
+  {
+  areaSlug: 'shelf-Road',
+  name: 'Shelf',
+  place: 'Colorado',
+  countryCode: 'USA',
+  location: { lat: 38.629334, lng: -105.228094},
+  },
 ];
 
 export default areas;
